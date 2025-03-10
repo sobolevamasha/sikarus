@@ -52,9 +52,5 @@ import hero from '@/components/HomePage/hero.vue';
 </script>
 
 <style lang="scss">
-@import "../styles/variables.scss";
 
-	.homepage {
-		//font-family: $secondary-font-family, sans-serif !important;
-	}
 </style>
