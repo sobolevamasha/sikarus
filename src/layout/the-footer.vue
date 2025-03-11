@@ -1,5 +1,5 @@
 <template>
-	<footer class="cmp-footer cmp--dark cmp-font--klavika">
+	<footer class="cmp-footer cmp--dark cmp-font--klavika footer">
   <v-container class="cmp-footer-container cmp-footer-container__content">
     <div class="cmp-footer-content grid-x grid-margin-x">
       <div class="cell large-8 small-12">
@@ -199,8 +199,8 @@
 </script>
 
 <style lang="scss">
-	.the-footer {
-		
+	.footer {
+		background-color: #616161;
 	}
 
 </style>

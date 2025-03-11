@@ -777,12 +777,12 @@ h6, .h6 {
   margin-bottom: 0.5rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: 688px) {
   h1, .h1 {
     font-size: 3rem;
   }
   h2, .h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   h3, .h3 {
     font-size: 1.9375rem;
@@ -19383,25 +19383,31 @@ body.rtl .cmp-accordion__content--right {
   -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  height: 335px;
+  height: 235px;
   background-color: #ffc510;
   background-color: var(--helpbox-background);
   display: flex;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+
+  @include up($lg) {
+    height: 335px;
+  }
+
+  
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: 688px) {
   .cmp-helpbox {
     padding-right: 0.9375rem;
     padding-left: 0.9375rem;
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: 688px) {
   .cmp-helpbox {
-    padding: 40px;
+    padding: 30px;
   }
 }
 
@@ -20846,3 +20852,11 @@ table th.active:not(.sorted)::after {
   margin-bottom: 0;
 }
 /*# sourceMappingURL=storybook.css.map */
+
+/*
+OUR GLOBALS
+*/
+
+.container-small {
+  
+}

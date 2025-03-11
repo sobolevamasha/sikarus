@@ -1,8 +1,8 @@
 <template>
   <div class="helpbox cmp-helpbox-container">
-    <div class="cmp-helpbox cmp-helpbox-offset">
-      <h2 class="cmp-helpbox__title">
-        КАК МЫ МОЖЕМ ВАМ ПОМОЧЬ?
+    <div class="cmp-helpbox cmp-helpbox-offset helpbox__wrap">
+      <h2 class="cmp-helpbox__title helpbox__title">
+        Как мы можем вам помочь?
       </h2>
       <div class="cmp-helpbox__content">
         <div class="cmp-search-field cmp-search-field--large">
@@ -17,48 +17,96 @@
         </div>
       </div>
     </div>
-    <div class="cmp-helpbox-bar cmp-shadow">
+    <div class="cmp-helpbox-bar cmp-shadow helpbox__list">
 
 
-      <a href="#" class="cmp-helpbox__icon cmp-font--regular text-left" v-for="(button, index) in buttons" :key="index">
-        <img class="cmp-icon cmp-icon-map-marker" :src="button.icon" />
-        <div class="cmp-helpbox__icon-text">{{ button.name }}</div>
+      <a href="#" class="cmp-helpbox__icon cmp-font--regular text-left helpbox__item" v-for="(button, index) in buttons"
+        :key="index">
+        <div class="helpbox__item--content">
+          <img class="cmp-icon cmp-icon-map-marker helpbox__item--icon" :src="button.icon" />
+          <div class="cmp-helpbox__icon-text text-left">{{ button.name }}</div>
+        </div>
       </a>
-
-
-      <!-- <a href="#" class="cmp-helpbox__icon cmp-font--regular">
-      <i class="cmp-icon cmp-icon-map-marker"></i>
-      <div class="cmp-helpbox__icon-text">Link #2</div>
-    </a>
-    <a href="#" class="cmp-helpbox__icon cmp-font--regular">
-      <i class="cmp-icon cmp-icon-map-marker"></i>
-      <div class="cmp-helpbox__icon-text">Link #3</div>
-    </a>
-    <a href="#" class="cmp-helpbox__icon cmp-font--regular">
-      <i class="cmp-icon cmp-icon-map-marker"></i>
-      <div class="cmp-helpbox__icon-text">Link #4</div>
-    </a> -->
     </div>
   </div>
 </template>
 
 <style lang="scss">
 .helpbox {
+  &__wrap {
+    @include up($sm) {
+    margin-top: -50px;
+    }
+  }
+  &__title {
+    text-transform: uppercase;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-self: center;
+    margin-top: -100px;
+    @include up($md) {
+      //margin-top: -30px;
+    }
+
+    @include up($lg) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    margin: 5px 0;
+
+    @include up($lg) {
+      margin: 5px 10px;
+    }
+    height: 60px;
+    font-size: 16px;
+    line-height: 100%;
+
+    @include up($lg) {
+      height: 80px;
+    }
+
+    &--content {
+      display: flex;
+      //justify-content: space-between;
+      width: 200px;
+    }
+    &--icon {
+      width: 35px;
+      height: 35px;
+    }
+  }
+
   & .search-form {
     position: relative;
+
     & input {
       padding: 15px 62px 15px 15px;
       margin-top: 20px;
       border-bottom: 2px solid #616161;
       max-width: 600px;
+      height: 40px;
       width: 100%;
-      height: 60px;
+
+      @include up($md) {
+        height: 60px;
+      }
     }
 
     & button {
       position: absolute;
-      top: 35px;
-      right: 280px;
+      right: 10px;
+      top: 27px;
+
+      @include up($md) {
+        right: 280px;
+        top: 35px;
+      }
     }
   }
 }
@@ -67,7 +115,6 @@
 <script>
 export default {
   computed: {
-
     buttons() {
       return [
         {
@@ -81,7 +128,23 @@ export default {
         {
           name: "Задать вопрос",
           icon: require('@/assets/icons/phone.svg'),
-        }
+        },
+        {
+          name: "Подписаться на Telegram",
+          icon: require('@/assets/icons/phone.svg'),
+        },
+        {
+          name: "Обратная связь",
+          icon: require('@/assets/icons/phone.svg'),
+        },
+        // {
+        //   name: "Обратная связь",
+        //   icon: require('@/assets/icons/phone.svg'),
+        // },
+        // {
+        //   name: "Обратная связь",
+        //   icon: require('@/assets/icons/phone.svg'),
+        // }
       ]
     },
   }

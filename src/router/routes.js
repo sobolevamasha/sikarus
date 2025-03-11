@@ -15,6 +15,12 @@ const routes = [
                 component: () => import("../views/HomePage"),
                 //meta: {api: "HomeController"}
             },
+            {
+                path: '/about',
+                name: 'about',
+                component: () => import("../views/AboutView"),
+                //meta: {api: "HomeController"}
+            },
             
 
         ]

@@ -10,6 +10,12 @@ let state = {
     isLoading: false,
 
 
+    windowWidth: window.innerWidth,
+    windowHeight: window.innerHeight,
+    headerHeight: 64,
+    withBurgerMenu: false,
+    withProductMenu: false
+
 };
 
 export default state;
