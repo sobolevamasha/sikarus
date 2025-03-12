@@ -53,11 +53,9 @@
                                 </li>
                             </ul> -->
                         </button>
-                        <button @click="onToggleProductMenu()"
-                        
-                        class="header__dropdown--product-list">
+                        <button class="header__dropdown--product-list">
                             Продукция
-                            <ul v-if="withProductMenu" class="header__dropdown--product-item">
+                            <ul class="header__dropdown--product-item">
                                 <li v-for="(product, index) in products" :key="index">
                                     <a :href="product.link" target="_blank">
                                         {{ product.title }}
@@ -114,6 +112,14 @@
 </template>
 
 <style lang="scss">
+.header__dropdown--product-list:hover {
+    transition: all 0.2s ease-in;
+    .header__dropdown--product-item {
+        display: block;
+    }
+
+}
+
 .header {
     &__mobile {
         background-color: $sika-yellow;
@@ -200,6 +206,7 @@
         }
 
         &--product-item {
+            display: none;
             position: absolute;
             background: $gray;
             z-index: 100;
@@ -212,8 +219,6 @@
                 padding: 10px 0;
                 position: relative;
                 border-bottom: 1px solid #ffffff;
-
-
                 &:first-child:after {
                     content: "";
                     position: absolute;
@@ -229,6 +234,22 @@
                     border-bottom: 10px solid $gray;
                 }
             }
+        }
+
+        &--product-list {
+            position: relative;
+            &:hover {
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    bottom: -11px;
+                    left: 0;
+                    border-bottom: 4px solid $sika-yellow;
+                    border-radius: 20px;
+                }
+            }
+
         }
     }
 
@@ -268,6 +289,8 @@
             padding: 10px 5px;
         }
     }
+
+
 }
 </style>
 
@@ -283,7 +306,6 @@ export default {
         return {
             isHeaderScrolled: false,
             isHeaderBurgered: false,
-            active: false,
         }
     },
     computed: {
@@ -296,7 +318,7 @@ export default {
             return this.$store.state.withBurgerMenu;
         },
         withProductMenu() {
-            return this.$store.state.withProductMenu;
+            //return this.$store.state.withProductMenu;
         },
         products() {
             return [
@@ -320,12 +342,10 @@ export default {
             }, 100);
             else this.isHeaderBurgered = false;
         },
-        onToggleProductMenu() {
-            this.$store.state.withProductMenu = !this.$store.state.withProductMenu;
-        },
-        onClickOutside() {
-            this.active = false
-        },
+        // onToggleProductMenu() {
+        //     this.$store.state.withProductMenu = !this.$store.state.withProductMenu;
+        // },
+
 
 
     },

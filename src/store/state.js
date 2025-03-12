@@ -14,7 +14,11 @@ let state = {
     windowHeight: window.innerHeight,
     headerHeight: 64,
     withBurgerMenu: false,
-    withProductMenu: false
+    withProductMenu: false,
+
+    swipers: {
+        
+    },
 
 };
 

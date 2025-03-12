@@ -20857,6 +20857,10 @@ table th.active:not(.sorted)::after {
 OUR GLOBALS
 */
 
-.container-small {
-  
+a {
+  transition: all .2s;
+}
+
+button {
+  transition: all .2s;
 }

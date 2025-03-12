@@ -10,11 +10,12 @@
     export default {
         name: 'App',
     };
+    
 </script>
 
 <style lang="scss">
 #app {
-  //font-family: $font-family;
+  font-family: $secondary-font-family;
   text-align: center;
   color: #2c3e50;
 
