@@ -75,6 +75,7 @@
       display: flex;
       //justify-content: space-between;
       width: 200px;
+      font-size: 20px;
     }
     &--icon {
       width: 35px;

@@ -15,6 +15,7 @@ let state = {
     headerHeight: 64,
     withBurgerMenu: false,
     withProductMenu: false,
+    menuOpened: false,
 
     swipers: {
         

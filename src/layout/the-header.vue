@@ -9,9 +9,9 @@
             <v-container class="header__mobile--wrap px-4 d-flex justify-space-between">
                 <div class="header__mobile--left d-flex align-center">
                     <div class="header__mobile--title d-flex align-center">
-                        <div class="logo">
+                        <a href="/" class="logo">
                             <img src="../assets/logo1.png" />
-                        </div>
+                        </a>
                         <a href="https://www.sika.com" target="_blank" class="ml-4">Sika Group</a>
                     </div>
                 </div>
@@ -86,13 +86,13 @@
         </div>
         <div class="header__content d-none d-md-flex">
             <v-container class="d-flex justify-space-between align-center">
-                <div class="header__content-left d-flex align-center">
+                <a href="/" class="header__content-left d-flex align-center">
                     <div class="logo">
                         <img src="../assets/logo1.png" />
                     </div>
 
                     <div class="header__content-title">Sika Россия</div>
-                </div>
+                </a>
                 <div class="header__content-right">
                     <div class="header__content-search">
                         <form method="get" class="search-form">
@@ -108,6 +108,8 @@
                 </div>
             </v-container>
         </div>
+        <mainmenu/>
+
     </nav>
 </template>
 
@@ -117,9 +119,7 @@
     .header__dropdown--product-item {
         display: block;
     }
-
 }
-
 .header {
     &__mobile {
         background-color: $sika-yellow;
@@ -261,8 +261,17 @@
         height: 145px;
         z-index: 10;
 
+        & a {
+            color: black !important;
+        }
+
         @include up($md) {
-            top: 80px;
+            //top: 80px;
+            position: relative;
+        }
+        @include up($lg) {
+            position: relative;
+            margin-top: 20px;
         }
     }
 
@@ -296,11 +305,13 @@
 
 <script>
 import burgerMenu from '@/layout/burger-menu.vue';
+import mainmenu from '@/components/mainmenu.vue';
 
 export default {
     name: "the-header",
     components: {
-        burgerMenu
+        burgerMenu,
+        mainmenu
     },
     data() {
         return {

@@ -2,7 +2,7 @@
     <section class="activity grid-container">
         <v-container>
             <h2 class="cmp-layout__title">
-                Наши сферы деятельности
+                Сферы, в которых мы работаем
             </h2>
             <ul class="activity__list">
                 <li v-for="(activity, index) in activities" :key="index" class="activity__item">
@@ -87,28 +87,18 @@ export default {
                     link: "about"
                 },
                 {
+                    img: require('@/assets/tmp/distribuciya.jpg'),
+                    name: "Производство бетона",
+                    text: "Материалы для промышленного и гражданского строительства",
+                    link: "about"
+                },
+                {
                     img: require('@/assets/tmp/stroitelstvo.jpg'),
                     name: "Частное домостроение",
                     text: "Материалы для внутренней и внешней отделки",
                     link: "about"
                 },
-                // {
-                //     img: require('@/assets/tmp/stroitelstvo.jpg'),
-                //     name: "Частное домостроение",
-                //     text: "Материалы для внутренней и внешней отделки",
-                //     link: "about"
-                // },{
-                //     img: require('@/assets/tmp/stroitelstvo.jpg'),
-                //     name: "Частное домостроение",
-                //     text: "Материалы для внутренней и внешней отделки",
-                //     link: "about"
-                // },
-                // {
-                //     img: require('@/assets/tmp/stroitelstvo.jpg'),
-                //     name: "Частное домостроение",
-                //     text: "Материалы для внутренней и внешней отделки",
-                //     link: "about"
-                // }
+                
 
             ]
         },

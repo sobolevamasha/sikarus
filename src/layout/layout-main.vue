@@ -30,6 +30,9 @@ export default {
         @include up($md) {
             margin-top: 0;
         }
+        @include up($lg) {
+            margin-top: -240px;
+        }
     }
 }
 </style>

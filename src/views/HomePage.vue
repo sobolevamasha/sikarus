@@ -1,10 +1,11 @@
 <template>
 	<div class="homepage" v-scroll="handleScroll">
-		<hero />
+		<hero :title="h1" :subtitle="h4" :background="background" :video="video" />
 		<helpbox />
 		<activity />
-		<news />
 		<about />
+		<news />
+		
 		<slider :title="title" :items="swiperItems" />
 		<statistics :blocks="blocks" />
 
@@ -15,7 +16,7 @@
 
 //import {scrollTo} from '@/utils/utils';
 import helpbox from '@/components/HomePage/helpbox.vue';
-import hero from '@/components/HomePage/hero.vue';
+import hero from '@/components/hero.vue';
 import activity from '@/components/HomePage/activity.vue';
 import news from '@/components/HomePage/news.vue';
 import about from '@/components/HomePage/about.vue';
@@ -87,7 +88,11 @@ export default {
 					top: "380+",
 					bottom: "сотрудников в России"
 				},
-			]
+			],
+			h1: 'Sika Россия',
+			h4: 'Строим доверие',
+			background: require('@/assets/hero-skyline-2.jpg'),
+			video: 'https://sika.scene7.com/is/content/sika/glo-skyline-loop'
 		}
 	},
 	computed: {
@@ -128,15 +133,16 @@ export default {
 .homepage {
 
 
-	& .about {
-		padding-top: 30px;
+	// & .about {
+	// 	padding-top: 30px;
 
-		@include up($lg) {
-			padding-top: 60px;
-		}
+	// 	@include up($lg) {
+	// 		padding-top: 60px;
+	// 	}
 
-	}
+	// }
 
+	& .about,
 	& .activity,
 	& .news,
 	& .slider,
