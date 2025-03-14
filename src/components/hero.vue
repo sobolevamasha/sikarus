@@ -1,9 +1,8 @@
 <template>
   <div class="cmp-font--klavika hero">
-    <div class="cmp-hero cmp-hero--darkbg cmp-hero--parallax"
-    :class="{'cmp-hero--small' : isSmall}">
-      <div v-if="!video" class="cmp-hero__background">
-        <picture>
+    <div class="cmp-hero cmp-hero--darkbg cmp-hero--parallax" :class="heroClass">
+      <div v-if="background && !video" class="cmp-hero__background">
+        <picture v-if="background">
           <img :src="background">
         </picture>
       </div>
@@ -29,6 +28,15 @@
 export default {
   name: "hero",
   props: ["title", "subtitle", "background", "video", "isSmall"],
+
+  computed: {
+    heroClass() {
+      return {
+        'cmp-hero--small cmp-hero--noimage': !this.background,
+        'cmp-hero--small': this.isSmall,
+      }
+    },
+  }
 }
 </script>
 

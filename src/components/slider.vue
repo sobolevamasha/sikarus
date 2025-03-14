@@ -129,7 +129,7 @@ export default {
         const swiper = new Swiper('.swiper', {
             freeMode: true,
             modules: [Navigation, Pagination],
-            slidesPerView: 3,
+            slidesPerView: 1,
             spaceBetween: 15,
             navigation: {
                 nextEl: '.swiper-button-next',
@@ -137,9 +137,19 @@ export default {
             },
             //mousewheel: true,
             //grabCursor: true,
+            
             breakpoints: {
-
+                360: {
+                    slidesPerView: 1,
+                },
+                688: {
+                    slidesPerView: 2,
+                },
+                1016: {
+                    slidesPerView: 3,
+                },
             }
+            
         });
 
     }

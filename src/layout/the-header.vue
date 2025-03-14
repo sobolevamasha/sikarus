@@ -6,7 +6,7 @@
         </transition>
 
         <div class="header__mobile d-md-none">
-            <v-container class="header__mobile--wrap px-4 d-flex justify-space-between">
+            <v-container class="header__mobile--wrap px- d-flex justify-space-between">
                 <div class="header__mobile--left d-flex align-center">
                     <div class="header__mobile--title d-flex align-center">
                         <a href="/" class="logo">
@@ -28,7 +28,7 @@
             </v-container>
         </div>
         <div class="header__top d-none d-md-flex">
-            <v-container class="header__wrap px-4 d-flex justify-space-between">
+            <v-container class="header__wrap px-2 d-flex justify-space-between">
                 <div class="header__left d-flex align-center">
                     <div class="header__title">
                         <a href="https://www.sika.com" target="_blank">Sika Group</a>
@@ -69,10 +69,10 @@
                 <div class="header__right">
                     <ul class="header__dropdown d-flex">
                         <li>
-                            <a>О компании</a>
+                            <a href="/about">О компании</a>
                         </li>
                         <li>
-                            <a>Контакты</a>
+                            <a href="/contacts">Контакты</a>
                         </li>
                         <li>
                             <a>Дилеры</a>
@@ -258,7 +258,7 @@
         color: black;
         position: absolute;
         width: 100%;
-        height: 145px;
+        height: 90px;
         z-index: 10;
 
         & a {
@@ -267,10 +267,12 @@
 
         @include up($md) {
             //top: 80px;
+            height: 100px;
             position: relative;
         }
         @include up($lg) {
             position: relative;
+            height: 145px;
             margin-top: 20px;
         }
     }

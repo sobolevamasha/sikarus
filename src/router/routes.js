@@ -19,9 +19,16 @@ const routes = [
                 name: 'about',
                 component: () => import("../views/About"),
             },
+            {
+                path: '/contacts',
+                name: 'contacts',
+                component: () => import("../views/Contacts"),
+            },
             
 
         ]
     }
 ];
+
+
 export default routes;

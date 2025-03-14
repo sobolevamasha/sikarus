@@ -15769,7 +15769,7 @@ body.rtl .cmp-quote blockquote {
   font-size: 2.88rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: 1016px) {
   .cmp-hero--small .cmp-hero__content--wrapper .cmp-display {
     font-size: -webkit-calc(2.88rem + 0.56 * ((100vw - 640px) / 384));
     font-size: -moz-calc(2.88rem + 0.56 * ((100vw - 640px) / 384));
@@ -15777,13 +15777,13 @@ body.rtl .cmp-quote blockquote {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: 1344px) {
   .cmp-hero--small .cmp-hero__content--wrapper .cmp-display {
     font-size: 3.44rem;
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: 1344px) {
   .cmp-hero--small .cmp-hero__content {
     margin-top: 256px;
   }
@@ -15794,7 +15794,7 @@ body.rtl .cmp-quote blockquote {
   height: auto;
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: 1344px) {
   .cmp-hero--noimage .cmp-hero__content {
     margin-top: 256px;
   }

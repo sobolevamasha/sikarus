@@ -50,7 +50,7 @@ export default {
                 },
                 {
                     name: "Контакты",
-                    to: "about"
+                    to: "contacts"
                 }
             ]
         }

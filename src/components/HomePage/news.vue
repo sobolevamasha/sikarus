@@ -1,14 +1,14 @@
 <template>
     <section class="news">
         <div class="grid-container">
-        <v-container>
-            <h2 class="cmp-layout__title">
-                Последние новости
-            </h2>
-            <ul class="news__list">
-                <li v-for="(item, index) in news" :key="index" v-if="news && news.length > 0 && index <= newsLimit"
-                    class="news__item">
-                    <router-link :to="item.link">
+            <v-container>
+                <h2 class="cmp-layout__title">
+                    Последние новости
+                </h2>
+                <ul class="news__list">
+                    <li v-for="(item, index) in news" :key="index" v-if="news && news.length > 0 && index <= newsLimit"
+                        class="news__item">
+                        <router-link :to="item.link"></router-link>
                         <img :src="item.img" />
                         <div class="news__content">
                             <span class="text-left d-block">{{ item.lang }}</span>
@@ -17,31 +17,38 @@
                                 <span class="text-left small cmp-font--bold d-block">{{ item.date }}</span>
                             </div>
                         </div>
-                    </router-link>
-                </li>
-            </ul>
-            <btn :label="!fullLimit ? 'Показать еще' : 'Скрыть'" @click="onShowMore" class="mt-2 mt-md-8"></btn>
-        </v-container>
-    </div>
+
+                    </li>
+                </ul>
+                <btn :label="!fullLimit ? 'Показать еще' : 'Скрыть'" @click="onShowMore" class="mt-2 mt-md-8"></btn>
+            </v-container>
+        </div>
     </section>
 </template>
 
 <style lang="scss">
 .news {
     background-color: #f5f5f5;
+
     &__list {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         justify-self: center;
 
         & img {
-            max-width: 250px;
-            max-height: 167px;
+            //max-width: 250px;
+            //max-height: 167px;
+
 
             @include up($lg) {
                 max-width: 370px;
                 max-height: 247px;
             }
+        }
+
+        @include up($md) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
         }
 
         @include up($lg) {
@@ -51,11 +58,17 @@
     }
 
     &__item {
-        max-width: 250px;
+        max-width: 280px;
         box-shadow: 0 1px 2px #0003, 0 1px 3px #0000001a;
         transition: all .3sease-in-out;
         outline: 1px solid transparent;
         margin: 15px;
+        position: relative;
+
+        @include up($md) {
+            max-width: 320px;
+        }
+
         @include up($lg) {
             max-width: 370px;
         }
@@ -73,6 +86,10 @@
 
     & a {
         color: $black !important;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
     }
 }
 </style>
