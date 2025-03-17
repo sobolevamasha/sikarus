@@ -1,12 +1,12 @@
 <template>
-    <div class="about grid-container">
+    <section class="about grid-container">
         <v-container>
             <h2 class="cmp-layout__title about__title">О компании</h2>
             <p v-for="(text, index) in texts" :key="index" class="mb-4">
                 {{ text.paragraph }}
             </p>
         </v-container>
-    </div>
+    </section>
 </template>
 
 <style lang="scss">

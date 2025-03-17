@@ -7124,7 +7124,7 @@ html.is-reveal-open body {
 }
 
 .cmp-icon-download:before {
-  content: "\f1da";
+  content: url('~@/assets/icons/download.svg');
 }
 
 .cmp-icon-earth:before {
@@ -16030,18 +16030,18 @@ body.rtl .cmp-hero__content--wrapper .cmp-button {
 
 @media print, screen and (min-width: 64em) {
   .cmp-hero__content--wrapper {
-    padding: 0 2rem;
-    padding-left: 2rem;
+    //padding: 0 2rem;
+    //padding-left: 2rem;
   }
 }
 
 @media screen and (min-width: 95em) {
   .cmp-hero__content--wrapper {
-    padding-left: 160px;
+    //padding-left: 160px;
   }
   body.rtl .cmp-hero__content--wrapper {
-    padding-left: 2rem;
-    padding-right: 160px;
+    //padding-left: 2rem;
+    //padding-right: 160px;
   }
 }
 
@@ -17793,7 +17793,8 @@ body.rtl .cmp-teaser.cmp-teaser .cmp-teaser__content .cmp-content .cmp-product__
 .cmp-teaser.cmp-teaser--document .cmp-teaser__content--left .cmp-icon {
   display: inline-block;
   font-size: 4rem;
-  margin-top: -2px;
+  //margin-top: -2px;
+  margin-left: 15px;
 }
 
 .cmp-teaser.cmp-teaser--document .cmp-teaser__content--right {
@@ -17802,7 +17803,10 @@ body.rtl .cmp-teaser.cmp-teaser .cmp-teaser__content .cmp-content .cmp-product__
   -moz-box-flex: 1;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
-  padding: 10px 0 0 10px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .cmp-teaser.cmp-teaser--document .cmp-teaser__content--right__title {

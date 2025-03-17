@@ -1,5 +1,5 @@
 <template>
-    <div class="slider grid-container">
+    <section class="slider grid-container">
         <v-container>
             <h2 class="cmp-layout__title about__title"> {{ title }} </h2>
             <div class="swiper">
@@ -44,7 +44,7 @@
                 </div>
             </div>
         </v-container>
-    </div>
+    </section>
 </template>
 
 <style lang="scss">

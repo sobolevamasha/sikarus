@@ -23,6 +23,8 @@ import about from '@/components/HomePage/about.vue';
 import slider from '@/components/slider.vue';
 import statistics from '@/components/statistics.vue';
 
+import objectList from '@/store/objects';
+
 export default {
 	name: "HomePage",
 	components: {
@@ -37,32 +39,32 @@ export default {
 	data() {
 		return {
 			title: "Объекты Sika в России",
-			swiperItems: [
-				{
-					name: "Жилой комплекс PRIME PARK",
-					location: "г. Москва",
-					to: "",
-					img: require('@/assets/tmp/slide1.jpg')
-				},
-				{
-					name: 'Многофункциональный комплекс "Лахта-Центр"',
-					location: "г. Санкт-Петербург",
-					to: "",
-					img: require('@/assets/tmp/slide2.jpg')
-				},
-				{
-					name: "Музей русского импрессионизма",
-					location: "г. Москва",
-					to: "",
-					img: require('@/assets/tmp/slide3.jpg')
-				},
-				{
-					name: "Жилой комплекс PRIME PARK",
-					location: "г. Москва",
-					to: "",
-					img: require('@/assets/tmp/slide1.jpg')
-				}
-			],
+			// swiperItems: [
+			// 	{
+			// 		name: "Жилой комплекс PRIME PARK",
+			// 		location: "г. Москва",
+			// 		to: "",
+			// 		img: require('@/assets/tmp/slide1.jpg')
+			// 	},
+			// 	{
+			// 		name: 'Многофункциональный комплекс "Лахта-Центр"',
+			// 		location: "г. Санкт-Петербург",
+			// 		to: "",
+			// 		img: require('@/assets/tmp/slide2.jpg')
+			// 	},
+			// 	{
+			// 		name: "Музей русского импрессионизма",
+			// 		location: "г. Москва",
+			// 		to: "",
+			// 		img: require('@/assets/tmp/slide3.jpg')
+			// 	},
+			// 	{
+			// 		name: "Жилой комплекс PRIME PARK",
+			// 		location: "г. Москва",
+			// 		to: "",
+			// 		img: require('@/assets/tmp/slide1.jpg')
+			// 	}
+			// ],
 			blocks: [
 				{
 					top: "114",
@@ -96,7 +98,9 @@ export default {
 		}
 	},
 	computed: {
-
+		swiperItems() {
+			return objectList[0].objects.filter(el => (el.mainPage === 'Y'));
+		}
 	},
 	methods: {
 		handleScroll() {
@@ -125,6 +129,9 @@ export default {
 		scrollTo(id) {
 			scrollTo(id);
 		}
+	},
+	mounted() {
+		console.log('swiper: ', this.swiperItems)
 	}
 }
 </script>
@@ -133,17 +140,17 @@ export default {
 .homepage {
 
 
-	// & .about {
-	// 	padding-top: 30px;
+	 & .activity {
+	 	padding-top: 30px;
 
-	// 	@include up($lg) {
-	// 		padding-top: 60px;
-	// 	}
+	 	@include up($lg) {
+	 		padding-top: 60px;
+	 	}
 
-	// }
+	 }
 
 	& .about,
-	& .activity,
+	//& .activity,
 	& .news,
 	& .slider,
 	& .statistics {

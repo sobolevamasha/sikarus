@@ -17,8 +17,11 @@
 #app {
   font-family: $secondary-font-family;
   text-align: center;
-  color: #2c3e50;
+  color: $black;
 
+  & a {
+    @include transition();
+  }
 }
 
 </style>

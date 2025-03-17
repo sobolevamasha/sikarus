@@ -24,6 +24,11 @@ const routes = [
                 name: 'contacts',
                 component: () => import("../views/Contacts"),
             },
+            {
+                path: '/objects',
+                name: 'objects',
+                component: () => import("../views/Objects"),
+            },
             
 
         ]

@@ -1,5 +1,5 @@
 <template>
-    <div class="statistics">
+    <section class="statistics">
         <div class="grid-container">
             <v-container>
                 <ul class="statistics__list" :class="{ 'statistics__list--withgrid': blocks.length > 2 }">
@@ -10,7 +10,7 @@
                 </ul>
             </v-container>
         </div>
-    </div>
+    </section>
 </template>
 
 <style lang="scss">
