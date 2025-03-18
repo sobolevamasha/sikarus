@@ -80,7 +80,7 @@ export default [
       {
         maps: [
           {
-            title: "",
+            title: "Схема проезда Краснодар",
             filePath: "",
           },
         ],

@@ -27,8 +27,8 @@
                 </div>
             </v-container>
         </div>
-        <div class="header__top d-none d-md-flex">
-            <v-container class="header__wrap px-2 d-flex justify-space-between">
+        <div class="header__top  d-none d-md-flex">
+            <div class="header__wrap header__container px-2 d-flex justify-space-between">
                 <div class="header__left d-flex align-center">
                     <div class="header__title">
                         <a href="https://www.sika.com" target="_blank">Sika Group</a>
@@ -82,13 +82,13 @@
                         </li>
                     </ul>
                 </div>
-            </v-container>
+            </div>
         </div>
-        <div class="header__content d-none d-md-flex">
-            <v-container class="d-flex justify-space-between align-center">
+        <div class="header__content  d-none d-md-flex">
+            <div class="header__container d-flex justify-space-between align-center">
                 <a href="/" class="header__content-left d-flex align-center">
                     <div class="logo">
-                        <img src="../assets/logo1.png" />
+                        <img src="../assets/Sika_ClaimU_pos_rgb.svg" />
                     </div>
 
                     <div class="header__content-title">Sika Россия</div>
@@ -106,9 +106,9 @@
                         </form>
                     </div>
                 </div>
-            </v-container>
+            </div>
         </div>
-        <mainmenu/>
+        <mainmenu />
 
     </nav>
 </template>
@@ -116,11 +116,19 @@
 <style lang="scss">
 .header__dropdown--product-list:hover {
     transition: all 0.2s ease-in;
+
     .header__dropdown--product-item {
         display: block;
     }
 }
+
 .header {
+    min-height: 75px;
+    width: 100%;
+    @include up($md) {
+        position: absolute;
+    }
+
     &__mobile {
         background-color: $sika-yellow;
         position: fixed;
@@ -186,6 +194,15 @@
     &__top {
         box-shadow: 0 1px 2px #0003, 0 1px 3px #0000001a;
         background-color: $dark-gray;
+        z-index: 10;
+        position: relative;
+    }
+
+    &__container {
+        width: 100%;
+        margin: auto;
+        max-width: 1920px;
+        padding: 10px 20px;
     }
 
     &__title {
@@ -219,6 +236,7 @@
                 padding: 10px 0;
                 position: relative;
                 border-bottom: 1px solid #ffffff;
+
                 &:first-child:after {
                     content: "";
                     position: absolute;
@@ -238,6 +256,7 @@
 
         &--product-list {
             position: relative;
+
             &:hover {
                 &::after {
                     content: "";
@@ -254,6 +273,7 @@
     }
 
     &__content {
+        animation: slide-up .4s;
         background-color: $sika-yellow;
         color: black;
         position: absolute;
@@ -270,6 +290,7 @@
             height: 100px;
             position: relative;
         }
+
         @include up($lg) {
             position: relative;
             height: 145px;

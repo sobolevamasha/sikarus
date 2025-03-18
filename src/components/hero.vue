@@ -43,6 +43,11 @@ export default {
 <style lang="scss">
 .hero {
 
+  & img,
+  & video {
+    object-fit: cover;
+  }
+  
   &--small {
     height: 600px;
   }

@@ -1,4 +1,4 @@
-//import config from '../config'
+import config from '../config'
 
 let state = {
 
@@ -15,7 +15,6 @@ let state = {
     headerHeight: 64,
     withBurgerMenu: false,
     withProductMenu: false,
-    menuOpened: false,
 
     swipers: {
         

@@ -4,28 +4,28 @@
   Не включаем сюда непосредственно глобальные стили. Для них - index.scss.
 */
 @import "mixins";
-//@import '~vuetify/src/styles/styles.sass';
+@import '~vuetify/src/styles/styles.sass';
 
 $main-font-family: Klavika, "Helvetica Neue", Helvetica, Arial, sans-serif;
 $secondary-font-family: "Calibri", Helvetica, Arial, sans-serif;
 
 // переопределяем сетку
-$grid-breakpoints: () !default;
-$grid-breakpoints: (
-        'xs': 0,
-        'sm': 688px, // default 600px
-        'md': 1016px, // default 960px
-        'lg': 1344px, // default 1280px - 16px,
-        'xl': 1344px, // default 1920px - 16px
-);
+//$grid-breakpoints: () !default;
+// $grid-breakpoints: (
+//         'xs': 0,
+//         'sm': 688px, // default 600px
+//         'md': 1016px, // default 960px
+//         'lg': 1344px, // default 1280px - 16px,
+//         'xl': 1920px, // default 1920px - 16px
+// );
 
 // удобные сокращения для наших компонентов
 // важно, чтобы эти размеры совпадали с вышеуказанными!
 $xs: 0px;
-$sm: 688px;
-$md: 1016px;
-$lg: 1344px;
-$xl: 2000px;
+$sm: 600px;
+$md: 960px;
+$lg: 1280px;
+$xl: 1920px;
 
 $white: #fff;
 $black: #000;

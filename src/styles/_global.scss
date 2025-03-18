@@ -368,7 +368,7 @@
  * foundation.zurb.com
  * Licensed under MIT Open Source
  */
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .reveal, .reveal.tiny, .reveal.small, .reveal.large, .cmp-video-overlay__wrapper {
     right: auto;
     left: auto;
@@ -562,7 +562,7 @@ template {
 }
 
 .foundation-mq {
-  font-family: "small=0em&medium=40em&large=64em&xlarge=75em&xxlarge=95em";
+  font-family: "small=0em&medium=$sm&large=$md&xlarge=75em&xxlarge=95em";
 }
 
 html {
@@ -777,7 +777,7 @@ h6, .h6 {
   margin-bottom: 0.5rem;
 }
 
-@media print, screen and (min-width: 688px) {
+@media print, screen and (min-width: $sm) {
   h1, .h1 {
     font-size: 3rem;
   }
@@ -950,7 +950,7 @@ ul.no-bullet, ol.no-bullet {
   text-align: justify;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .medium-text-left {
     text-align: left;
   }
@@ -965,7 +965,7 @@ ul.no-bullet, ol.no-bullet {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .large-text-left {
     text-align: left;
   }
@@ -1087,7 +1087,7 @@ ul.no-bullet, ol.no-bullet {
   margin: 0 auto;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .grid-container {
     padding-right: 0.9375rem;
     padding-left: 0.9375rem;
@@ -1101,7 +1101,7 @@ ul.no-bullet, ol.no-bullet {
   margin: 0 auto;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .grid-container.fluid {
     padding-right: 0.9375rem;
     padding-left: 0.9375rem;
@@ -1171,7 +1171,7 @@ ul.no-bullet, ol.no-bullet {
   flex-basis: auto;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .grid-x > .medium-shrink, .grid-x > .medium-full, .grid-x > .medium-1, .grid-x > .medium-2, .grid-x > .medium-3, .grid-x > .medium-4, .grid-x > .medium-5, .grid-x > .medium-6, .grid-x > .medium-7, .grid-x > .medium-8, .grid-x > .medium-9, .grid-x > .medium-10, .grid-x > .medium-11, .grid-x > .medium-12 {
     -webkit-flex-basis: auto;
     -ms-flex-preferred-size: auto;
@@ -1179,7 +1179,7 @@ ul.no-bullet, ol.no-bullet {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .grid-x > .large-shrink, .grid-x > .large-full, .grid-x > .large-1, .grid-x > .large-2, .grid-x > .large-3, .grid-x > .large-4, .grid-x > .large-5, .grid-x > .large-6, .grid-x > .large-7, .grid-x > .large-8, .grid-x > .large-9, .grid-x > .large-10, .grid-x > .large-11, .grid-x > .large-12 {
     -webkit-flex-basis: auto;
     -ms-flex-preferred-size: auto;
@@ -1251,7 +1251,7 @@ ul.no-bullet, ol.no-bullet {
   width: 100%;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .grid-x > .medium-auto {
     -webkit-box-flex: 1;
     -webkit-flex: 1 1 0px;
@@ -1308,7 +1308,7 @@ ul.no-bullet, ol.no-bullet {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .grid-x > .large-auto {
     -webkit-box-flex: 1;
     -webkit-flex: 1 1 0px;
@@ -1435,7 +1435,7 @@ ul.no-bullet, ol.no-bullet {
   margin-right: -0.625rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .grid-margin-x {
     margin-left: -0.9375rem;
     margin-right: -0.9375rem;
@@ -1450,7 +1450,7 @@ ul.no-bullet, ol.no-bullet {
   margin-right: 0.625rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .grid-margin-x > .cell {
     width: -webkit-calc(100% - 1.875rem);
     width: -moz-calc(100% - 1.875rem);
@@ -1540,7 +1540,7 @@ ul.no-bullet, ol.no-bullet {
   width: calc(100% - 1.25rem);
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .grid-margin-x > .auto {
     width: auto;
   }
@@ -1675,7 +1675,7 @@ ul.no-bullet, ol.no-bullet {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .grid-margin-x > .large-auto {
     width: auto;
   }
@@ -1818,7 +1818,7 @@ ul.no-bullet, ol.no-bullet {
   margin-left: -0.625rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .grid-padding-x .grid-padding-x {
     margin-right: -0.9375rem;
     margin-left: -0.9375rem;
@@ -1830,7 +1830,7 @@ ul.no-bullet, ol.no-bullet {
   margin-left: -0.625rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .grid-container:not(.full) > .grid-padding-x {
     margin-right: -0.9375rem;
     margin-left: -0.9375rem;
@@ -1842,7 +1842,7 @@ ul.no-bullet, ol.no-bullet {
   padding-left: 0.625rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .grid-padding-x > .cell {
     padding-right: 0.9375rem;
     padding-left: 0.9375rem;
@@ -1881,7 +1881,7 @@ ul.no-bullet, ol.no-bullet {
   width: 12.5%;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .medium-up-1 > .cell {
     width: 100%;
   }
@@ -1908,7 +1908,7 @@ ul.no-bullet, ol.no-bullet {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .large-up-1 > .cell {
     width: 100%;
   }
@@ -2010,7 +2010,7 @@ ul.no-bullet, ol.no-bullet {
   width: calc(12.5% - 1.25rem);
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .grid-margin-x.small-up-1 > .cell {
     width: -webkit-calc(100% - 1.875rem);
     width: -moz-calc(100% - 1.875rem);
@@ -2093,7 +2093,7 @@ ul.no-bullet, ol.no-bullet {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .grid-margin-x.large-up-1 > .cell {
     width: -webkit-calc(100% - 1.875rem);
     width: -moz-calc(100% - 1.875rem);
@@ -2237,7 +2237,7 @@ ul.no-bullet, ol.no-bullet {
   width: 100%;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .small-margin-collapse > .medium-1 {
     width: 8.33333%;
   }
@@ -2276,7 +2276,7 @@ ul.no-bullet, ol.no-bullet {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .small-margin-collapse > .large-1 {
     width: 8.33333%;
   }
@@ -2364,7 +2364,7 @@ ul.no-bullet, ol.no-bullet {
   padding-left: 0;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .medium-margin-collapse {
     margin-right: 0;
     margin-left: 0;
@@ -2375,7 +2375,7 @@ ul.no-bullet, ol.no-bullet {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .medium-margin-collapse > .small-1 {
     width: 8.33333%;
   }
@@ -2414,7 +2414,7 @@ ul.no-bullet, ol.no-bullet {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .medium-margin-collapse > .medium-1 {
     width: 8.33333%;
   }
@@ -2453,7 +2453,7 @@ ul.no-bullet, ol.no-bullet {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .medium-margin-collapse > .large-1 {
     width: 8.33333%;
   }
@@ -2531,7 +2531,7 @@ ul.no-bullet, ol.no-bullet {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .medium-padding-collapse {
     margin-right: 0;
     margin-left: 0;
@@ -2542,7 +2542,7 @@ ul.no-bullet, ol.no-bullet {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .large-margin-collapse {
     margin-right: 0;
     margin-left: 0;
@@ -2553,7 +2553,7 @@ ul.no-bullet, ol.no-bullet {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .large-margin-collapse > .small-1 {
     width: 8.33333%;
   }
@@ -2592,7 +2592,7 @@ ul.no-bullet, ol.no-bullet {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .large-margin-collapse > .medium-1 {
     width: 8.33333%;
   }
@@ -2631,7 +2631,7 @@ ul.no-bullet, ol.no-bullet {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .large-margin-collapse > .large-1 {
     width: 8.33333%;
   }
@@ -2709,7 +2709,7 @@ ul.no-bullet, ol.no-bullet {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .large-padding-collapse {
     margin-right: 0;
     margin-left: 0;
@@ -3018,7 +3018,7 @@ ul.no-bullet, ol.no-bullet {
   margin-left: calc(91.66667% + 0.625rem);
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .medium-offset-0 {
     margin-left: 0%;
   }
@@ -3117,7 +3117,7 @@ ul.no-bullet, ol.no-bullet {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .large-offset-0 {
     margin-left: 0%;
   }
@@ -3349,7 +3349,7 @@ ul.no-bullet, ol.no-bullet {
   flex-basis: auto;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .grid-y > .medium-shrink, .grid-y > .medium-full, .grid-y > .medium-1, .grid-y > .medium-2, .grid-y > .medium-3, .grid-y > .medium-4, .grid-y > .medium-5, .grid-y > .medium-6, .grid-y > .medium-7, .grid-y > .medium-8, .grid-y > .medium-9, .grid-y > .medium-10, .grid-y > .medium-11, .grid-y > .medium-12 {
     -webkit-flex-basis: auto;
     -ms-flex-preferred-size: auto;
@@ -3357,7 +3357,7 @@ ul.no-bullet, ol.no-bullet {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .grid-y > .large-shrink, .grid-y > .large-full, .grid-y > .large-1, .grid-y > .large-2, .grid-y > .large-3, .grid-y > .large-4, .grid-y > .large-5, .grid-y > .large-6, .grid-y > .large-7, .grid-y > .large-8, .grid-y > .large-9, .grid-y > .large-10, .grid-y > .large-11, .grid-y > .large-12 {
     -webkit-flex-basis: auto;
     -ms-flex-preferred-size: auto;
@@ -3429,7 +3429,7 @@ ul.no-bullet, ol.no-bullet {
   height: 100%;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .grid-y > .medium-auto {
     -webkit-box-flex: 1;
     -webkit-flex: 1 1 0px;
@@ -3486,7 +3486,7 @@ ul.no-bullet, ol.no-bullet {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .grid-y > .large-auto {
     -webkit-box-flex: 1;
     -webkit-flex: 1 1 0px;
@@ -3605,7 +3605,7 @@ ul.no-bullet, ol.no-bullet {
   margin-bottom: -0.625rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .grid-padding-y .grid-padding-y {
     margin-top: -0.9375rem;
     margin-bottom: -0.9375rem;
@@ -3617,7 +3617,7 @@ ul.no-bullet, ol.no-bullet {
   padding-bottom: 0.625rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .grid-padding-y > .cell {
     padding-top: 0.9375rem;
     padding-bottom: 0.9375rem;
@@ -3629,7 +3629,7 @@ ul.no-bullet, ol.no-bullet {
   margin-bottom: -0.625rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .grid-margin-y {
     margin-top: -0.9375rem;
     margin-bottom: -0.9375rem;
@@ -3644,7 +3644,7 @@ ul.no-bullet, ol.no-bullet {
   margin-bottom: 0.625rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .grid-margin-y > .cell {
     height: -webkit-calc(100% - 1.875rem);
     height: -moz-calc(100% - 1.875rem);
@@ -3734,7 +3734,7 @@ ul.no-bullet, ol.no-bullet {
   height: calc(100% - 1.25rem);
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .grid-margin-y > .auto {
     height: auto;
   }
@@ -3869,7 +3869,7 @@ ul.no-bullet, ol.no-bullet {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .grid-margin-y > .large-auto {
     height: auto;
   }
@@ -4063,7 +4063,7 @@ ul.no-bullet, ol.no-bullet {
   flex-wrap: nowrap;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .medium-grid-frame {
     overflow: hidden;
     position: relative;
@@ -4116,7 +4116,7 @@ ul.no-bullet, ol.no-bullet {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .large-grid-frame {
     overflow: hidden;
     position: relative;
@@ -4237,7 +4237,7 @@ ul.no-bullet, ol.no-bullet {
   height: 100vh;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .grid-y.medium-grid-frame {
     width: auto;
     overflow: hidden;
@@ -4254,7 +4254,7 @@ ul.no-bullet, ol.no-bullet {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .grid-y.large-grid-frame {
     width: auto;
     overflow: hidden;
@@ -4292,13 +4292,13 @@ ul.no-bullet, ol.no-bullet {
   height: 100%;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cell .grid-y.medium-grid-frame {
     height: 100%;
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cell .grid-y.large-grid-frame {
     height: 100%;
   }
@@ -4315,7 +4315,7 @@ ul.no-bullet, ol.no-bullet {
   margin-bottom: -0.625rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .grid-margin-y {
     margin-top: -0.9375rem;
     margin-bottom: -0.9375rem;
@@ -4330,7 +4330,7 @@ ul.no-bullet, ol.no-bullet {
   margin-bottom: 0.625rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .grid-margin-y > .cell {
     height: -webkit-calc(100% - 1.875rem);
     height: -moz-calc(100% - 1.875rem);
@@ -4420,7 +4420,7 @@ ul.no-bullet, ol.no-bullet {
   height: calc(100% - 1.25rem);
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .grid-margin-y > .auto {
     height: auto;
   }
@@ -4555,7 +4555,7 @@ ul.no-bullet, ol.no-bullet {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .grid-margin-y > .large-auto {
     height: auto;
   }
@@ -4699,7 +4699,7 @@ ul.no-bullet, ol.no-bullet {
   height: calc(100vh + 1.25rem);
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .grid-frame.grid-margin-y {
     height: -webkit-calc(100vh + 1.875rem);
     height: -moz-calc(100vh + 1.875rem);
@@ -4707,7 +4707,7 @@ ul.no-bullet, ol.no-bullet {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .grid-frame.grid-margin-y {
     height: -webkit-calc(100vh + 1.875rem);
     height: -moz-calc(100vh + 1.875rem);
@@ -4723,7 +4723,7 @@ ul.no-bullet, ol.no-bullet {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .grid-margin-y.medium-grid-frame {
     height: -webkit-calc(100vh + 1.875rem);
     height: -moz-calc(100vh + 1.875rem);
@@ -4731,7 +4731,7 @@ ul.no-bullet, ol.no-bullet {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .grid-margin-y.large-grid-frame {
     height: -webkit-calc(100vh + 1.875rem);
     height: -moz-calc(100vh + 1.875rem);
@@ -6067,7 +6067,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   padding: 0;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .menu.medium-horizontal {
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
@@ -6108,7 +6108,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .menu.large-horizontal {
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
@@ -6494,7 +6494,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   border-color: transparent transparent transparent #000000;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .dropdown.menu.medium-horizontal > li.opens-left > .is-dropdown-submenu {
     top: 100%;
     right: 0;
@@ -6561,7 +6561,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .dropdown.menu.large-horizontal > li.opens-left > .is-dropdown-submenu {
     top: 100%;
     right: 0;
@@ -6840,7 +6840,7 @@ html.is-reveal-open body {
   outline: 0;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .reveal {
     min-height: 0;
   }
@@ -6854,7 +6854,7 @@ html.is-reveal-open body {
   margin-bottom: 0;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .reveal {
     width: 600px;
     max-width: 1200px;
@@ -6865,21 +6865,21 @@ html.is-reveal-open body {
   padding: 0;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .reveal.tiny {
     width: 30%;
     max-width: 1200px;
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .reveal.small {
     width: 50%;
     max-width: 1200px;
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .reveal.large {
     width: 90%;
     max-width: 1200px;
@@ -7729,7 +7729,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika h1,
   .cmp-font--klavika .h1 {
     font-size: 3.44rem;
@@ -7750,7 +7750,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika h1,
   .cmp-font--klavika .h1 {
     line-height: 58px;
@@ -7771,7 +7771,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika h2,
   .cmp-font--klavika .h2 {
     font-size: 2.75rem;
@@ -7792,7 +7792,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika h2,
   .cmp-font--klavika .h2 {
     line-height: 49px;
@@ -7813,7 +7813,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika h3,
   .cmp-font--klavika .h3 {
     font-size: 2.35rem;
@@ -7834,7 +7834,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika h3,
   .cmp-font--klavika .h3 {
     line-height: 38px;
@@ -7855,7 +7855,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika h4,
   .cmp-font--klavika .h4 {
     font-size: 1.88rem;
@@ -7876,7 +7876,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika h4,
   .cmp-font--klavika .h4 {
     line-height: 30px;
@@ -7902,7 +7902,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika h5,
   .cmp-font--klavika .h5 {
     font-size: 1.5rem;
@@ -7929,7 +7929,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika h6,
   .cmp-font--klavika .h6 {
     font-size: 1.2rem;
@@ -7950,7 +7950,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika h6,
   .cmp-font--klavika .h6 {
     line-height: 19px;
@@ -7966,7 +7966,7 @@ iframe {
   font-size: 2.88rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika .cmp-display {
     font-size: -webkit-calc(2.88rem + 0.56 * ((100vw - 640px) / 384));
     font-size: -moz-calc(2.88rem + 0.56 * ((100vw - 640px) / 384));
@@ -7974,7 +7974,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-font--klavika .cmp-display {
     font-size: 3.44rem;
   }
@@ -7997,7 +7997,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika .lead {
     line-height: 30px;
   }
@@ -8020,7 +8020,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika .cmp-lead {
     line-height: 30px;
   }
@@ -8040,7 +8040,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika small,
   .cmp-font--klavika .small {
     font-size: 0.8125rem;
@@ -8061,7 +8061,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika small,
   .cmp-font--klavika .small {
     line-height: 16px;
@@ -8086,7 +8086,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika blockquote {
     font-size: 1.5rem;
   }
@@ -8104,7 +8104,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika blockquote {
     line-height: 32px;
   }
@@ -8212,7 +8212,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika-vn h1,
   .cmp-font--klavika-vn .h1 {
     font-size: 3.44rem;
@@ -8233,7 +8233,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika-vn h1,
   .cmp-font--klavika-vn .h1 {
     line-height: 58px;
@@ -8254,7 +8254,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika-vn h2,
   .cmp-font--klavika-vn .h2 {
     font-size: 2.75rem;
@@ -8275,7 +8275,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika-vn h2,
   .cmp-font--klavika-vn .h2 {
     line-height: 49px;
@@ -8296,7 +8296,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika-vn h3,
   .cmp-font--klavika-vn .h3 {
     font-size: 2.35rem;
@@ -8317,7 +8317,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika-vn h3,
   .cmp-font--klavika-vn .h3 {
     line-height: 38px;
@@ -8338,7 +8338,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika-vn h4,
   .cmp-font--klavika-vn .h4 {
     font-size: 1.88rem;
@@ -8359,7 +8359,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika-vn h4,
   .cmp-font--klavika-vn .h4 {
     line-height: 30px;
@@ -8385,7 +8385,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika-vn h5,
   .cmp-font--klavika-vn .h5 {
     font-size: 1.5rem;
@@ -8412,7 +8412,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika-vn h6,
   .cmp-font--klavika-vn .h6 {
     font-size: 1.2rem;
@@ -8433,7 +8433,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika-vn h6,
   .cmp-font--klavika-vn .h6 {
     line-height: 19px;
@@ -8449,7 +8449,7 @@ iframe {
   font-size: 2.88rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika-vn .cmp-display {
     font-size: -webkit-calc(2.88rem + 0.56 * ((100vw - 640px) / 384));
     font-size: -moz-calc(2.88rem + 0.56 * ((100vw - 640px) / 384));
@@ -8457,7 +8457,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-font--klavika-vn .cmp-display {
     font-size: 3.44rem;
   }
@@ -8480,7 +8480,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika-vn .lead {
     line-height: 30px;
   }
@@ -8503,7 +8503,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika-vn .cmp-lead {
     line-height: 30px;
   }
@@ -8523,7 +8523,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika-vn small,
   .cmp-font--klavika-vn .small {
     font-size: 0.8125rem;
@@ -8544,7 +8544,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika-vn small,
   .cmp-font--klavika-vn .small {
     line-height: 16px;
@@ -8569,7 +8569,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika-vn blockquote {
     font-size: 1.5rem;
   }
@@ -8587,7 +8587,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--klavika-vn blockquote {
     line-height: 32px;
   }
@@ -8690,7 +8690,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri-regular h1,
   .cmp-font--calibri-regular .h1 {
     font-size: 3.44rem;
@@ -8711,7 +8711,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri-regular h1,
   .cmp-font--calibri-regular .h1 {
     line-height: 58px;
@@ -8732,7 +8732,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri-regular h2,
   .cmp-font--calibri-regular .h2 {
     font-size: 2.75rem;
@@ -8753,7 +8753,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri-regular h2,
   .cmp-font--calibri-regular .h2 {
     line-height: 49px;
@@ -8774,7 +8774,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri-regular h3,
   .cmp-font--calibri-regular .h3 {
     font-size: 2.35rem;
@@ -8795,7 +8795,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri-regular h3,
   .cmp-font--calibri-regular .h3 {
     line-height: 38px;
@@ -8816,7 +8816,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri-regular h4,
   .cmp-font--calibri-regular .h4 {
     font-size: 1.88rem;
@@ -8837,7 +8837,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri-regular h4,
   .cmp-font--calibri-regular .h4 {
     line-height: 30px;
@@ -8863,7 +8863,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri-regular h5,
   .cmp-font--calibri-regular .h5 {
     font-size: 1.5rem;
@@ -8890,7 +8890,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri-regular h6,
   .cmp-font--calibri-regular .h6 {
     font-size: 1.2rem;
@@ -8911,7 +8911,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri-regular h6,
   .cmp-font--calibri-regular .h6 {
     line-height: 19px;
@@ -8927,7 +8927,7 @@ iframe {
   font-size: 2.88rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri-regular .cmp-display {
     font-size: -webkit-calc(2.88rem + 0.56 * ((100vw - 640px) / 384));
     font-size: -moz-calc(2.88rem + 0.56 * ((100vw - 640px) / 384));
@@ -8935,7 +8935,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-font--calibri-regular .cmp-display {
     font-size: 3.44rem;
   }
@@ -8958,7 +8958,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri-regular .lead {
     line-height: 30px;
   }
@@ -8981,7 +8981,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri-regular .cmp-lead {
     line-height: 30px;
   }
@@ -9001,7 +9001,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri-regular small,
   .cmp-font--calibri-regular .small {
     font-size: 0.8125rem;
@@ -9022,7 +9022,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri-regular small,
   .cmp-font--calibri-regular .small {
     line-height: 16px;
@@ -9047,7 +9047,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri-regular blockquote {
     font-size: 1.5rem;
   }
@@ -9065,7 +9065,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri-regular blockquote {
     line-height: 32px;
   }
@@ -9171,7 +9171,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri h1,
   .cmp-font--calibri .h1 {
     font-size: 3.44rem;
@@ -9192,7 +9192,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri h1,
   .cmp-font--calibri .h1 {
     line-height: 58px;
@@ -9213,7 +9213,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri h2,
   .cmp-font--calibri .h2 {
     font-size: 2.75rem;
@@ -9234,7 +9234,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri h2,
   .cmp-font--calibri .h2 {
     line-height: 49px;
@@ -9255,7 +9255,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri h3,
   .cmp-font--calibri .h3 {
     font-size: 2.35rem;
@@ -9276,7 +9276,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri h3,
   .cmp-font--calibri .h3 {
     line-height: 38px;
@@ -9297,7 +9297,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri h4,
   .cmp-font--calibri .h4 {
     font-size: 1.88rem;
@@ -9318,7 +9318,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri h4,
   .cmp-font--calibri .h4 {
     line-height: 30px;
@@ -9344,7 +9344,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri h5,
   .cmp-font--calibri .h5 {
     font-size: 1.5rem;
@@ -9371,7 +9371,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri h6,
   .cmp-font--calibri .h6 {
     font-size: 1.2rem;
@@ -9392,7 +9392,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri h6,
   .cmp-font--calibri .h6 {
     line-height: 19px;
@@ -9408,7 +9408,7 @@ iframe {
   font-size: 2.88rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri .cmp-display {
     font-size: -webkit-calc(2.88rem + 0.56 * ((100vw - 640px) / 384));
     font-size: -moz-calc(2.88rem + 0.56 * ((100vw - 640px) / 384));
@@ -9416,7 +9416,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-font--calibri .cmp-display {
     font-size: 3.44rem;
   }
@@ -9439,7 +9439,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri .lead {
     line-height: 30px;
   }
@@ -9462,7 +9462,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri .cmp-lead {
     line-height: 30px;
   }
@@ -9482,7 +9482,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri small,
   .cmp-font--calibri .small {
     font-size: 0.8125rem;
@@ -9503,7 +9503,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri small,
   .cmp-font--calibri .small {
     line-height: 16px;
@@ -9528,7 +9528,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri blockquote {
     font-size: 1.5rem;
   }
@@ -9546,7 +9546,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--calibri blockquote {
     line-height: 32px;
   }
@@ -9652,7 +9652,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--iransans h1,
   .cmp-font--iransans .h1 {
     font-size: 3.44rem;
@@ -9673,7 +9673,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--iransans h1,
   .cmp-font--iransans .h1 {
     line-height: 58px;
@@ -9694,7 +9694,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--iransans h2,
   .cmp-font--iransans .h2 {
     font-size: 2.75rem;
@@ -9715,7 +9715,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--iransans h2,
   .cmp-font--iransans .h2 {
     line-height: 49px;
@@ -9736,7 +9736,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--iransans h3,
   .cmp-font--iransans .h3 {
     font-size: 2.35rem;
@@ -9757,7 +9757,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--iransans h3,
   .cmp-font--iransans .h3 {
     line-height: 38px;
@@ -9778,7 +9778,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--iransans h4,
   .cmp-font--iransans .h4 {
     font-size: 1.88rem;
@@ -9799,7 +9799,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--iransans h4,
   .cmp-font--iransans .h4 {
     line-height: 30px;
@@ -9825,7 +9825,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--iransans h5,
   .cmp-font--iransans .h5 {
     font-size: 1.5rem;
@@ -9852,7 +9852,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--iransans h6,
   .cmp-font--iransans .h6 {
     font-size: 1.2rem;
@@ -9873,7 +9873,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--iransans h6,
   .cmp-font--iransans .h6 {
     line-height: 19px;
@@ -9889,7 +9889,7 @@ iframe {
   font-size: 2.88rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--iransans .cmp-display {
     font-size: -webkit-calc(2.88rem + 0.56 * ((100vw - 640px) / 384));
     font-size: -moz-calc(2.88rem + 0.56 * ((100vw - 640px) / 384));
@@ -9897,7 +9897,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-font--iransans .cmp-display {
     font-size: 3.44rem;
   }
@@ -9920,7 +9920,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--iransans .lead {
     line-height: 30px;
   }
@@ -9943,7 +9943,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--iransans .cmp-lead {
     line-height: 30px;
   }
@@ -9963,7 +9963,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--iransans small,
   .cmp-font--iransans .small {
     font-size: 0.8125rem;
@@ -9984,7 +9984,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--iransans small,
   .cmp-font--iransans .small {
     line-height: 16px;
@@ -10009,7 +10009,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--iransans blockquote {
     font-size: 1.5rem;
   }
@@ -10027,7 +10027,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--iransans blockquote {
     line-height: 32px;
   }
@@ -10136,7 +10136,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--lantinghei h1,
   .cmp-font--lantinghei .h1 {
     font-size: 3.44rem;
@@ -10157,7 +10157,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--lantinghei h1,
   .cmp-font--lantinghei .h1 {
     line-height: 58px;
@@ -10178,7 +10178,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--lantinghei h2,
   .cmp-font--lantinghei .h2 {
     font-size: 2.75rem;
@@ -10199,7 +10199,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--lantinghei h2,
   .cmp-font--lantinghei .h2 {
     line-height: 49px;
@@ -10220,7 +10220,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--lantinghei h3,
   .cmp-font--lantinghei .h3 {
     font-size: 2.35rem;
@@ -10241,7 +10241,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--lantinghei h3,
   .cmp-font--lantinghei .h3 {
     line-height: 38px;
@@ -10262,7 +10262,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--lantinghei h4,
   .cmp-font--lantinghei .h4 {
     font-size: 1.88rem;
@@ -10283,7 +10283,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--lantinghei h4,
   .cmp-font--lantinghei .h4 {
     line-height: 30px;
@@ -10309,7 +10309,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--lantinghei h5,
   .cmp-font--lantinghei .h5 {
     font-size: 1.5rem;
@@ -10336,7 +10336,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--lantinghei h6,
   .cmp-font--lantinghei .h6 {
     font-size: 1.2rem;
@@ -10357,7 +10357,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--lantinghei h6,
   .cmp-font--lantinghei .h6 {
     line-height: 19px;
@@ -10373,7 +10373,7 @@ iframe {
   font-size: 2.88rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--lantinghei .cmp-display {
     font-size: -webkit-calc(2.88rem + 0.56 * ((100vw - 640px) / 384));
     font-size: -moz-calc(2.88rem + 0.56 * ((100vw - 640px) / 384));
@@ -10381,7 +10381,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-font--lantinghei .cmp-display {
     font-size: 3.44rem;
   }
@@ -10404,7 +10404,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--lantinghei .lead {
     line-height: 30px;
   }
@@ -10427,7 +10427,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--lantinghei .cmp-lead {
     line-height: 30px;
   }
@@ -10447,7 +10447,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--lantinghei small,
   .cmp-font--lantinghei .small {
     font-size: 0.8125rem;
@@ -10468,7 +10468,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--lantinghei small,
   .cmp-font--lantinghei .small {
     line-height: 16px;
@@ -10493,7 +10493,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--lantinghei blockquote {
     font-size: 1.5rem;
   }
@@ -10511,7 +10511,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--lantinghei blockquote {
     line-height: 32px;
   }
@@ -10620,7 +10620,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--gothic h1,
   .cmp-font--gothic .h1 {
     font-size: 3.44rem;
@@ -10641,7 +10641,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--gothic h1,
   .cmp-font--gothic .h1 {
     line-height: 58px;
@@ -10662,7 +10662,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--gothic h2,
   .cmp-font--gothic .h2 {
     font-size: 2.75rem;
@@ -10683,7 +10683,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--gothic h2,
   .cmp-font--gothic .h2 {
     line-height: 49px;
@@ -10704,7 +10704,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--gothic h3,
   .cmp-font--gothic .h3 {
     font-size: 2.35rem;
@@ -10725,7 +10725,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--gothic h3,
   .cmp-font--gothic .h3 {
     line-height: 38px;
@@ -10746,7 +10746,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--gothic h4,
   .cmp-font--gothic .h4 {
     font-size: 1.88rem;
@@ -10767,7 +10767,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--gothic h4,
   .cmp-font--gothic .h4 {
     line-height: 30px;
@@ -10793,7 +10793,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--gothic h5,
   .cmp-font--gothic .h5 {
     font-size: 1.5rem;
@@ -10820,7 +10820,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--gothic h6,
   .cmp-font--gothic .h6 {
     font-size: 1.2rem;
@@ -10841,7 +10841,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--gothic h6,
   .cmp-font--gothic .h6 {
     line-height: 19px;
@@ -10857,7 +10857,7 @@ iframe {
   font-size: 2.88rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--gothic .cmp-display {
     font-size: -webkit-calc(2.88rem + 0.56 * ((100vw - 640px) / 384));
     font-size: -moz-calc(2.88rem + 0.56 * ((100vw - 640px) / 384));
@@ -10865,7 +10865,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-font--gothic .cmp-display {
     font-size: 3.44rem;
   }
@@ -10888,7 +10888,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--gothic .lead {
     line-height: 30px;
   }
@@ -10911,7 +10911,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--gothic .cmp-lead {
     line-height: 30px;
   }
@@ -10931,7 +10931,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--gothic small,
   .cmp-font--gothic .small {
     font-size: 0.8125rem;
@@ -10952,7 +10952,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--gothic small,
   .cmp-font--gothic .small {
     line-height: 16px;
@@ -10977,7 +10977,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--gothic blockquote {
     font-size: 1.5rem;
   }
@@ -10995,7 +10995,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--gothic blockquote {
     line-height: 32px;
   }
@@ -11104,7 +11104,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--jasmine h1,
   .cmp-font--jasmine .h1 {
     font-size: 3.44rem;
@@ -11125,7 +11125,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--jasmine h1,
   .cmp-font--jasmine .h1 {
     line-height: 58px;
@@ -11146,7 +11146,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--jasmine h2,
   .cmp-font--jasmine .h2 {
     font-size: 2.75rem;
@@ -11167,7 +11167,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--jasmine h2,
   .cmp-font--jasmine .h2 {
     line-height: 49px;
@@ -11188,7 +11188,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--jasmine h3,
   .cmp-font--jasmine .h3 {
     font-size: 2.35rem;
@@ -11209,7 +11209,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--jasmine h3,
   .cmp-font--jasmine .h3 {
     line-height: 38px;
@@ -11230,7 +11230,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--jasmine h4,
   .cmp-font--jasmine .h4 {
     font-size: 1.88rem;
@@ -11251,7 +11251,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--jasmine h4,
   .cmp-font--jasmine .h4 {
     line-height: 30px;
@@ -11277,7 +11277,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--jasmine h5,
   .cmp-font--jasmine .h5 {
     font-size: 1.5rem;
@@ -11304,7 +11304,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--jasmine h6,
   .cmp-font--jasmine .h6 {
     font-size: 1.2rem;
@@ -11325,7 +11325,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--jasmine h6,
   .cmp-font--jasmine .h6 {
     line-height: 19px;
@@ -11341,7 +11341,7 @@ iframe {
   font-size: 2.88rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--jasmine .cmp-display {
     font-size: -webkit-calc(2.88rem + 0.56 * ((100vw - 640px) / 384));
     font-size: -moz-calc(2.88rem + 0.56 * ((100vw - 640px) / 384));
@@ -11349,7 +11349,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-font--jasmine .cmp-display {
     font-size: 3.44rem;
   }
@@ -11372,7 +11372,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--jasmine .lead {
     line-height: 30px;
   }
@@ -11395,7 +11395,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--jasmine .cmp-lead {
     line-height: 30px;
   }
@@ -11415,7 +11415,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--jasmine small,
   .cmp-font--jasmine .small {
     font-size: 0.8125rem;
@@ -11436,7 +11436,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--jasmine small,
   .cmp-font--jasmine .small {
     line-height: 16px;
@@ -11461,7 +11461,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--jasmine blockquote {
     font-size: 1.5rem;
   }
@@ -11479,7 +11479,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--jasmine blockquote {
     line-height: 32px;
   }
@@ -11588,7 +11588,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--sarabunnew h1,
   .cmp-font--sarabunnew .h1 {
     font-size: 3.44rem;
@@ -11609,7 +11609,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--sarabunnew h1,
   .cmp-font--sarabunnew .h1 {
     line-height: 58px;
@@ -11630,7 +11630,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--sarabunnew h2,
   .cmp-font--sarabunnew .h2 {
     font-size: 2.75rem;
@@ -11651,7 +11651,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--sarabunnew h2,
   .cmp-font--sarabunnew .h2 {
     line-height: 49px;
@@ -11672,7 +11672,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--sarabunnew h3,
   .cmp-font--sarabunnew .h3 {
     font-size: 2.35rem;
@@ -11693,7 +11693,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--sarabunnew h3,
   .cmp-font--sarabunnew .h3 {
     line-height: 38px;
@@ -11714,7 +11714,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--sarabunnew h4,
   .cmp-font--sarabunnew .h4 {
     font-size: 1.88rem;
@@ -11735,7 +11735,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--sarabunnew h4,
   .cmp-font--sarabunnew .h4 {
     line-height: 30px;
@@ -11761,7 +11761,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--sarabunnew h5,
   .cmp-font--sarabunnew .h5 {
     font-size: 1.5rem;
@@ -11788,7 +11788,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--sarabunnew h6,
   .cmp-font--sarabunnew .h6 {
     font-size: 1.2rem;
@@ -11809,7 +11809,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--sarabunnew h6,
   .cmp-font--sarabunnew .h6 {
     line-height: 19px;
@@ -11825,7 +11825,7 @@ iframe {
   font-size: 2.88rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--sarabunnew .cmp-display {
     font-size: -webkit-calc(2.88rem + 0.56 * ((100vw - 640px) / 384));
     font-size: -moz-calc(2.88rem + 0.56 * ((100vw - 640px) / 384));
@@ -11833,7 +11833,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-font--sarabunnew .cmp-display {
     font-size: 3.44rem;
   }
@@ -11856,7 +11856,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--sarabunnew .lead {
     line-height: 30px;
   }
@@ -11879,7 +11879,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--sarabunnew .cmp-lead {
     line-height: 30px;
   }
@@ -11899,7 +11899,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--sarabunnew small,
   .cmp-font--sarabunnew .small {
     font-size: 0.8125rem;
@@ -11920,7 +11920,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--sarabunnew small,
   .cmp-font--sarabunnew .small {
     line-height: 16px;
@@ -11945,7 +11945,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--sarabunnew blockquote {
     font-size: 1.5rem;
   }
@@ -11963,7 +11963,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-font--sarabunnew blockquote {
     line-height: 32px;
   }
@@ -12350,7 +12350,7 @@ iframe {
   margin-top: 10px;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-button:not(:first-child) {
     margin-top: 0;
   }
@@ -12550,7 +12550,7 @@ iframe {
   margin: 0 10px;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-bigimages {
     display: -webkit-box;
     display: -webkit-flex;
@@ -12561,7 +12561,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-bigimages {
     max-width: 1920px;
   }
@@ -12571,7 +12571,7 @@ iframe {
   margin-top: 0;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-bigimages .cmp-image {
     width: 50vw;
   }
@@ -12585,7 +12585,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 40em) and (min-width: 40em) {
+@media print, screen and (min-width: $sm) and (min-width: $sm) {
   .cmp-bigimages .cmp-image--left {
     margin-top: -webkit-calc(50px + 50 * ((100vw - 640px) / 560));
     margin-top: -moz-calc(50px + 50 * ((100vw - 640px) / 560));
@@ -12593,13 +12593,13 @@ iframe {
   }
 }
 
-@media screen and (min-width: 40em) and (min-width: 75em) {
+@media screen and (min-width: $sm) and (min-width: 75em) {
   .cmp-bigimages .cmp-image--left {
     margin-top: 100px;
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-bigimages .cmp-image--right {
     padding-left: 15px;
   }
@@ -12734,7 +12734,7 @@ iframe {
   width: 100%;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-list--search .cmp-search-field .cmp-search-form {
     width: 80%;
   }
@@ -12773,7 +12773,7 @@ iframe {
   flex-wrap: wrap;
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-list--filters .cmp-form .cmp-input {
     padding-left: 0;
   }
@@ -12904,7 +12904,7 @@ iframe {
   overflow-y: auto;
 }
 
-@media screen and (min-width: 40em) and (max-width: 63.99875em) and (orientation: landscape) {
+@media screen and (min-width: $sm) and (max-width: 63.99875em) and (orientation: landscape) {
   .cmp-modal__content .cmp-filters-wrap {
     max-height: 100px;
   }
@@ -13337,7 +13337,7 @@ iframe {
   display: flex;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-modal__overlay--website-selector .cmp-modal__content {
     display: block;
   }
@@ -13368,7 +13368,7 @@ iframe {
   justify-content: center;
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-modal__overlay--website-selector .cmp-modal__close-button {
     top: 40px;
     right: 40px;
@@ -13396,7 +13396,7 @@ iframe {
   justify-content: flex-start;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-modal__overlay-video.cmp-modal--show.cmp-modal--anim .cmp-modal__content {
     -webkit-animation: leaveScaleVideo 0.4s;
     -moz-animation: leaveScaleVideo 0.4s;
@@ -13415,7 +13415,7 @@ iframe {
   margin: auto !important;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-modal__overlay-video .cmp-modal__content {
     -webkit-animation: blowUpModalVideo 0.4s;
     -moz-animation: blowUpModalVideo 0.4s;
@@ -13702,7 +13702,7 @@ iframe {
   padding-right: 2rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-modal__content {
     -webkit-animation: blowUpModal 0.5s cubic-bezier(0.25, 0.75, 0.5, 1.25);
     -moz-animation: blowUpModal 0.5s cubic-bezier(0.25, 0.75, 0.5, 1.25);
@@ -13711,7 +13711,7 @@ iframe {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-modal__content {
     width: 80%;
     max-width: 1200px;
@@ -13758,7 +13758,7 @@ iframe {
   animation: leaveFade 0.7s cubic-bezier(0.25, 0.75, 0.5, 1.25);
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-modal--show.cmp-modal--anim .cmp-modal__content {
     -webkit-animation: leaveScale 0.6s cubic-bezier(0.25, 0.75, 0.5, 1.25);
     -moz-animation: leaveScale 0.6s cubic-bezier(0.25, 0.75, 0.5, 1.25);
@@ -13802,7 +13802,7 @@ iframe {
   color: #000000;
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-full-modal__close-button {
     font-size: 3rem;
     top: 40px;
@@ -13891,7 +13891,7 @@ body.rtl .cmp-categorydrilldown h4 a, .cmp-categorydrilldown h4 body.rtl a, body
   margin-bottom: 17px;
 }
 
-@media screen and (min-width: 40em) {
+@media screen and (min-width: $sm) {
   .cmp-text--two-columns {
     -webkit-column-count: 2;
     -moz-column-count: 2;
@@ -13940,7 +13940,7 @@ body.rtl .cmp-categorydrilldown h4 a, .cmp-categorydrilldown h4 body.rtl a, body
   font-size: 1.81rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-text p .cmp-lead {
     font-size: -webkit-calc(1.81rem + -0.37 * ((100vw - 640px) / 384));
     font-size: -moz-calc(1.81rem + -0.37 * ((100vw - 640px) / 384));
@@ -13948,7 +13948,7 @@ body.rtl .cmp-categorydrilldown h4 a, .cmp-categorydrilldown h4 body.rtl a, body
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-text p .cmp-lead {
     font-size: 1.44rem;
   }
@@ -13978,7 +13978,7 @@ body.rtl .cmp-categorydrilldown h4 a, .cmp-categorydrilldown h4 body.rtl a, body
   text-align: center;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-textimage .cmp-image--center {
     width: 600px;
     margin: 0 auto 2rem;
@@ -14249,7 +14249,7 @@ body.rtl .cmp-categorydrilldown h4 a, .cmp-categorydrilldown h4 body.rtl a, body
   height: 400px;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-video-overlay__wrapper {
     width: 600px;
     max-width: 1200px;
@@ -15552,7 +15552,7 @@ body.rtl .cmp-layout--right {
   margin: 1rem 0;
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-quote.cmp-quote--wide {
     min-height: -webkit-calc(45vw * 0.66);
     min-height: -moz-calc(45vw * 0.66);
@@ -15568,7 +15568,7 @@ body.rtl .cmp-layout--right {
   right: initial;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-quote.cmp-quote--wide picture {
     display: block;
     position: relative;
@@ -15685,13 +15685,13 @@ body.rtl .cmp-quote blockquote {
   }
 }
 
-@media screen and (min-width: 40em) and (max-width: 63.99875em) {
+@media screen and (min-width: $sm) and (max-width: 63.99875em) {
   .cmp-hero {
     min-height: 440px;
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-hero {
     height: 815px;
   }
@@ -15748,13 +15748,13 @@ body.rtl .cmp-quote blockquote {
   }
 }
 
-@media screen and (min-width: 40em) and (max-width: 63.99875em) {
+@media screen and (min-width: $sm) and (max-width: 63.99875em) {
   .cmp-hero--small {
     min-height: 440px;
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-hero--small {
     height: 600px;
   }
@@ -15769,7 +15769,7 @@ body.rtl .cmp-quote blockquote {
   font-size: 2.88rem;
 }
 
-@media print, screen and (min-width: 1016px) {
+@media print, screen and (min-width: $md) {
   .cmp-hero--small .cmp-hero__content--wrapper .cmp-display {
     font-size: -webkit-calc(2.88rem + 0.56 * ((100vw - 640px) / 384));
     font-size: -moz-calc(2.88rem + 0.56 * ((100vw - 640px) / 384));
@@ -15777,13 +15777,13 @@ body.rtl .cmp-quote blockquote {
   }
 }
 
-@media print, screen and (min-width: 1344px) {
+@media print, screen and (min-width: $lg) {
   .cmp-hero--small .cmp-hero__content--wrapper .cmp-display {
     font-size: 3.44rem;
   }
 }
 
-@media print, screen and (min-width: 1344px) {
+@media print, screen and (min-width: $lg) {
   .cmp-hero--small .cmp-hero__content {
     margin-top: 256px;
   }
@@ -15794,7 +15794,7 @@ body.rtl .cmp-quote blockquote {
   height: auto;
 }
 
-@media print, screen and (min-width: 1344px) {
+@media print, screen and (min-width: $lg) {
   .cmp-hero--noimage .cmp-hero__content {
     margin-top: 256px;
   }
@@ -15808,7 +15808,7 @@ body.rtl .cmp-quote blockquote {
   font-size: 2.88rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-hero--noimage .cmp-hero__content--wrapper .cmp-display {
     font-size: -webkit-calc(2.88rem + 0.56 * ((100vw - 640px) / 384));
     font-size: -moz-calc(2.88rem + 0.56 * ((100vw - 640px) / 384));
@@ -15816,7 +15816,7 @@ body.rtl .cmp-quote blockquote {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-hero--noimage .cmp-hero__content--wrapper .cmp-display {
     font-size: 3.44rem;
   }
@@ -15839,7 +15839,7 @@ body.rtl .cmp-quote blockquote {
   min-height: 100%;
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-hero .cmp-video video {
     height: auto;
   }
@@ -15904,9 +15904,10 @@ body.rtl .cmp-quote blockquote {
   margin: 0;
   padding-left: 16px;
   padding-right: 16px;
+  justify-content: center;
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-hero__content--wrapper {
     -webkit-box-pack: center;
     -webkit-justify-content: center;
@@ -15948,7 +15949,7 @@ body.rtl .cmp-hero__content--wrapper .cmp-button {
   font-size: 2.88rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-hero__content--wrapper .cmp-display {
     font-size: -webkit-calc(2.88rem + 0.56 * ((100vw - 640px) / 384));
     font-size: -moz-calc(2.88rem + 0.56 * ((100vw - 640px) / 384));
@@ -15956,7 +15957,7 @@ body.rtl .cmp-hero__content--wrapper .cmp-button {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-hero__content--wrapper .cmp-display {
     font-size: 3.44rem;
   }
@@ -16022,13 +16023,13 @@ body.rtl .cmp-hero__content--wrapper .cmp-button {
   height: 24px;
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-hero__bottom-wrapper--go-to-bottom {
     right: initial;
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-hero__content--wrapper {
     //padding: 0 2rem;
     //padding-left: 2rem;
@@ -16051,7 +16052,7 @@ body.rtl .cmp-hero__content--wrapper .cmp-button {
   padding-right: 16px;
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-hidden-hero-title {
     padding: 0 2rem;
     padding-left: 2rem;
@@ -16077,7 +16078,7 @@ body.rtl .cmp-hero__content--wrapper .cmp-button {
   font-size: 2.88rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-hidden-hero-title .cmp-display {
     font-size: -webkit-calc(2.88rem + 0.56 * ((100vw - 640px) / 384));
     font-size: -moz-calc(2.88rem + 0.56 * ((100vw - 640px) / 384));
@@ -16085,7 +16086,7 @@ body.rtl .cmp-hero__content--wrapper .cmp-button {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-hidden-hero-title .cmp-display {
     font-size: 3.44rem;
   }
@@ -16142,13 +16143,13 @@ body.rtl .cmp-hero__content--wrapper .cmp-button {
   order: 2;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-teaser.cmp-teaser--knowledgebase.cmp-teaser--list .cmp-content__head--ribbon .cmp-content__head__title, .cmp-teaser.cmp-teaser--news.cmp-teaser--list .cmp-content__head--ribbon .cmp-content__head__title {
     padding-right: 10px;
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-teaser.cmp-teaser--knowledgebase.cmp-teaser--list .cmp-content__head--ribbon, .cmp-teaser.cmp-teaser--news.cmp-teaser--list .cmp-content__head--ribbon {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -16210,7 +16211,7 @@ body.rtl .cmp-hero__content--wrapper .cmp-button {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-teaser.cmp-teaser--generic .cmp-teaser__content .cmp-content .publish-date, .cmp-teaser.cmp-teaser--knowledgebase .cmp-teaser__content .cmp-content .publish-date, .cmp-teaser.cmp-teaser--square .cmp-teaser__content .cmp-content .publish-date, .cmp-teaser.cmp-teaser--product .cmp-teaser__content .cmp-content .publish-date, .cmp-teaser.cmp-teaser--event .cmp-teaser__content .cmp-content .publish-date, .cmp-teaser.cmp-teaser--news .cmp-teaser__content .cmp-content .publish-date, .cmp-teaser.cmp-teaser--story .cmp-teaser__content .cmp-content .publish-date, .cmp-teaser.cmp-teaser--project .cmp-teaser__content .cmp-content .publish-date {
     font-size: 1rem;
   }
@@ -16378,7 +16379,7 @@ body.rtl .cmp-hero__content--wrapper .cmp-button {
   overflow: visible;
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-teaser.cmp-teaser--generic.cmp-teaser--list .cmp-teaser__content .cmp-image, .cmp-teaser.cmp-teaser--knowledgebase.cmp-teaser--list .cmp-teaser__content .cmp-image, .cmp-teaser.cmp-teaser--product.cmp-teaser--list .cmp-teaser__content .cmp-image, .cmp-teaser.cmp-teaser--story.cmp-teaser--list .cmp-teaser__content .cmp-image {
     padding: 0 16px;
     max-width: 33%;
@@ -16415,7 +16416,7 @@ body.rtl .cmp-hero__content--wrapper .cmp-button {
   margin-top: 20px;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-teaser.cmp-teaser--generic.cmp-teaser--list .cmp-teaser__content, .cmp-teaser.cmp-teaser--knowledgebase.cmp-teaser--list .cmp-teaser__content, .cmp-teaser.cmp-teaser--product.cmp-teaser--list .cmp-teaser__content, .cmp-teaser.cmp-teaser--story.cmp-teaser--list .cmp-teaser__content {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -16454,7 +16455,7 @@ body.rtl .cmp-hero__content--wrapper .cmp-button {
   justify-content: flex-end;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-teaser.cmp-teaser--generic.cmp-teaser--list .cmp-label--ribbon, .cmp-teaser.cmp-teaser--knowledgebase.cmp-teaser--list .cmp-label--ribbon, .cmp-teaser.cmp-teaser--product.cmp-teaser--list .cmp-label--ribbon, .cmp-teaser.cmp-teaser--story.cmp-teaser--list .cmp-label--ribbon {
     display: block;
     position: absolute;
@@ -16503,7 +16504,7 @@ body.rtl .cmp-hero__content--wrapper .cmp-button {
   transition: color 0.3s ease-in-out;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-teaser.cmp-teaser--event.cmp-teaser--list .cmp-teaser__content .cmp-date, .cmp-teaser.cmp-teaser--news.cmp-teaser--list .cmp-teaser__content .cmp-date, .cmp-teaser.cmp-teaser--project.cmp-teaser--list .cmp-teaser__content .cmp-date {
     width: 140px;
     text-align: right;
@@ -16547,7 +16548,7 @@ body.rtl .cmp-hero__content--wrapper .cmp-button {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-teaser.cmp-teaser--event.cmp-teaser--list .cmp-teaser__content .cmp-date .day, .cmp-teaser.cmp-teaser--news.cmp-teaser--list .cmp-teaser__content .cmp-date .day, .cmp-teaser.cmp-teaser--project.cmp-teaser--list .cmp-teaser__content .cmp-date .day,
   .cmp-teaser.cmp-teaser--event.cmp-teaser--list .cmp-teaser__content .cmp-date .marker,
   .cmp-teaser.cmp-teaser--news.cmp-teaser--list .cmp-teaser__content .cmp-date .marker,
@@ -16591,7 +16592,7 @@ body.rtl .cmp-hero__content--wrapper .cmp-button {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-teaser.cmp-teaser--event.cmp-teaser--list .cmp-teaser__content .cmp-date .location, .cmp-teaser.cmp-teaser--news.cmp-teaser--list .cmp-teaser__content .cmp-date .location, .cmp-teaser.cmp-teaser--project.cmp-teaser--list .cmp-teaser__content .cmp-date .location,
   .cmp-teaser.cmp-teaser--event.cmp-teaser--list .cmp-teaser__content .cmp-date .month,
   .cmp-teaser.cmp-teaser--news.cmp-teaser--list .cmp-teaser__content .cmp-date .month,
@@ -16610,7 +16611,7 @@ body.rtl .cmp-hero__content--wrapper .cmp-button {
   transition: none;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   
   .cmp-teaser.cmp-teaser--event.cmp-teaser--list .cmp-teaser__content .cmp-date .year,
   .cmp-teaser.cmp-teaser--news.cmp-teaser--list .cmp-teaser__content .cmp-date .year,
@@ -16647,7 +16648,7 @@ body.rtl .cmp-hero__content--wrapper .cmp-button {
   display: flex;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-teaser.cmp-teaser--event.cmp-teaser--list .cmp-teaser__content .cmp-content-container, .cmp-teaser.cmp-teaser--news.cmp-teaser--list .cmp-teaser__content .cmp-content-container, .cmp-teaser.cmp-teaser--project.cmp-teaser--list .cmp-teaser__content .cmp-content-container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -16667,7 +16668,7 @@ body.rtl .cmp-hero__content--wrapper .cmp-button {
   margin-bottom: 0.5rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-teaser.cmp-teaser--event.cmp-teaser--list .cmp-teaser__content .cmp-content, .cmp-teaser.cmp-teaser--news.cmp-teaser--list .cmp-teaser__content .cmp-content, .cmp-teaser.cmp-teaser--project.cmp-teaser--list .cmp-teaser__content .cmp-content {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
@@ -16693,7 +16694,7 @@ body.rtl .cmp-hero__content--wrapper .cmp-button {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-teaser.cmp-teaser--event.cmp-teaser--list .cmp-teaser__content .cmp-content h4, .cmp-teaser.cmp-teaser--news.cmp-teaser--list .cmp-teaser__content .cmp-content h4, .cmp-teaser.cmp-teaser--project.cmp-teaser--list .cmp-teaser__content .cmp-content h4 {
     font-size: 1.5rem;
   }
@@ -16703,7 +16704,7 @@ body.rtl .cmp-hero__content--wrapper .cmp-button {
   margin-bottom: 0.5rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-teaser.cmp-teaser--event.cmp-teaser--list .cmp-teaser__content, .cmp-teaser.cmp-teaser--news.cmp-teaser--list .cmp-teaser__content, .cmp-teaser.cmp-teaser--project.cmp-teaser--list .cmp-teaser__content {
     max-height: 500px;
     -webkit-box-orient: horizontal;
@@ -16723,7 +16724,7 @@ body.rtl .cmp-hero__content--wrapper .cmp-button {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-teaser.cmp-teaser--event.cmp-teaser--list .cmp-teaser__content, .cmp-teaser.cmp-teaser--news.cmp-teaser--list .cmp-teaser__content, .cmp-teaser.cmp-teaser--project.cmp-teaser--list .cmp-teaser__content {
     -webkit-flex-basis: 25%;
     -ms-flex-preferred-size: 25%;
@@ -16749,7 +16750,7 @@ body.rtl .cmp-hero__content--wrapper .cmp-button {
   justify-content: flex-end;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-teaser.cmp-teaser--event.cmp-teaser--list .cmp-label--ribbon, .cmp-teaser.cmp-teaser--news.cmp-teaser--list .cmp-label--ribbon, .cmp-teaser.cmp-teaser--project.cmp-teaser--list .cmp-label--ribbon {
     display: block;
     top: 0;
@@ -16835,7 +16836,7 @@ body.rtl .cmp-hero__content--wrapper .cmp-button {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-teaser__content h4 {
     font-size: 1.5625rem;
   }
@@ -17029,14 +17030,14 @@ body.rtl .cmp-teaser__icon {
   margin-right: -1rem !important;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-teaser.cmp-teaser--knowledgebase.cmp-teaser--list .cmp-label--ribbon {
     display: inline-block;
     position: relative;
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-teaser.cmp-teaser--knowledgebase.cmp-teaser--list .cmp-label--ribbon + .cmp-content {
     margin-top: 38px;
   }
@@ -17428,7 +17429,7 @@ body.rtl .cmp-teaser.cmp-teaser--square .cmp-teaser__content__icon {
   align-items: center;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-teaser.cmp-teaser--product.cmp-teaser--list .cmp-teaser__content .cmp-image {
     -webkit-flex-basis: 33%;
     -ms-flex-preferred-size: 33%;
@@ -17515,7 +17516,7 @@ body.rtl .cmp-teaser.cmp-teaser .cmp-teaser__content .cmp-content .cmp-product__
   flex-direction: column-reverse;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-teaser.cmp-teaser--event.cmp-teaser--list .cmp-teaser__content {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -17543,7 +17544,7 @@ body.rtl .cmp-teaser.cmp-teaser .cmp-teaser__content .cmp-content .cmp-product__
   /* display image in first place */
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-teaser.cmp-teaser--news.cmp-teaser--list .cmp-label--ribbon {
     margin-right: -1rem !important;
   }
@@ -17559,7 +17560,7 @@ body.rtl .cmp-teaser.cmp-teaser .cmp-teaser__content .cmp-content .cmp-product__
   flex-direction: column-reverse;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-teaser.cmp-teaser--news.cmp-teaser--list .cmp-teaser__content {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -17618,7 +17619,7 @@ body.rtl .cmp-teaser.cmp-teaser .cmp-teaser__content .cmp-content .cmp-product__
   display: none;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-teaser.cmp-teaser--project.cmp-teaser--list .cmp-teaser__content .cmp-image {
     display: block;
   }
@@ -17649,14 +17650,14 @@ body.rtl .cmp-teaser.cmp-teaser .cmp-teaser__content .cmp-content .cmp-product__
   width: 100%;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-teaser--project-carousel--wide {
     width: 785px !important;
     /* important needed to overwrite a "slick carousel" styling on the div element */
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-teaser--project-carousel--wide .cmp-image {
     width: 100% !important;
   }
@@ -17668,7 +17669,7 @@ body.rtl .cmp-teaser.cmp-teaser .cmp-teaser__content .cmp-content .cmp-product__
   height: 100%;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-teaser--project-carousel .cmp-image .image-mobile {
     display: none;
   }
@@ -17685,7 +17686,7 @@ body.rtl .cmp-teaser.cmp-teaser .cmp-teaser__content .cmp-content .cmp-product__
   display: none;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-teaser--project-carousel .cmp-image img {
     width: 100%;
     height: auto;
@@ -17896,7 +17897,7 @@ body.rtl .cmp-teaser.cmp-teaser .cmp-teaser__content .cmp-content .cmp-product__
   medium: 0.8rem;
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-teaser.cmp-teaser--document .cmp-teaser__content--extended .cmp-teaser__content--right > div:last-of-type .cmp-icon {
     medium: -webkit-calc(0.8rem + 0.7625 * ((100vw - 1024px) / -384));
     medium: -moz-calc(0.8rem + 0.7625 * ((100vw - 1024px) / -384));
@@ -17904,7 +17905,7 @@ body.rtl .cmp-teaser.cmp-teaser .cmp-teaser__content .cmp-content .cmp-product__
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-teaser.cmp-teaser--document .cmp-teaser__content--extended .cmp-teaser__content--right > div:last-of-type .cmp-icon {
     medium: 1.5625rem;
   }
@@ -18122,7 +18123,7 @@ body.rtl .cmp-teaser.cmp-teaser .cmp-teaser__content .cmp-content .cmp-product__
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-storyboard__story .cmp-teaser.cmp-teaser--article .cmp-teaser__content .cmp-text,
   .cmp-storyboard__story .cmp-teaser__content .cmp-text {
     font-size: 1.5625rem;
@@ -18226,13 +18227,13 @@ body.rtl .cmp-teaser.cmp-teaser .cmp-teaser__content .cmp-content .cmp-product__
   width: 60%;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-persona__link {
     width: 50%;
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-persona__link {
     width: 50%;
   }
@@ -18403,7 +18404,7 @@ body.rtl .cmp-teaser.cmp-teaser .cmp-teaser__content .cmp-content .cmp-product__
   margin-left: 10px;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-list-view__content__right {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -18510,7 +18511,7 @@ body.rtl .cmp-teaser.cmp-teaser .cmp-teaser__content .cmp-content .cmp-product__
   display: none;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-list-view__content .cmp-icon:not(.cmp-icon-download) {
     display: block;
   }
@@ -18544,7 +18545,7 @@ body.rtl .cmp-teaser.cmp-teaser .cmp-teaser__content .cmp-content .cmp-product__
   flex: 100%;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-list-view__title {
     margin-left: 10px;
   }
@@ -18557,7 +18558,7 @@ body.rtl .cmp-teaser.cmp-teaser .cmp-teaser__content .cmp-content .cmp-product__
   padding-bottom: 10px;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-list-view__type {
     padding-bottom: 0;
     -webkit-box-flex: 2;
@@ -18576,7 +18577,7 @@ body.rtl .cmp-teaser.cmp-teaser .cmp-teaser__content .cmp-content .cmp-product__
   font-weight: normal;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-list-view__size {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
@@ -18710,7 +18711,7 @@ body.rtl .cmp-teaser.cmp-teaser .cmp-teaser__content .cmp-content .cmp-product__
   line-height: normal;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-list-view-extended__content {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -18776,7 +18777,7 @@ body.rtl .cmp-teaser.cmp-teaser .cmp-teaser__content .cmp-content .cmp-product__
   margin-top: 5px;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-list-view-extended__content__right {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -18926,7 +18927,7 @@ body.rtl .cmp-teaser.cmp-teaser .cmp-teaser__content .cmp-content .cmp-product__
   display: none;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-list-view-extended__content .cmp-icon:not(.cmp-icon-download) {
     display: block;
   }
@@ -18936,7 +18937,7 @@ body.rtl .cmp-teaser.cmp-teaser .cmp-teaser__content .cmp-content .cmp-product__
   overflow-wrap: break-word;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-list-view-extended__title {
     margin-left: 10px;
   }
@@ -18948,7 +18949,7 @@ body.rtl .cmp-teaser.cmp-teaser .cmp-teaser__content .cmp-content .cmp-product__
   font-weight: normal;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-list-view-extended__type {
     padding-bottom: 0;
     -webkit-box-flex: 2;
@@ -18967,7 +18968,7 @@ body.rtl .cmp-teaser.cmp-teaser .cmp-teaser__content .cmp-content .cmp-product__
   font-weight: normal;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-list-view-extended__size {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
@@ -18994,13 +18995,13 @@ body.rtl .cmp-teaser.cmp-teaser .cmp-teaser__content .cmp-content .cmp-product__
   padding-left: 20px;
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-list-view-extended__ac-content {
     padding-left: 40px;
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-list-view-extended__ac-content .image {
     -webkit-box-flex: 100;
     -webkit-flex: 100;
@@ -19014,7 +19015,7 @@ body.rtl .cmp-teaser.cmp-teaser .cmp-teaser__content .cmp-content .cmp-product__
   max-width: 50px;
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-list-view-extended__ac-content .image img {
     max-width: 100px;
   }
@@ -19025,7 +19026,7 @@ body.rtl .cmp-teaser.cmp-teaser .cmp-teaser__content .cmp-content .cmp-product__
   margin-left: 10px;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-list-view-extended__ac-content .description {
     margin-left: 20px;
   }
@@ -19036,7 +19037,7 @@ body.rtl .cmp-teaser.cmp-teaser .cmp-teaser__content .cmp-content .cmp-product__
   font-weight: normal;
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-list-view-extended__ac-content .description > div {
     width: 76%;
   }
@@ -19223,7 +19224,7 @@ body.rtl .cmp-link-list--arrow .cmp-link-list__items ul li a {
   right: 0.5rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-accordion__title::before {
     right: 1rem;
   }
@@ -19355,7 +19356,7 @@ body.rtl .cmp-accordion__content--right {
   padding-bottom: 1rem;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-categorydrilldown .grid-x .cell {
     padding-bottom: 2rem;
   }
@@ -19424,7 +19425,7 @@ body.rtl .cmp-accordion__content--right {
   medium: 2.44rem;
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-helpbox__title {
     medium: -webkit-calc(2.44rem + 0.31 * ((100vw - 1024px) / -384));
     medium: -moz-calc(2.44rem + 0.31 * ((100vw - 1024px) / -384));
@@ -19432,7 +19433,7 @@ body.rtl .cmp-accordion__content--right {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-helpbox__title {
     medium: 2.75rem;
   }
@@ -19491,7 +19492,7 @@ body.rtl .cmp-accordion__content--right {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-helpbox__icon {
     line-height: 30px;
   }
@@ -19548,7 +19549,7 @@ body.rtl .cmp-helpbox__icon .cmp-icon {
   color: var(--primary);
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-helpbox-offset {
     margin-top: -75px;
     margin-bottom: 30px;
@@ -19563,7 +19564,7 @@ body.rtl .cmp-helpbox__icon .cmp-icon {
   z-index: 2;
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-helpbox-container {
     max-width: 1280px;
   }
@@ -19600,7 +19601,7 @@ body.rtl .cmp-helpbox__icon .cmp-icon {
   justify-content: flex-start;
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-helpbox-bar {
     padding: 0;
   }
@@ -19619,7 +19620,7 @@ body.rtl .cmp-helpbox__icon .cmp-icon {
   justify-content: center;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-helpbox-bar {
     -webkit-box-align: start;
     -webkit-align-items: flex-start;
@@ -19658,7 +19659,7 @@ body.rtl .cmp-helpbox__icon .cmp-icon {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-helpbox-bar {
     -webkit-box-align: center;
     -webkit-align-items: center;
@@ -19790,7 +19791,7 @@ body.rtl .cmp-helpbox-bar :last-child .cmp-helpbox__icon-text {
   mix-blend-mode: screen;
 }
 
-@media screen and (min-width: 40em) {
+@media screen and (min-width: $sm) {
   .cmp-person.cmp-person__two-col {
     display: -webkit-box;
     display: -webkit-flex;
@@ -19876,7 +19877,7 @@ body.rtl .cmp-helpbox-bar :last-child .cmp-helpbox__icon-text {
   display: none;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-contact-overlay__logo {
     display: block;
     width: 80px;
@@ -19888,13 +19889,13 @@ body.rtl .cmp-helpbox-bar :last-child .cmp-helpbox__icon-text {
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-contact-overlay__logo {
     width: 120px;
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-contact-overlay .cmp-background--yellow .cmp-layout__head h2 {
     max-width: 75%;
   }
@@ -20025,7 +20026,7 @@ table th.sorted--down::after {
   border-bottom: 1px solid #e0e0e0;
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-table--hover thead tr:hover {
     background-color: #f4f4f4;
   }
@@ -20404,7 +20405,7 @@ table th.active:not(.sorted)::after {
   medium: 1.95rem;
 }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: $md) {
   .cmp-pre-footer__item .cmp-title h3 {
     medium: -webkit-calc(1.95rem + 0.25 * ((100vw - 1024px) / -384));
     medium: -moz-calc(1.95rem + 0.25 * ((100vw - 1024px) / -384));
@@ -20412,7 +20413,7 @@ table th.active:not(.sorted)::after {
   }
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-pre-footer__item .cmp-title h3 {
     medium: 2.2rem;
   }
@@ -20540,7 +20541,7 @@ table th.active:not(.sorted)::after {
   }
 }
 
-@media screen and (min-width: 40em) and (max-width: 63.99875em) {
+@media screen and (min-width: $sm) and (max-width: 63.99875em) {
   .cmp-footer-content--bottom {
     -webkit-align-content: center;
     -ms-flex-line-pack: center;
@@ -20563,7 +20564,7 @@ table th.active:not(.sorted)::after {
   padding-right: 12px;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: $sm) {
   .cmp-footer-content .cmp-footer__link-list {
     margin-right: 20px;
   }
@@ -20644,7 +20645,7 @@ table th.active:not(.sorted)::after {
   display: inline-block;
 }
 
-@media screen and (min-width: 40em) and (max-width: 63.99875em) {
+@media screen and (min-width: $sm) and (max-width: 63.99875em) {
   .cmp-footer-links__menu {
     -webkit-box-pack: center;
     -webkit-justify-content: center;
@@ -20711,7 +20712,7 @@ table th.active:not(.sorted)::after {
   position: relative;
 }
 
-@media screen and (min-width: 40em) and (max-width: 63.99875em) {
+@media screen and (min-width: $sm) and (max-width: 63.99875em) {
   .cmp-footer-corporation {
     margin-top: 20px;
   }
@@ -20724,7 +20725,7 @@ table th.active:not(.sorted)::after {
   margin-left: auto;
 }
 
-@media screen and (min-width: 40em) and (max-width: 63.99875em) {
+@media screen and (min-width: $sm) and (max-width: 63.99875em) {
   .cmp-footer-corporation .cmp-logo {
     position: absolute;
     right: 0;
@@ -20812,7 +20813,7 @@ table th.active:not(.sorted)::after {
   flex-basis: 50%;
 }
 
-@media screen and (min-width: 64em) {
+@media screen and (min-width: $md) {
   .cmp-footer-simplified-container .cmp-footer-simplified-content > .logo-column img {
     max-width: 450px;
   }

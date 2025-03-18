@@ -35,9 +35,10 @@
 .helpbox {
   &__wrap {
     @include up($sm) {
-    margin-top: -50px;
+      margin-top: -50px;
     }
   }
+
   &__title {
     text-transform: uppercase;
   }
@@ -47,22 +48,25 @@
     grid-template-columns: repeat(1, 1fr);
     justify-self: center;
     margin-top: -100px;
+
     @include up($md) {
-      //margin-top: -30px;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: -70px;
     }
 
     @include up($lg) {
-      display: flex;
-      flex-wrap: wrap;
+      margin-top: -100px;
     }
   }
 
   &__item {
     margin: 5px 0;
 
-    @include up($lg) {
+    @include up($md) {
       margin: 5px 10px;
     }
+
     height: 60px;
     font-size: 16px;
     line-height: 100%;
@@ -77,6 +81,7 @@
       width: 200px;
       font-size: 20px;
     }
+
     &--icon {
       width: 35px;
       height: 35px;

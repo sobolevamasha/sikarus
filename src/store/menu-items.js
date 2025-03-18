@@ -1,6 +1,7 @@
 export default [
   {
     name: "О нас",
+    isOpen: false,
     items: [
       {
         title: "Концерн Sika",
@@ -93,53 +94,58 @@ export default [
   },
   {
     name: "Продукция",
-    // items: [
-    //   {
-    //     title: "Концерн Sika",
-    //     subitems: [
-    //       {
-    //         name: "Цели и бренд Sika",
-    //         to: "",
-    //       },
+    isOpen: false,
+    items: [
+      {
+        title: "Концерн Sika",
+        subitems: [
+          {
+            name: "Цели и бренд Sika",
+            to: "",
+          },
           
-    //     ],
-    //   },
-    // ],
+        ],
+      },
+    ],
   },
   {
     name: "Отраслевые решения",
-    // items: [
-    //   {
-    //     title: "Концерн Sika",
-    //     subitems: [
-    //       {
-    //         name: "Цели и бренд Sika",
-    //         to: "",
-    //       },
-    //       {
-    //         name: "Ценности и принципы",
-    //         to: "",
-    //       },
-    //       {
-    //         name: "История",
-    //         to: "",
-    //       },
-    //       {
-    //         name: "Целевые рынки сбыта",
-    //         to: "",
-    //       },
-    //     ],
-    //   },
-    // ],
+    isOpen: false,
+    items: [
+      {
+        title: "Концерн Sika",
+        subitems: [
+          {
+            name: "Цели и бренд Sika",
+            to: "",
+          },
+          {
+            name: "Ценности и принципы",
+            to: "",
+          },
+          {
+            name: "История",
+            to: "",
+          },
+          {
+            name: "Целевые рынки сбыта",
+            to: "",
+          },
+        ],
+      },
+    ],
   },
   {
     name: "Продуктовые бренды",
+    isOpen: false,
   },
   {
     name: "Сервис",
+    isOpen: false,
   },
   {
     name: "Где купить",
+    isOpen: false,
   },
 
 ];

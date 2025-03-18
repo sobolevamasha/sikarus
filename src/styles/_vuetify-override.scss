@@ -1,8 +1,9 @@
-@import 'variables';
+@import './variables.scss';
 /*
 	здесь мы переопределяем все стили vuetify которые нельзя заменить в теме
  */
 @import '~vuetify/src/styles/styles.sass';
+
 
 #app {
   //todo replace

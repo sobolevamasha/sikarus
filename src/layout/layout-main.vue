@@ -26,12 +26,12 @@ export default {
 <style lang="scss">
 .layout-main {
     & main {
-        margin-top: 75px;
+        //margin-top: 75px;
         @include up($md) {
-            margin-top: 0;
+            //margin-top: 0;
         }
         @include up($lg) {
-            margin-top: -240px;
+            //margin-top: -240px;
         }
     }
 }

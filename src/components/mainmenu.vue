@@ -1,23 +1,22 @@
 <template>
-    <div class="mainmenu d-none d-lg-block">
+    <div class="mainmenu d-none d-md-block">
         <v-container>
-            <ul class="mainmenu__list">
+            <ul class="mainmenu__list" ref="menu">
                 <li v-for="(menuItem, index) in menuItems" :key="index" class="mainmenu__list-item"
-                    @click="toggleMenu(index)">
+                    @click="toggleDropdown(index)">
                     {{ menuItem.name }}
 
-                    <div v-if="menuOpened"
-                    class="mainmenu__list-subitem grid-x">
-                        <div v-for="(el, index) in menuItem.items" :key="index" class="mainmenu__list-subitemList
+                    <div v-if="menuItem.isOpen" class="dropdown mainmenu__list-subitem grid-x">
+                        <div v-for="(item, itemIndex) in menuItem.items" :key="itemIndex" class="mainmenu__list-subitemList
                         cell medium-2 cmp-nav-mega-dropdown__column">
 
                             <h6 class="cmp-nav-mega-dropdown__content__sub-title cmp-font--bold">
-                                {{ el.title }}
+                                {{ item.title }}
                             </h6>
                             <ul>
-                                <li v-for="(subItem, index) in el.subitems">
-                                    <a :href="subItem.to" target="_self">
-                                        {{ subItem.name }}
+                                <li v-for="(subitem, subIndex) in item.subitems" :key="subIndex">
+                                    <a :href="subitem.to" target="_self">
+                                        {{ subitem.name }}
                                     </a>
                                 </li>
                             </ul>
@@ -37,30 +36,30 @@ import menuItems from '@/store/menu-items.js'
 export default {
     data() {
         return {
-            showMenu: false,
-            selectedItem: {}
+            menuItems: menuItems,
+            openDropdownIndex: null
         }
     },
-    components: {
-        menuItems,
-    },
-    computed: {
-        menuItems() {
-            return menuItems;
-        },
-        menuOpened() {
-            return this.$store.state.menuOpened;
-        },
-    },
+
     methods: {
-        toggleMenu(index) {
-            this.selectedItem = this.menuItems[index];
-            this.$store.state.menuOpened = !this.$store.state.menuOpened;
-            console.log('this.selectedItem = ', this.selectedItem);
-        }
+        toggleDropdown(index) {
+            this.menuItems.forEach((item, idx) => {
+                item.isOpen = idx === index ? !item.isOpen : false;
+            });
+        },
+        // handleClickOutside() {
+        //     this.menuItems.forEach(item => {
+        //         item.isOpen = false;
+        //     });
+        // },
     },
     mounted() {
+        //document.addEventListener('click', this.handleClickOutside);
     },
+    beforeDestroy() {
+        //document.removeEventListener('click', this.handleClickOutside);
+    }
+
 }
 </script>
 
