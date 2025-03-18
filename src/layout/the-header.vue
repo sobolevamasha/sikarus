@@ -69,10 +69,10 @@
                 <div class="header__right">
                     <ul class="header__dropdown d-flex">
                         <li>
-                            <a href="/about">О компании</a>
+                            <router-link to="/about">О компании</router-link>
                         </li>
                         <li>
-                            <a href="/contacts">Контакты</a>
+                            <router-link to="/contacts">Контакты</router-link>
                         </li>
                         <li>
                             <a>Дилеры</a>
@@ -86,13 +86,13 @@
         </div>
         <div class="header__content  d-none d-md-flex">
             <div class="header__container d-flex justify-space-between align-center">
-                <a href="/" class="header__content-left d-flex align-center">
+                <router-link to="/" class="header__content-left d-flex align-center">
                     <div class="logo">
                         <img src="../assets/Sika_ClaimU_pos_rgb.svg" />
                     </div>
 
                     <div class="header__content-title">Sika Россия</div>
-                </a>
+                </router-link>
                 <div class="header__content-right">
                     <div class="header__content-search">
                         <form method="get" class="search-form">
@@ -125,6 +125,7 @@
 .header {
     min-height: 75px;
     width: 100%;
+
     @include up($md) {
         position: absolute;
     }
@@ -220,6 +221,27 @@
         & li {
             padding: 8px 20px;
             color: $white;
+            position: relative;
+            
+            &:hover,
+            &:focus {
+
+                &::after {
+
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    bottom: -10px;
+                    left: 0;
+                    border-bottom: 4px solid $sika-yellow;
+                    border-radius: 20px;
+                }
+            }
+        }
+
+        & a {
+            display: block;
+            height: 100%;
         }
 
         &--product-item {
@@ -293,8 +315,8 @@
 
         @include up($lg) {
             position: relative;
-            height: 145px;
-            margin-top: 20px;
+            height: 135px;
+            margin-top: 10px;
         }
     }
 
@@ -329,6 +351,7 @@
 <script>
 import burgerMenu from '@/layout/burger-menu.vue';
 import mainmenu from '@/components/mainmenu.vue';
+import router from '@/router';
 
 export default {
     name: "the-header",

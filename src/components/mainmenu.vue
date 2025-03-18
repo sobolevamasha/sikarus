@@ -1,30 +1,31 @@
 <template>
-    <div class="mainmenu d-none d-md-block">
-        <v-container>
-            <ul class="mainmenu__list" ref="menu">
-                <li v-for="(menuItem, index) in menuItems" :key="index" class="mainmenu__list-item"
-                    @click="toggleDropdown(index)">
-                    {{ menuItem.name }}
+    <div class="mainmenu d-none d-md-block" ref="dropdown">
 
-                    <div v-if="menuItem.isOpen" class="dropdown mainmenu__list-subitem grid-x">
-                        <div v-for="(item, itemIndex) in menuItem.items" :key="itemIndex" class="mainmenu__list-subitemList
+        <ul class="mainmenu__list">
+            <li v-for="(menuItem, index) in menuItems" :key="index" class="mainmenu__list-item"
+                @click="toggleDropdown(index)">
+
+                <div>{{ menuItem.name }}</div>
+
+                <div v-if="menuItem.isOpen" class="dropdown mainmenu__list-subitem grid-x">
+                    <div v-for="(item, itemIndex) in menuItem.items" :key="itemIndex" class="mainmenu__list-subitemList
                         cell medium-2 cmp-nav-mega-dropdown__column">
 
-                            <h6 class="cmp-nav-mega-dropdown__content__sub-title cmp-font--bold">
-                                {{ item.title }}
-                            </h6>
-                            <ul>
-                                <li v-for="(subitem, subIndex) in item.subitems" :key="subIndex">
-                                    <a :href="subitem.to" target="_self">
-                                        {{ subitem.name }}
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                        <h6 class="cmp-nav-mega-dropdown__content__sub-title cmp-font--bold">
+                            {{ item.title }}
+                        </h6>
+                        <ul>
+                            <li v-for="(subitem, subIndex) in item.subitems" :key="subIndex">
+                                <a :href="subitem.to" target="_self">
+                                    {{ subitem.name }}
+                                </a>
+                            </li>
+                        </ul>
                     </div>
-                </li>
-            </ul>
-        </v-container>
+                </div>
+            </li>
+        </ul>
+
 
     </div>
 </template>
@@ -47,17 +48,20 @@ export default {
                 item.isOpen = idx === index ? !item.isOpen : false;
             });
         },
-        // handleClickOutside() {
-        //     this.menuItems.forEach(item => {
-        //         item.isOpen = false;
-        //     });
-        // },
+        handleClickOutside(event) {
+            const dropdown = this.$refs.dropdown;
+            if (dropdown && !dropdown.contains(event.target)) {
+                this.menuItems.forEach((item, idx) => {
+                    item.isOpen = false;
+                });
+            }
+        },
     },
     mounted() {
-        //document.addEventListener('click', this.handleClickOutside);
+        document.addEventListener('click', this.handleClickOutside);
     },
     beforeDestroy() {
-        //document.removeEventListener('click', this.handleClickOutside);
+        document.removeEventListener('click', this.handleClickOutside);
     }
 
 }
@@ -65,9 +69,20 @@ export default {
 
 <style lang="scss">
 .mainmenu {
-    //position: absolute;
-
+    position: absolute;
+    width: 85%;
+    right: 40px;
+    bottom: -50px;
     color: $black;
+
+    @include up($lg) {
+        bottom: -35px;
+        width: 86%;
+    }
+
+    @include up($xl) {
+        width: 87%;
+    }
 
     h6 {
         font-weight: 700;
@@ -80,10 +95,11 @@ export default {
         z-index: 100;
         position: relative;
         //width: auto;
-        height: 50px;
+        height: 70px;
         display: flex;
         justify-content: left;
         align-items: center;
+        padding: 0 15px !important;
     }
 
     &__list-item {
@@ -95,16 +111,22 @@ export default {
         align-items: center;
         cursor: pointer;
 
-        &:not(:last-child)::after {
-            position: absolute;
-            content: "";
-            height: 100%;
-            width: 2px;
-            background-color: #e0e0e0;
-            right: 0;
-            top: 0;
+        // &:not(:last-child) {
+        //     & div {
+        //         position: relative;
 
-        }
+        //         &::after {
+        //             position: absolute;
+        //             content: "";
+        //             height: 100%;
+        //             width: 1px;
+        //             background-color: #e0e0e0;
+        //             right: -15px;
+        //         }
+        //     }
+        // }
+
+
     }
 
     &__list-subitem {

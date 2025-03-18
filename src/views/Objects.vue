@@ -4,6 +4,7 @@
         <div class="grid-container">
             <ul class="objects__list my-16">
                 <li v-for="(item, index) of objects" :key="index" class="objects__item mx-2 my-2">
+                    <router-link to="/objects/object"></router-link>
                     <div class="objects__item--top">
                         <div class="gradient"></div>
                         <img class="" :src="item.img" />
@@ -23,7 +24,7 @@
                     <download :title="document.name" :filePath="document.filePath" />
                 </li>
             </ul>
-            
+
         </div>
     </div>
 </template>
@@ -32,6 +33,7 @@
 import hero from '@/components/hero.vue';
 import objectList from '@/store/objects';
 import download from '@/components/download.vue';
+import router from '@/router';
 
 export default {
     name: "Objects",
@@ -87,6 +89,7 @@ export default {
     }
 
     &__item {
+        position: relative;
         max-width: 370px;
         height: 390px;
         box-shadow: 0 1px 2px #0003, 0 1px 3px #0000001a;
@@ -94,6 +97,14 @@ export default {
 
         &--spans {
             height: 70px;
+        }
+
+        & a {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
         }
 
         & span {
