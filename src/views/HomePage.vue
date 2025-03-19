@@ -8,6 +8,45 @@
 		
 		<slider :title="title" :items="swiperItems" />
 		<statistics :blocks="blocks" />
+		<!-- <ul class="burger-menu__list pa-0">
+                        <li v-for="(menuItem, index) in menuData" :key="index" @click="toggleMenu(index)"
+                            :class="{ 'isOpen': menuItem.isOpen }" class="d-flex align-center justify-space-between ">
+
+                            <div class="burger-menu__list-item-name">
+
+                                <a v-if="menuItem.to" @click="onRouterClick" :href="menuItem.to"></a>
+                                {{ menuItem.name }}
+
+                            </div>
+                            <svg v-if="menuItem.to" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 366 1024">
+                                <g id="icomoon-ignore">
+                                </g>
+                                <path
+                                    d="M339.968 547.84q0 7.168-5.12 12.288l-267.264 267.264q-5.12 5.12-12.288 5.12t-13.312-5.12l-28.672-28.672q-6.144-6.144-6.144-13.312t6.144-13.312l224.256-224.256-224.256-225.28q-6.144-5.12-6.144-12.288t6.144-13.312l28.672-28.672q5.12-6.144 13.312-6.144t12.288 6.144l267.264 266.24q5.12 5.12 5.12 13.312z">
+                                </path>
+                            </svg>
+
+                            <ul v-show="menuItem.isOpen" class="dropdown burger-menu__list-subitem grid-x">
+                                <li v-for="(item, itemIndex) in menuItem.items" :key="itemIndex" class="burger-menu__list-subitemList
+                        cell medium-2 cmp-nav-mega-dropdown__column">
+
+                                    <h6 @click="toggleSubMenu(menuItem, item)" :class="{ 'isOpen': item.isOpen }"
+                                        class="cmp-nav-mega-dropdown__content__sub-title cmp-font--bold">
+                                        {{ item.title }}
+                                    </h6>
+                                    <ul v-show="item.isOpen">
+                                        <li v-for="(subitem, subIndex) in item.subitems" :key="subIndex">
+                                            <router-link :to="subitem.to">{{ subitem.name }}</router-link>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+
+
+                        </li>
+                    </ul> -->
 
 	</div>
 </template>
@@ -25,6 +64,8 @@ import statistics from '@/components/statistics.vue';
 
 import objectList from '@/store/objects';
 
+import burgerMenu from '@/layout/burger-menu.vue';
+
 export default {
 	name: "HomePage",
 	components: {
@@ -34,7 +75,8 @@ export default {
 		news,
 		about,
 		slider,
-		statistics
+		statistics,
+		burgerMenu
 	},
 	data() {
 		return {

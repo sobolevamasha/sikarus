@@ -1,9 +1,11 @@
 export default [
   {
     name: "О нас",
+    to: '',
     isOpen: false,
     items: [
       {
+        isOpen: false,
         title: "Концерн Sika",
         subitems: [
           {
@@ -25,6 +27,7 @@ export default [
         ],
       },
       {
+        isOpen: false,
         title: "Sika Россия",
         subitems: [
           {
@@ -45,58 +48,15 @@ export default [
           },
         ],
       },
-      {
-        title: "Устойчивое развитие",
-        subitems: [
-          {
-            name: "Sika и устойчивое развитие",
-            to: "",
-          },
-        
-        ],
-      },
-      {
-        title: "Карьера",
-        subitems: [
-          {
-            name: "О компании",
-            to: "",
-          },
-          {
-            name: "Заводы Sika в России",
-            to: "",
-          },
-          {
-            name: "Лаборатории Sika в России",
-            to: "",
-          },
-          {
-            name: "Техподдержка",
-            to: "",
-          },
-        ],
-      },
-      {
-        title: "Приобретения",
-        subitems: [
-          {
-            name: "Объекты",
-            to: "/objects",
-          },
-          {
-            name: "Заводы Sika в России",
-            to: "",
-          },
-
-        ],
-      },
     ],
   },
   {
     name: "Продукция",
+    to: '',
     isOpen: false,
     items: [
       {
+        isOpen: false,
         title: "Концерн Sika",
         subitems: [
           {
@@ -110,9 +70,11 @@ export default [
   },
   {
     name: "Отраслевые решения",
+    to: '',
     isOpen: false,
     items: [
       {
+        isOpen: false,
         title: "Концерн Sika",
         subitems: [
           {
@@ -137,14 +99,17 @@ export default [
   },
   {
     name: "Продуктовые бренды",
+    to: '/contacts',
     isOpen: false,
   },
   {
     name: "Сервис",
+    to: '/about',
     isOpen: false,
   },
   {
     name: "Где купить",
+    to: '/objects',
     isOpen: false,
   },
 

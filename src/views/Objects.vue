@@ -121,7 +121,7 @@ export default {
                 bottom: 0;
                 left: 0;
                 padding: 25px;
-                z-index: 10;
+                z-index: 5;
                 text-align: left;
                 color: $white;
             }
