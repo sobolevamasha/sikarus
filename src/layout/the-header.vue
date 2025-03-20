@@ -6,13 +6,16 @@
         </transition>
 
         <div class="header__mobile d-md-none">
+
             <v-container class="header__mobile--wrap px- d-flex justify-space-between">
                 <div class="header__mobile--left d-flex align-center">
                     <div class="header__mobile--title d-flex align-center">
                         <a href="/" class="logo">
                             <img src="../assets/logo1.png" />
                         </a>
-                        <a href="https://www.sika.com" target="_blank" class="ml-4">Sika Group</a>
+                        <a href="/" target="_blank" class="ml-4">
+                            Sika Россия
+                        </a>
                     </div>
                 </div>
                 <div class="header__mobile--right">
@@ -34,7 +37,7 @@
                         <a href="https://www.sika.com" target="_blank">Sika Group</a>
                     </div>
                     <div class="header__dropdown d-flex ">
-                        <button class="d-flex align-center">
+                        <button class="d-flex align-center" @click="showModal = true">
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="28" height="25"
                                 viewBox="0 0 512 512" fill="white" class="mr-2">
                                 <g id="icomoon-ignore">
@@ -45,13 +48,8 @@
                             </svg>
 
                             Countries
-                            <!-- <ul class="header__dropdown--country">
-                                <li v-for="(country, index) in countries" :key="index">
-                                    <a :href="country.link">
-                                        {{ country.name }}
-                                    </a>
-                                </li>
-                            </ul> -->
+
+
                         </button>
                         <button class="header__dropdown--product-list">
                             Продукция
@@ -109,6 +107,45 @@
             </div>
         </div>
         <mainmenu />
+        <transition name="modal">
+            <div class="modal-mask" v-if="showModal">
+                <countries @close="closeModal" />
+            </div>
+        </transition>
+
+        <div class="header__sideblock d-none d-md-block">
+            <ul>
+                <li class="isActive">
+
+                    <a href="/"></a>
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                        viewBox="0 0 1024 1024">
+                        <g id="icomoon-ignore">
+                        </g>
+                        <path fill="#000"
+                            d="M736 864h128.082c35.301 0 63.918-28.51 63.918-63.918v-544.082h-159.811c-35.451 0-64.189-28.375-64.189-63.939v-192.061h-319.727c-35.497 0-64.273 28.747-64.273 64.235v63.765h240l208 243.2v492.8h-32v-448h-159.811c-35.451 0-64.189-28.375-64.189-63.939v-192.061h-319.727c-35.497 0-64.273 28.747-64.273 64.235v735.531c0 35.476 28.51 64.235 63.918 64.235h480.165c35.301 0 63.918-28.51 63.918-63.918v-96.082zM736 0v191.906c0 17.725 14.431 32.094 31.705 32.094h160.295l-192-224zM544 160v191.906c0 17.725 14.431 32.094 31.705 32.094h160.295l-192-224z">
+                        </path>
+                    </svg>
+                    Корзина документов
+                    <span>(4)</span>
+
+                </li>
+                <li>
+
+                    <a href="/"></a>
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 512 512">
+                        <g id="icomoon-ignore">
+                        </g>
+                        <path
+                            d="M512 198.525l-176.89-25.704-79.11-160.291-79.108 160.291-176.892 25.704 128 124.769-30.216 176.176 158.216-83.179 158.216 83.179-30.217-176.176 128.001-124.769z">
+                        </path>
+                    </svg>
+                    Выбранные продукты
+                    <span>(10)</span>
+
+                </li>
+            </ul>
+        </div>
 
     </nav>
 </template>
@@ -134,10 +171,15 @@
         background-color: $sika-yellow;
         position: fixed;
         width: 100%;
-        z-index: 10;
+        z-index: 4;
+
+        &--zindex {
+            z-index: 3;
+        }
 
         &--title a {
             color: $black !important;
+            font-size: 22px;
         }
 
         &--btn {
@@ -222,7 +264,7 @@
             padding: 8px 20px;
             color: $white;
             position: relative;
-            
+
             &:hover,
             &:focus {
 
@@ -231,7 +273,7 @@
                     content: "";
                     position: absolute;
                     width: 100%;
-                    bottom: -10px;
+                    bottom: -12px;
                     left: 0;
                     border-bottom: 4px solid $sika-yellow;
                     border-radius: 20px;
@@ -259,6 +301,16 @@
                 position: relative;
                 border-bottom: 1px solid #ffffff;
 
+                &:hover,
+                &:focus {
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        border-bottom: none;
+                    }
+                }
+
                 &:first-child:after {
                     content: "";
                     position: absolute;
@@ -272,22 +324,27 @@
                     border-left: 10px solid transparent;
                     border-right: 10px solid transparent;
                     border-bottom: 10px solid $gray;
+
                 }
             }
         }
 
         &--product-list {
             position: relative;
+            transition: all 0.2s ease-in;
 
             &:hover {
+                z-index: 10;
+
                 &::after {
                     content: "";
                     position: absolute;
                     width: 100%;
                     bottom: -11px;
                     left: 0;
-                    border-bottom: 4px solid $sika-yellow;
+                    border-bottom: $sika-yellow;
                     border-radius: 20px;
+                    z-index: 10;
                 }
             }
 
@@ -311,6 +368,7 @@
             //top: 80px;
             height: 100px;
             position: relative;
+            z-index: 5;
         }
 
         @include up($lg) {
@@ -344,6 +402,46 @@
         }
     }
 
+    &__sideblock {
+        background-color: $light-gray-section;
+        z-index: 10;
+        position: fixed;
+        right: -190px;
+        top: 50%;
+        transition: all 0.3s ease-in;
+
+        &:hover {
+            right: 0;
+        }
+
+        & ul {
+            & li {
+                padding: 16px;
+                display: flex;
+                position: relative;
+
+                & svg {
+                    margin-right: 16px;
+                }
+
+                & a {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                }
+
+                &.isActive {
+                    & svg path {
+                        fill: $sika-yellow;
+                    }
+                }
+
+            }
+        }
+    }
+
 
 }
 </style>
@@ -352,17 +450,20 @@
 import burgerMenu from '@/layout/burger-menu.vue';
 import mainmenu from '@/components/mainmenu.vue';
 import router from '@/router';
+import countries from '@/components/countries.vue';
 
 export default {
     name: "the-header",
     components: {
         burgerMenu,
-        mainmenu
+        mainmenu,
+        countries
     },
     data() {
         return {
             isHeaderScrolled: false,
             isHeaderBurgered: false,
+            showModal: false
         }
     },
     computed: {
@@ -374,14 +475,12 @@ export default {
         withBurgerMenu() {
             return this.$store.state.withBurgerMenu;
         },
-        withProductMenu() {
-            //return this.$store.state.withProductMenu;
-        },
+
         products() {
             return [
                 {
                     title: 'Строительство',
-                    link: 'about',
+                    link: '/about',
                 },
                 {
                     title: 'Частное домостроение',
@@ -399,9 +498,10 @@ export default {
             }, 100);
             else this.isHeaderBurgered = false;
         },
-        // onToggleProductMenu() {
-        //     this.$store.state.withProductMenu = !this.$store.state.withProductMenu;
-        // },
+
+        closeModal() {
+            this.showModal = false;
+        }
 
 
 

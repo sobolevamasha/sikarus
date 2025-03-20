@@ -34,6 +34,11 @@ const routes = [
                 name: 'object',
                 component: () => import("../views/Object"),
             },
+            // {
+            //     path: '/countries',
+            //     name: 'countries',
+            //     component: () => import("../components/countries.vue"),
+            // },
             
 
         ]

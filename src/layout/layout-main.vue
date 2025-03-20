@@ -1,5 +1,6 @@
 <template>
     <div class="layout-main">
+        
         <the-header />
         <v-main>
             <transition name="route" mode="out-in">
@@ -13,12 +14,14 @@
 <script>
 import TheHeader from './the-header';
 import TheFooter from './the-footer';
+import countries from '@/components/countries.vue';
 
 export default {
     name: "layout-main",
     components: {
         TheHeader,
-        TheFooter
+        TheFooter,
+        countries
     },
 }
 </script>
