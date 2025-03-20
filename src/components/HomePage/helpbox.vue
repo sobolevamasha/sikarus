@@ -1,6 +1,6 @@
 <template>
   <div class="helpbox cmp-helpbox-container">
-    <div class="cmp-helpbox cmp-helpbox-offset helpbox__wrap">
+    <div class="cmp-helpbox  helpbox__wrap">
       <h2 class="cmp-helpbox__title helpbox__title">
         Как мы можем вам помочь?
       </h2>
@@ -33,6 +33,10 @@
 
 <style lang="scss">
 .helpbox {
+
+  & h2 {
+    margin-bottom: 0;
+  }
   &__wrap {
     @include up($sm) {
       margin-top: -50px;
@@ -47,16 +51,17 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     justify-self: center;
-    margin-top: -100px;
+    margin-top: -90px;
 
     @include up($md) {
-      display: flex;
-      flex-wrap: wrap;
-      margin-top: -70px;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: -80px;
     }
 
     @include up($lg) {
-      margin-top: -100px;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: -60px;
     }
   }
 
@@ -64,7 +69,7 @@
     margin: 5px 0;
 
     @include up($md) {
-      margin: 5px 10px;
+      margin: 10px;
     }
 
     height: 60px;
@@ -72,6 +77,7 @@
     line-height: 100%;
 
     @include up($lg) {
+
       height: 80px;
     }
 

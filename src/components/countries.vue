@@ -109,7 +109,7 @@ export default {
     width: 100%;
     height: 100%;
     z-index: 10;
-    overflow-y: auto;
+    overflow-y: hidden;
     background: white;
     animation: enterFade .7s cubic-bezier(.25, .75, .5, 1.25);
 
@@ -183,6 +183,7 @@ export default {
         &--item {
             border-bottom: 1px solid $black;
             padding: 15px 0;
+            cursor: pointer;
         }
 
         &--countries {

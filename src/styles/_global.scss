@@ -729,9 +729,9 @@ h5,
 .h5,
 h6,
 .h6 {
- // font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  //font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-style: normal;
-  //font-weight: normal;
+  font-weight: normal;
   color: inherit;
   text-rendering: optimizeLegibility;
 }
@@ -754,7 +754,7 @@ h6 small,
 
 h1,
 .h1 {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   line-height: 1.4;
   margin-top: 0;
   margin-bottom: 0.5rem;
@@ -762,7 +762,7 @@ h1,
 
 h2,
 .h2 {
-  font-size: 1.25rem;
+  font-size: 2rem;
   line-height: 1.4;
   margin-top: 0;
   margin-bottom: 0.5rem;
@@ -8056,7 +8056,7 @@ iframe {
 .cmp-font--klavika .h5,
 .cmp-font--klavika h6,
 .cmp-font--klavika .h6 {
-  font-family: "Klavika Medium";
+  font-family: "Klavika Medium", sans-serif;
   font-weight: 700;
 }
 
@@ -8977,7 +8977,7 @@ iframe {
 }
 
 .cmp-font--klavika-vn .cmp-text .cmp-definition b {
-  font-family: "Klavika VN Medium";
+  font-family: "Klavika VN Medium", sans-serif;
   font-weight: bold;
 }
 
@@ -8990,24 +8990,24 @@ iframe {
 }
 
 .cmp-font--klavika-vn .cmp-font--modifier-medium {
-  font-family: "Klavika VN Medium";
+  font-family: "Klavika VN Medium", sans-serif;
 }
 
 .cmp-font--klavika-vn .cmp-font--modifier-bold {
-  font-family: "Klavika VN Medium";
+  font-family: "Klavika VN Medium", sans-serif;
 }
 
 .cmp-font--klavika-vn .cmp-font--light {
-  font-family: "Klavika VN Light";
+  font-family: "Klavika VN Light", sans-serif;
   font-weight: normal;
 }
 
 .cmp-font--klavika-vn .cmp-font--bold {
-  font-family: "Klavika VN Medium";
+  font-family: "Klavika VN Medium", sans-serif;
 }
 
 .cmp-font--calibri-regular {
-  font-family: "Calibri Regular";
+  font-family: "Calibri Regular", sans-serif;
   /* headings styling */
 }
 
@@ -21061,8 +21061,12 @@ body.rtl .cmp-accordion__content--right {
   -ms-flex-direction: column;
   flex-direction: column;
 
+  @include up($md) {
+    height: 260px;
+  }
+
   @include up($lg) {
-    height: 335px;
+    height: 300px;
   }
 }
 
@@ -21222,7 +21226,7 @@ body.rtl .cmp-helpbox__icon .cmp-icon {
 
 .cmp-helpbox-container {
   width: 100%;
-  margin: auto;
+  margin: 0 auto;
   position: relative;
   z-index: 2;
 }
@@ -21418,7 +21422,7 @@ body.rtl .cmp-helpbox__icon .cmp-icon {
 }
 
 .cmp-helpbox-bar :first-child {
-  margin-left: 0;
+  //margin-left: 0;
 }
 
 body.rtl .cmp-helpbox-bar :first-child {

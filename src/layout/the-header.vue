@@ -406,7 +406,7 @@
         background-color: $light-gray-section;
         z-index: 10;
         position: fixed;
-        right: -190px;
+        right: -200px;
         top: 50%;
         transition: all 0.3s ease-in;
 
@@ -421,7 +421,7 @@
                 position: relative;
 
                 & svg {
-                    margin-right: 16px;
+                    margin-right: 25px;
                 }
 
                 & a {
