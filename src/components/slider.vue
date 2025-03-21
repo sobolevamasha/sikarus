@@ -5,7 +5,7 @@
             <div class="swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide" v-for="(item, index) in items" :key="index">
-                        <!-- <router-link v-if="item.to" :to="item.to"></router-link> -->
+                        <router-link v-if="item.to" :to="item.to"></router-link>
                         <div class="">
                             <div class="">
 
@@ -86,6 +86,15 @@
         & img {
             //max-width: 300px !important;
         }
+
+        & a {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
     }
 
     & button {
@@ -137,7 +146,7 @@ export default {
             },
             //mousewheel: true,
             //grabCursor: true,
-            
+
             breakpoints: {
                 360: {
                     slidesPerView: 1,
@@ -149,7 +158,7 @@ export default {
                     slidesPerView: 3,
                 },
             }
-            
+
         });
 
     }

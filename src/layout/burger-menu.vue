@@ -314,7 +314,7 @@ export default {
 
     &__middle {
         background-color: $dark-gray;
-        height: 100%;
+        height: 60vh;
         color: $white;
 
         & li {
