@@ -77,8 +77,8 @@
     }
 
     &__content {
-        max-width: 250px;
-        padding: 10px 15px 15px;
+        //max-width: 250px;
+        padding: 15px;
 
         @include up($lg) {
             max-width: 370px;

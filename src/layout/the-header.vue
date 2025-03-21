@@ -33,12 +33,12 @@
         <div class="header__top  d-none d-md-flex">
             <div class="header__wrap header__container px-2 d-flex justify-space-between">
                 <div class="header__left d-flex align-center">
-                    <div class="header__title">
+                    <div class="header__title mr-4">
                         <a href="https://www.sika.com" target="_blank">Sika Group</a>
                     </div>
                     <div class="header__dropdown d-flex ">
                         <button class="d-flex align-center" @click="showModal = true">
-                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="28" height="25"
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                                 viewBox="0 0 512 512" fill="white" class="mr-2">
                                 <g id="icomoon-ignore">
                                 </g>
@@ -49,10 +49,27 @@
 
                             Countries
 
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                viewBox="0 0 887 1024">
+                                <g id="icomoon-ignore">
+                                </g>
+                                <path fill="white"
+                                    d="M64.512 285.696l378.88 364.544 380.928-364.544q22.528-26.624 49.152 0 26.624 22.528 0 49.152l-405.504 401.408q-22.528 22.528-49.152 0l-405.504-401.408q-26.624-26.624 0-49.152 24.576-24.576 51.2 0z">
+                                </path>
+                            </svg>
+
 
                         </button>
                         <button class="header__dropdown--product-list">
                             Продукция
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                viewBox="0 0 887 1024">
+                                <g id="icomoon-ignore">
+                                </g>
+                                <path fill="white"
+                                    d="M64.512 285.696l378.88 364.544 380.928-364.544q22.528-26.624 49.152 0 26.624 22.528 0 49.152l-405.504 401.408q-22.528 22.528-49.152 0l-405.504-401.408q-26.624-26.624 0-49.152 24.576-24.576 51.2 0z">
+                                </path>
+                            </svg>
                             <ul class="header__dropdown--product-item">
                                 <li v-for="(product, index) in products" :key="index">
                                     <a :href="product.link" target="_blank">
@@ -259,6 +276,27 @@
             color: $white;
             position: relative;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+
+            & svg {
+                margin-left: 10px;
+            }
+
+            &:hover,
+            &:focus {
+
+                &::after {
+
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    bottom: -12px;
+                    left: 0;
+                    border-bottom: 4px solid $sika-yellow;
+                    border-radius: 20px;
+                }
+            }
         }
 
         & li {
