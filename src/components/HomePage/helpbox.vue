@@ -51,7 +51,10 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     justify-self: center;
-    margin-top: -90px;
+    max-width: 250px;
+    margin: -50px auto 0;
+
+    
 
     @include up($md) {
       grid-template-columns: repeat(3, 1fr);

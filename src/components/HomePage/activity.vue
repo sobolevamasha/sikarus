@@ -28,9 +28,12 @@
     &__list {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
+        grid-gap: 15px;
         justify-self: center;
+        margin: 0 auto;
+        justify-content: center;
 
-        @include up($md) {
+        @include up($sm) {
             grid-template-columns: repeat(2, 1fr);
         }
 
@@ -54,7 +57,7 @@
         box-shadow: 0 1px 2px #0003, 0 1px 3px #0000001a;
         transition: all .3sease-in-out;
         outline: 1px solid transparent;
-        margin: 15px;
+        margin: 0 auto;
 
         @include up($lg) {
             max-width: 370px;

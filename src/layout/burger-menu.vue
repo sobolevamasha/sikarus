@@ -299,7 +299,7 @@ export default {
     background: $white;
     color: $black !important;
     box-sizing: border-box;
-    overflow: hidden;
+    overflow: scroll;
     z-index: 4;
 
     &--zindex {
