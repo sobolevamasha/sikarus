@@ -258,6 +258,7 @@
             padding: 8px 20px;
             color: $white;
             position: relative;
+            cursor: pointer;
         }
 
         & li {
