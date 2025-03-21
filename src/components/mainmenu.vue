@@ -6,7 +6,7 @@
                 @click="toggleDropdown(index)">
 
                 <div class="mainmenu__list-item-name">
-                    <a v-if="menuItem.to" :href="menuItem.to"></a>
+                    <router-link v-if="menuItem.to" :to="menuItem.to"></router-link>
                     {{ menuItem.name }}
                 </div>
 
@@ -34,6 +34,7 @@
 <script>
 import Vue from "vue";
 import menuItems from '@/store/menu-items.js'
+import router from "@/router";
 
 export default {
     data() {
@@ -70,15 +71,14 @@ export default {
 
 <style lang="scss">
 .mainmenu {
-    position: absolute;
-    width: 85%;
-    right: 40px;
-    bottom: -50px;
+
     color: $black;
 
     @include up($lg) {
-        bottom: -35px;
-        width: 86%;
+        position: absolute;
+        width: 85%;
+        right: 60px;
+        bottom: -40px;
     }
 
     @include up($xl) {

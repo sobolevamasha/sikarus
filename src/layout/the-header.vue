@@ -163,7 +163,7 @@
     min-height: 75px;
     width: 100%;
 
-    @include up($md) {
+    @include up($lg) {
         position: absolute;
     }
 

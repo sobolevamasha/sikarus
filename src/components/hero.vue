@@ -32,7 +32,7 @@ export default {
   computed: {
     heroClass() {
       return {
-        'cmp-hero--small cmp-hero--noimage': !this.background,
+        'cmp-hero--noimage cmp-hero--small': !this.background,
         'cmp-hero--small': this.isSmall,
       }
     },

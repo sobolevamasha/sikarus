@@ -16330,6 +16330,12 @@ body.rtl .cmp-quote blockquote {
 
 @media print, screen and (min-width: $md) {
   .cmp-hero {
+    height: 615px;
+  }
+}
+
+@media print, screen and (min-width: $lg) {
+  .cmp-hero {
     height: 815px;
   }
 }
@@ -16385,15 +16391,21 @@ body.rtl .cmp-quote blockquote {
   }
 }
 
-@media screen and (min-width: $sm) and (max-width: 63.99875em) {
+@media screen and (min-width: $sm) {
   .cmp-hero--small {
-    min-height: 440px;
+    min-height: 300px;
   }
 }
 
 @media print, screen and (min-width: $md) {
   .cmp-hero--small {
-    height: 600px;
+    height: 300px;
+  }
+}
+
+@media print, screen and (min-width: $lg) {
+  .cmp-hero--small {
+    height: 550px;
   }
 }
 
@@ -16429,6 +16441,13 @@ body.rtl .cmp-quote blockquote {
 .cmp-hero--noimage {
   background-color: #f5f5f5;
   height: auto;
+  min-height: 250px;
+}
+
+@media print, screen and (min-width: $lg) {
+  .cmp-hero--noimage {
+    min-height: 450px;
+  }
 }
 
 @media print, screen and (min-width: $lg) {
@@ -16476,7 +16495,7 @@ body.rtl .cmp-quote blockquote {
   min-height: 100%;
 }
 
-@media print, screen and (min-width: $md) {
+@media print, screen and (min-width: $lg) {
   .cmp-hero .cmp-video video {
     height: auto;
   }

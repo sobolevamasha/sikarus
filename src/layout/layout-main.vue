@@ -28,7 +28,7 @@ export default {
 
 <style lang="scss">
 .layout-main {
-    @include up($md) {
+    @include up($lg) {
         min-height: 100%;
         display: grid;
         grid-template-rows: 1fr auto;

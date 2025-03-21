@@ -9,6 +9,7 @@ export default [
         description:
           "Осуществлена гидроизоляция  ПВХ-мембраной Sikaplan® WP 1100-20HL-RUS. Использование этой мембраны особенно актуально при наличии грунтовых вод, которые присутствуют на данном объекте. Швы гидроизоляции свариваются внахлест с помощью фенов с использованием прикаточных роликов.",
         mainPage: "N",
+        to: '/objects'
       },
       {
         name: "Сельскохозяйственный комплекс АПХ «Мираторг»",
@@ -18,6 +19,7 @@ export default [
         description:
           "Устройство кровли с механической фиксацией, обустройство дорожек на кровле",
         mainPage: "Y",
+        to: '/objects'
       },
       {
         name: "Жилой комплекс PRIME PARK",
@@ -26,6 +28,7 @@ export default [
         date: "2019",
         description: "Гидроизоляция подземной части жилого комплекса",
         mainPage: "Y",
+        to: '/objects'
       },
       {
         name: "Многофункциональный комплекс «Лахта-Центр»",
@@ -35,6 +38,7 @@ export default [
         description:
           "Устройство кровли с механической фиксацией, обустройство дорожек на кровле",
         mainPage: "Y",
+        to: '/objects',
         sliderItems: [
           {
             img: require("@/assets/tmp/sliderBig/lakhta-1.jpg"),
@@ -82,6 +86,7 @@ export default [
         description:
           "Звукопоглощающее полимерное покрытие Sika Comfortfloor Pro",
         mainPage: "Y",
+        to: '/objects'
       },
     ],
     documents: [
