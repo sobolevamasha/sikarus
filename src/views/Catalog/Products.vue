@@ -33,6 +33,15 @@
         position: relative;
         flex-direction: column;
         align-items: center;
+        transition: all 0.2s ease-in;
+
+        &:hover {
+            border-bottom: 2px solid $sika-yellow;
+            & h3 {
+                transition: all 0.2s ease-in;
+                color: $sika-yellow;
+            }
+        }
 
         @include up($md) {
             flex-direction: row;

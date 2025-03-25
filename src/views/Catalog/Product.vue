@@ -35,7 +35,7 @@
 
                 <ul class="product__info--description">
                     <li v-for="(item, index) in product.descriptionItems">
-                        <h5>{{ item.name }}</h5>
+                        <h4>{{ item.name }}</h4>
                         <ul class="list-style">
                             <li v-for="(subitem, index2) in item.items" class="list-style">
                                 {{ subitem.item }}
@@ -43,6 +43,49 @@
                         </ul>
                     </li>
                 </ul>
+
+                <div class="product__info--chars">
+                    <h2>Характеристики</h2>
+                    <v-expansion-panels flat accordion>
+                        <v-expansion-panel>
+                            <v-expansion-panel-header expand-icon="mdi-menu-down">
+                                <h3>Информация о материале</h3>
+                            </v-expansion-panel-header>
+                            <v-expansion-panel-content class="text-left">
+                                <ul>
+                                    <li v-for="(char, indexChar) in product.chars">
+                                        <h4>{{ char.name }}
+                                        </h4>
+                                        <p>{{ char.value }}</p>
+                                    </li>
+                                </ul>
+                            </v-expansion-panel-content>
+                        </v-expansion-panel>
+                    </v-expansion-panels>
+
+                </div>
+
+                <div class="product__info--usage">
+
+                    <h2>Применение</h2>
+                    <v-expansion-panels flat accordion>
+                        <v-expansion-panel v-for="(usage, indexUsage) in product.usage">
+                            <v-expansion-panel-header expand-icon="mdi-menu-down">
+                                <h3>{{ usage.title }}</h3>
+                            </v-expansion-panel-header>
+                            <v-expansion-panel-content class="text-left">
+                                <ul>
+                                    <li v-for="(item, indexItem) in usage.info">
+                                        <h4>{{ item.name }}
+                                        </h4>
+                                        <p>{{ item.value }}</p>
+                                    </li>
+                                </ul>
+                            </v-expansion-panel-content>
+                        </v-expansion-panel>
+                    </v-expansion-panels>
+
+                </div>
             </div>
         </div>
     </div>
@@ -72,7 +115,7 @@
         }
 
         & p {
-            font-size: 18px;
+            font-size: 20px;
         }
 
         & li {
@@ -88,6 +131,10 @@
                 top: 3px;
                 left: -30px;
             }
+        }
+
+        & h4 {
+            font-weight: 700;
         }
 
         &--links {
@@ -120,6 +167,17 @@
     }
 
     &__info {
+
+        & h4 {
+            font-weight: 700;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #000;
+        }
+
+        & p {
+            font-size: 20px;
+        }
+
         &--navigation {
             font-weight: 700;
             font-size: 28px;
@@ -149,14 +207,18 @@
 
             @include up($md) {
                 grid-template-columns: repeat(2, 1fr);
-                grid-gap: 60px;
+                grid-gap: 30px;
             }
 
-            & h5 {
-                font-weight: 700;
-                margin-bottom: 10px;
-                border-bottom: 1px solid #000;
+
+
+            & li {
+                font-size: 20px;
             }
+        }
+
+        &--chars {
+            margin-top: 50px;
         }
     }
 }
@@ -170,7 +232,7 @@ import products from '@/store/products';
 export default {
     data() {
         return {
-            title: 'Продукт',
+            title: products[0].name,
             background: require('@/assets/tmp/beton.jpg')
         }
     },
@@ -180,10 +242,10 @@ export default {
     computed: {
         product() {
             return products[0];
-        }
+        },
     },
     mounted() {
-        console.log('product: ', this.product);
+        //console.log('product: ', this.product);
     }
 }
 </script>

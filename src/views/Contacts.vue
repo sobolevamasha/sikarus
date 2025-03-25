@@ -119,22 +119,6 @@ export default {
         display: block;
         color: $black !important;
     }
-
-    & .v-expansion-panels {
-        margin: 40px 0;
-    }
-
-    & .v-expansion-panel-header {
-        background-color: $light-gray-section;
-        margin-bottom: 10px;
-    }
-
-    & .mdi-menu-down::before {
-        content: url('~@/assets/icons/down-open-big.svg');
-        width: 24px;
-        height: 24px;
-    }
-
    
 
 
