@@ -4,7 +4,7 @@
         <div class="grid-container my-4 my-sm-8 my-lg-16">
             <ul class="category__list">
                 <li class="category__item" v-for="(item, index) in catalog">
-                    <a class="category__item--link" href=""></a>
+                    <router-link  class="category__item--link" to="/products"></router-link>
                     <img :src="item.img" />
                     <div class="category__item--content">
                         <h4>

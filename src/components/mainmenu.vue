@@ -13,20 +13,20 @@
                 <div v-if="menuItem.isOpen" class="dropdown mainmenu__list-subitem grid-x">
                     <div v-for="(item, itemIndex) in menuItem.items" :key="itemIndex" class="mainmenu__list-subitemList
                         cell medium-2 cmp-nav-mega-dropdown__column">
-                        <a v-if="item.to" :href="item.to" class="dropdown mainmenu__list-subitem-link">
+                        <router-link  v-if="item.to" :to="item.to" class="dropdown mainmenu__list-subitem-link">
                             <h6 class="cmp-nav-mega-dropdown__content__sub-title cmp-font--bold">
 
                                 {{ item.title }}
                             </h6>
-                        </a>
+                        </router-link>
                         <h6 v-else class="cmp-nav-mega-dropdown__content__sub-title cmp-font--bold">
                             {{ item.title }}
                         </h6>
                         <ul>
                             <li v-for="(subitem, subIndex) in item.subitems" :key="subIndex">
-                                <a :href="subitem.to" target="_self">
+                                <router-link  :to="subitem.to" target="_self">
                                     {{ subitem.name }}
-                                </a>
+                                </router-link>
                             </li>
                         </ul>
                     </div>
