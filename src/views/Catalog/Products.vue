@@ -14,7 +14,7 @@
                             </li>
                         </ul>
                     </div>
-                    <a class="products__item--link" href="/product"></a>
+                    <router-link class="products__item--link" to="/product"></router-link>
                 </li>
             </ul>
         </div>
@@ -79,6 +79,7 @@
 
 <script>
 import hero from '@/components/hero.vue';
+import router from '@/router';
 import products from '@/store/products';
 
 
