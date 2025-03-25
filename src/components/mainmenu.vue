@@ -13,8 +13,13 @@
                 <div v-if="menuItem.isOpen" class="dropdown mainmenu__list-subitem grid-x">
                     <div v-for="(item, itemIndex) in menuItem.items" :key="itemIndex" class="mainmenu__list-subitemList
                         cell medium-2 cmp-nav-mega-dropdown__column">
+                        <a v-if="item.to" :href="item.to" class="dropdown mainmenu__list-subitem-link">
+                            <h6 class="cmp-nav-mega-dropdown__content__sub-title cmp-font--bold">
 
-                        <h6 class="cmp-nav-mega-dropdown__content__sub-title cmp-font--bold">
+                                {{ item.title }}
+                            </h6>
+                        </a>
+                        <h6 v-else class="cmp-nav-mega-dropdown__content__sub-title cmp-font--bold">
                             {{ item.title }}
                         </h6>
                         <ul>
@@ -166,6 +171,11 @@ export default {
     &__list-subitemList {
         width: 100%;
         padding: 20px;
+    }
+
+    &__list-subitem-link {
+        border-bottom: none !important;
+        padding: 0 !important;
     }
 }
 </style>

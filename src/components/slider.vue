@@ -57,7 +57,7 @@
         padding: 20px 30px;
         color: $white;
         text-align: left;
-        z-index: 0;
+        z-index: 2;
 
         & span {
             font-weight: 700;

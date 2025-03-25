@@ -34,11 +34,21 @@ const routes = [
                 name: 'object',
                 component: () => import("../views/Object"),
             },
-            // {
-            //     path: '/countries',
-            //     name: 'countries',
-            //     component: () => import("../components/countries.vue"),
-            // },
+            {
+                path: '/category',
+                name: 'category',
+                component: () => import("../views/Catalog/Category"),
+            },
+            {
+                path: '/products',
+                name: 'products',
+                component: () => import("../views/Catalog/Products"),
+            },
+            {
+                path: '/product',
+                name: 'product',
+                component: () => import("../views/Catalog/Product"),
+            },
             
 
         ]
