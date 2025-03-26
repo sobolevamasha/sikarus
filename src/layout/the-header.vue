@@ -123,7 +123,10 @@
                 </div>
             </div>
         </div>
-        <mainmenu />
+        <div class="header__mainmenu--container">
+            <mainmenu />
+        </div>
+
         <transition name="modal">
             <div class="modal-mask" v-if="showModal">
                 <countries @close="closeModal" />
@@ -182,6 +185,13 @@
 
     @include up($lg) {
         position: absolute;
+    }
+
+    &__mainmenu--container {
+        position: relative;
+        padding-left: 90px;
+        margin: 0 auto;
+        max-width: 1920px;
     }
 
     &__mobile {

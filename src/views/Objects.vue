@@ -1,8 +1,9 @@
 <template>
     <div class="objects">
         <hero :title="h1" :background="background" :isSmall="true" />
-        <div class="grid-container">
-            <ul class="objects__list my-16">
+        <breadcrumbs :level1="level1" :level2="level2" />
+        <div class="grid-container my-4 my-sm-8 my-lg-12">
+            <ul class="objects__list">
                 <li v-for="(item, index) of objects" :key="index" class="objects__item mx-2 my-2">
                     <router-link to="/objects/object"></router-link>
                     <div class="objects__item--top">
@@ -34,19 +35,21 @@ import hero from '@/components/hero.vue';
 import objectList from '@/store/objects';
 import download from '@/components/download.vue';
 import router from '@/router';
+import breadcrumbs from '@/components/breadcrumbs.vue';
 
 export default {
     name: "Objects",
     components: {
         hero,
-        download
+        download,
+        breadcrumbs
     },
     data() {
         return {
             h1: 'Объекты',
-            //h4: 'Строим доверие',
             background: require('@/assets/objects.jpg'),
-            //video: 'https://sika.scene7.com/is/content/sika/glo-skyline-loop'
+            level1: 'Главная',
+            level2: 'Объекты',
         }
     },
     computed: {
@@ -57,10 +60,6 @@ export default {
             return objectList[0].documents;
         }
     },
-    mounted() {
-        console.log('objects: ', this.objects);
-        console.log('documents: ', this.documents);
-    }
 
 }
 </script>
@@ -76,7 +75,7 @@ export default {
         //grid-template-columns: repeat(3, 1fr);
         //grid-gap: 20px;
         @include up($lg) {
-            justify-content: space-between;
+            justify-content: flex-start;
         }
 
         & img {
@@ -90,7 +89,7 @@ export default {
 
     &__item {
         position: relative;
-        max-width: 370px;
+        max-width: 374px;
         height: 390px;
         box-shadow: 0 1px 2px #0003, 0 1px 3px #0000001a;
         transition: all .3s ease-in-out;
