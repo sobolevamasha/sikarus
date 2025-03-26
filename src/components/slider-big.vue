@@ -68,7 +68,7 @@
 
         & .swiper-slide {
             height: 100px;
-            width: 100px !important;
+            //width: 100px !important;
             opacity: 0.7;
         }
 
@@ -130,14 +130,28 @@ export default {
         const swiper2 = new Swiper('.mySwiper2', {
             freeMode: true,
             modules: [Navigation],
-            spaceBetween: 10,
-            slidesPerView: 7,
+            spaceBetween: 5,
+            slidesPerView: 3,
             watchSlidesVisibility: true,
             watchSlidesProgress: true,
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
+            breakpoints: {
+                360: {
+                    slidesPerView: 3,
+                    spaceBetween: 5,
+                },
+                688: {
+                    slidesPerView: 6,
+                    spaceBetween: 5,
+                },
+                1016: {
+                    slidesPerView: 7,
+                    spaceBetween: 15,
+                },
+            }
 
         });
 
@@ -150,6 +164,7 @@ export default {
             thumbs: {
                 swiper: swiper2
             },
+            
         });
 
 

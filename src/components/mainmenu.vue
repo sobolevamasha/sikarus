@@ -81,13 +81,16 @@ export default {
 
     @include up($lg) {
         position: absolute;
-        width: 85%;
-        right: 60px;
+        width: 100%;
+        left: 0;
         bottom: -40px;
+        padding-left: 130px;
+        padding-right: 40px;
     }
 
     @include up($xl) {
-        width: 87%;
+        //width: 80%;
+        //max-width: 2200px;
     }
 
     h6 {

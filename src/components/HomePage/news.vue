@@ -62,7 +62,7 @@
     &__item {
         max-width: 280px;
         box-shadow: 0 1px 2px #0003, 0 1px 3px #0000001a;
-        transition: all .3sease-in-out;
+        transition: all .3s ease-in-out;
         outline: 1px solid transparent;
         margin: 0 auto;
         position: relative;

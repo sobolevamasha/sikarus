@@ -1,7 +1,8 @@
 <template>
     <div class="category">
         <hero :title="title" :background="background" :isSmall="true" />
-        <div class="grid-container my-4 my-sm-8 my-lg-16">
+        <breadcrumbs :level1="level1" :level2="level2" />
+        <div class="grid-container my-4 my-sm-8 my-lg-12">
             <ul class="category__list">
                 <li class="category__item" v-for="(item, index) in catalog">
                     <router-link  class="category__item--link" to="/products"></router-link>
@@ -63,16 +64,20 @@
 <script>
 import hero from '@/components/hero.vue';
 import catalog from '@/store/catalog';
+import breadcrumbs from '@/components/breadcrumbs.vue';
 
 export default {
     data() {
         return {
             title: 'Добавки в бетон',
-            background: require('@/assets/tmp/beton.jpg')
+            background: require('@/assets/tmp/beton.jpg'),
+            level1: 'Продукция',
+            level2: 'Добавки в бетон',
         }
     },
     components: {
-        hero
+        hero,
+        breadcrumbs
     },
     computed: {
         catalog() {
