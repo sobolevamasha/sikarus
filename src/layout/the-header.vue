@@ -2,12 +2,12 @@
     <nav class="header" :class="headerClass">
 
         <transition name="burger" appear>
-            <burger-menu v-if="withBurgerMenu" />
+            <burger-menu v-show="withBurgerMenu" />
         </transition>
 
         <div class="header__mobile d-md-none">
 
-            <v-container class="header__mobile--wrap px- d-flex justify-space-between">
+            <div class="container header__mobile--wrap px- d-flex justify-space-between">
                 <div class="header__mobile--left d-flex align-center">
                     <div class="header__mobile--title d-flex align-center">
                         <a href="/" class="logo">
@@ -28,7 +28,7 @@
                         </button>
                     </transition>
                 </div>
-            </v-container>
+            </div>
         </div>
         <div class="header__top  d-none d-md-flex">
             <div class="header__wrap header__container px-2 d-flex justify-space-between">
@@ -128,7 +128,7 @@
         </div>
 
         <transition name="modal">
-            <div class="modal-mask" v-if="showModal">
+            <div class="modal-mask" v-show="showModal">
                 <countries @close="closeModal" />
             </div>
         </transition>

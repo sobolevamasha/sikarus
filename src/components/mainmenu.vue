@@ -6,20 +6,20 @@
                 @click="toggleDropdown(index)">
 
                 <div class="mainmenu__list-item-name">
-                    <router-link v-if="menuItem.to" :to="menuItem.to"></router-link>
+                    <router-link v-show="menuItem.to" :to="menuItem.to"></router-link>
                     {{ menuItem.name }}
                 </div>
 
-                <div v-if="menuItem.isOpen" class="dropdown mainmenu__list-subitem grid-x">
+                <div v-show="menuItem.isOpen" class="dropdown mainmenu__list-subitem grid-x">
                     <div v-for="(item, itemIndex) in menuItem.items" :key="itemIndex" class="mainmenu__list-subitemList
                         cell medium-2 cmp-nav-mega-dropdown__column">
-                        <router-link v-if="item.to" :to="item.to" class="dropdown mainmenu__list-subitem-link">
+                        <router-link v-show="item.to" :to="item.to" class="dropdown mainmenu__list-subitem-link">
                             <h6 class="cmp-nav-mega-dropdown__content__sub-title cmp-font--bold">
 
                                 {{ item.title }}
                             </h6>
                         </router-link>
-                        <h6 v-else class="cmp-nav-mega-dropdown__content__sub-title cmp-font--bold">
+                        <h6 v-show="!item.to" class="cmp-nav-mega-dropdown__content__sub-title cmp-font--bold">
                             {{ item.title }}
                         </h6>
                         <ul>

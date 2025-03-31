@@ -2,27 +2,27 @@
     <div class="breadcrumbs d-none d-sm-block">
         <div class="grid-container">
             <ul>
-                <li v-if="level1">
+                <li v-show="level1">
                     <a>
                         {{ level1 }}
                     </a>
                 </li>
-                <li v-if="level2">
+                <li v-show="level2">
                     <a>
                         {{ level2 }}
                     </a>
                 </li>
-                <li v-if="level3">
+                <li v-show="level3">
                     <a>
                         {{ level3 }}
                     </a>
                 </li>
-                <li v-if="level4">
+                <li v-show="level4">
                     <a>
                         {{ level4 }}
                     </a>
                 </li>
-                <li v-if="level5">
+                <li v-show="level5">
                     <a>
                         {{ level5 }}
                     </a>

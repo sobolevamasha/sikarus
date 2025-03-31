@@ -6,15 +6,15 @@
                     <div class="burger-menu__scroll">
                         <ul class="burger-menu__list">
                             <li v-for="(menuItem, index) in menuData" :key="index" class="burger-menu__list--item">
-                                <a v-if="menuItem.to" :href="menuItem.to"></a>
+                                <a v-show="menuItem.to" :href="menuItem.to"></a>
                                 <div @click="toggleMenu(index)" :class="{ 'isOpen': menuItem.isOpen && menuItem.items }"
                                     class="d-flex align-center justify-space-between">
                                     <div class="burger-menu__list-name">
 
                                         {{ menuItem.name }}
                                     </div>
-                                    <svg v-if="!menuItem.to" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24"
-                                        height="24" viewBox="0 0 366 1024">
+                                    <svg v-show="!menuItem.to" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" viewBox="0 0 366 1024">
                                         <g id="icomoon-ignore">
                                         </g>
                                         <path
@@ -47,7 +47,7 @@
             <div class="container">
                 <ul class="burger-menu__list">
                     <li v-for="(item, index) in bottomMenu" :key="index" class="burger-menu__list--item">
-                        <a v-if="item.to" :href="item.to"></a>
+                        <a v-show="item.to" :href="item.to"></a>
                         <div class="d-flex align-center justify-space-between">
                             <div class="burger-menu__list-name">
 
@@ -112,7 +112,7 @@
 
         </div>
         <transition name="modal">
-            <div class="modal-mask" v-if="showModal">
+            <div class="modal-mask" v-show="showModal">
                 <countries @close="closeModal" />
             </div>
         </transition>

@@ -5,7 +5,7 @@
             <div class="swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide" v-for="(item, index) in items" :key="index">
-                        <router-link v-if="item.to" :to="item.to"></router-link>
+                        <router-link  :to="item.to"></router-link>
                         <div class="">
                             <div class="">
 
@@ -13,7 +13,7 @@
 
                                 <div class="slider__descr">
                                     <h4>{{ item.name }}</h4>
-                                    <span v-if="item.location">{{ item.location }}</span>
+                                    <span >{{ item.location }}</span>
                                 </div>
                                 <div class="slider__gradient"></div>
                             </div>
@@ -74,18 +74,14 @@
         left: 0;
     }
 
-    & .swiper {
-        //max-height: 450px;
-    }
+
 
     & .swiper-wrapper {
         width: 100%;
     }
 
     & .swiper-slide {
-        & img {
-            //max-width: 300px !important;
-        }
+        
 
         & a {
             position: absolute;

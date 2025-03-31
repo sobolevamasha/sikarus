@@ -1,14 +1,14 @@
 <template>
     <section class="statistics">
         <div class="grid-container">
-            <v-container>
+            <div class="container">
                 <ul class="statistics__list" :class="{ 'statistics__list--withgrid': blocks.length > 2 }">
                     <li v-for="(block, index) in blocks" :key="index" class="statistics__block">
                         <div>{{ block.top }}</div>
                         <span>{{ block.bottom }}</span>
                     </li>
                 </ul>
-            </v-container>
+            </div>
         </div>
     </section>
 </template>

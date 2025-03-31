@@ -1,6 +1,6 @@
 <template>
     <section class="activity grid-container">
-        <v-container>
+        <div class="container">
             <h2 class="cmp-layout__title">
                 Сферы, в которых мы работаем
             </h2>
@@ -19,7 +19,7 @@
 
 
 
-        </v-container>
+        </div>
     </section>
 </template>
 
