@@ -1,12 +1,12 @@
 <template>
     <section class="news">
         <div class="grid-container">
-            <v-container>
+            <div class="container">
                 <h2 class="cmp-layout__title">
                     Последние новости
                 </h2>
                 <ul class="news__list">
-                    <li v-for="(item, index) in news" :key="index" v-if="news && news.length > 0 && index <= newsLimit"
+                    <li v-for="(item, index) in news" :key="index" v-show="news && news.length > 0 && index <= newsLimit"
                         class="news__item">
                         <router-link :to="item.link"></router-link>
                         <img :src="item.img" />
@@ -21,7 +21,7 @@
                     </li>
                 </ul>
                 <btn :label="!fullLimit ? 'Показать еще' : 'Скрыть'" @click="onShowMore" class="mt-2 mt-md-8"></btn>
-            </v-container>
+            </div>
         </div>
     </section>
 </template>

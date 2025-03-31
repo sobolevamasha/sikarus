@@ -1,6 +1,6 @@
 <template>
   <footer class="cmp-footer cmp--dark footer">
-    <v-container class="cmp-footer-container cmp-footer-container__content">
+    <div class="container cmp-footer-container cmp-footer-container__content">
       <div class="cmp-footer-content grid-x grid-margin-x">
         <div class="cell large-8 small-12">
           <div class="grid-x">
@@ -187,7 +187,7 @@
           </div>
         </a>
       </div>
-    </v-container>
+    </div>
 
     <div class="cmp-footer-container cmp-footer-container__links">
       <div class="cmp-footer-content cmp-footer-content--bottom">

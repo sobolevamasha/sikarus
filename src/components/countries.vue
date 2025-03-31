@@ -48,7 +48,7 @@
 
                         <h4>{{ region.region }}</h4>
                     </div>
-                    <ul v-if="region.isOpen" class="countries__section--countries">
+                    <ul v-show="region.isOpen" class="countries__section--countries">
                         <li v-for="(country, indexCountry) in region.countries" :key="indexCountry">
                             <a :href="country.to" target="_blank">{{ country.name }}</a>
                         </li>
