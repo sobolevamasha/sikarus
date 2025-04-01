@@ -10,12 +10,12 @@
             <div class="container header__mobile--wrap px- d-flex justify-space-between">
                 <div class="header__mobile--left d-flex align-center">
                     <div class="header__mobile--title d-flex align-center">
-                        <a href="/" class="logo">
+                        <router-link to="/" class="logo">
                             <img src="../assets/logo1.png" />
-                        </a>
-                        <a href="/" target="_blank" class="ml-4">
+                        </router-link>
+                        <router-link to="/" target="_blank" class="ml-4">
                             Sika Россия
-                        </a>
+                        </router-link>
                     </div>
                 </div>
                 <div class="header__mobile--right">
@@ -72,9 +72,9 @@
                             </svg>
                             <ul v-show="productListOpen" class="header__dropdown--product-item">
                                 <li v-for="(product, index) in products" :key="index">
-                                    <a :href="product.link" target="_blank">
+                                    <router-link :to="product.link" target="_blank">
                                         {{ product.title }}
-                                    </a>
+                                    </router-link>
                                 </li>
 
                             </ul>
@@ -90,14 +90,14 @@
                             <router-link to="/contacts">Контакты</router-link>
                         </li>
                         <li>
-                            <a>Дилеры</a>
+                            <router-link to="/">Дилеры</router-link>
                         </li>
                         <li>
                             <button @click="onCabinetMenuToggle" class="header__dropdown--cabinet">Моя Sika
 
                                 <ul v-show="cabinetOpen" class="header__dropdown--cabinet-item">
                                     <li>
-                                        <a href="/cabinet">
+                                        <router-link to="/cabinet">
                                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                                                 viewBox="0 0 1024 1024">
                                                 <g id="icomoon-ignore">
@@ -108,10 +108,10 @@
                                             </svg>
                                             Корзина документов
                                             <span>(4)</span>
-                                        </a>
+                                        </router-link>
                                     </li>
                                     <li>
-                                        <a href="/cabinet">
+                                        <router-link to="/cabinet">
                                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                                                 viewBox="0 0 512 512" fill="white">
                                                 <g id="icomoon-ignore">
@@ -122,10 +122,10 @@
                                             </svg>
                                             Выбранные продукты
                                             <span>(10)</span>
-                                        </a>
+                                        </router-link>
                                     </li>
                                     <li>
-                                        <a href="/auth">
+                                        <router-link to="/auth">
                                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                                                 viewBox="0 0 512 512" fill="white">
                                                 <g id="icomoon-ignore">
@@ -136,7 +136,7 @@
                                             </svg>
 
                                             {{ isAuth ? 'Выйти' : 'Войти' }}
-                                        </a>
+                                        </router-link>
                                     </li>
 
 

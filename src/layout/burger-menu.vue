@@ -6,7 +6,7 @@
                     <div class="burger-menu__scroll">
                         <ul class="burger-menu__list">
                             <li v-for="(menuItem, index) in menuData" :key="index" class="burger-menu__list--item">
-                                <a v-show="menuItem.to" :href="menuItem.to"></a>
+                                <router-link v-show="menuItem.to" :to="menuItem.to"></router-link>
                                 <div @click="toggleMenu(index)" :class="{ 'isOpen': menuItem.isOpen && menuItem.items }"
                                     class="d-flex align-center justify-space-between">
                                     <div class="burger-menu__list-name">
@@ -32,7 +32,7 @@
                                         </div>
                                         <ul class="burger-menu__subsublist" v-show="item.isOpen">
                                             <li v-for="(subitem, subIndex) in item.subitems" :key="subIndex">
-                                                <a :href="subitem.to">{{ subitem.name }}</a>
+                                                <router-link :to="subitem.to">{{ subitem.name }}</router-link>
                                             </li>
                                         </ul>
                                     </li>
@@ -47,7 +47,7 @@
             <div class="container">
                 <ul class="burger-menu__list">
                     <li v-for="(item, index) in bottomMenu" :key="index" class="burger-menu__list--item">
-                        <a v-show="item.to" :href="item.to"></a>
+                        <router-link v-show="item.to" :to="item.to"></router-link>
                         <div class="d-flex align-center justify-space-between">
                             <div class="burger-menu__list-name">
 
