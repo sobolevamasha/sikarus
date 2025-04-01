@@ -32,8 +32,6 @@ export default [
             text5: "",
           },
         ],
-      },
-      {
         maps: [
           {
             title: "Схема проезда склад Санкт-Петербург.jpg",
@@ -76,8 +74,6 @@ export default [
             text5: "",
           },
         ],
-      },
-      {
         maps: [
           {
             title: "Схема проезда Краснодар",

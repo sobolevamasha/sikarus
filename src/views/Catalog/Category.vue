@@ -85,7 +85,6 @@ export default {
         },
     },
     mounted() {
-        //console.log('catalog: ', this.catalog[0].subcategory)
     }
 }
 </script>

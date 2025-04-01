@@ -22150,6 +22150,7 @@ table th.active:not(.sorted)::after {
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
+  margin: 0 5px;
 }
 
 .cmp-pictograms__item__link {

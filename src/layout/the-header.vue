@@ -37,7 +37,7 @@
                         <a href="https://www.sika.com" target="_blank">Sika Group</a>
                     </div>
                     <div class="header__dropdown d-flex ">
-                        <button class="d-flex align-center" @click="showModal = true">
+                        <button class="header__dropdown--product-list d-flex align-center" @click="showModal = true">
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                                 viewBox="0 0 512 512" fill="white" class="mr-2">
                                 <g id="icomoon-ignore">
@@ -60,7 +60,7 @@
 
 
                         </button>
-                        <button class="header__dropdown--product-list">
+                        <button @click="onProductListToggle" class="header__dropdown--product-list">
                             Продукция
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="15" height="15"
                                 viewBox="0 0 887 1024">
@@ -70,7 +70,7 @@
                                     d="M64.512 285.696l378.88 364.544 380.928-364.544q22.528-26.624 49.152 0 26.624 22.528 0 49.152l-405.504 401.408q-22.528 22.528-49.152 0l-405.504-401.408q-26.624-26.624 0-49.152 24.576-24.576 51.2 0z">
                                 </path>
                             </svg>
-                            <ul class="header__dropdown--product-item">
+                            <ul v-show="productListOpen" class="header__dropdown--product-item">
                                 <li v-for="(product, index) in products" :key="index">
                                     <a :href="product.link" target="_blank">
                                         {{ product.title }}
@@ -93,7 +93,55 @@
                             <a>Дилеры</a>
                         </li>
                         <li>
-                            <a>Моя Sika</a>
+                            <button @click="onCabinetMenuToggle" class="header__dropdown--cabinet">Моя Sika
+
+                                <ul v-show="cabinetOpen" class="header__dropdown--cabinet-item">
+                                    <li>
+                                        <a href="/cabinet">
+                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                viewBox="0 0 1024 1024">
+                                                <g id="icomoon-ignore">
+                                                </g>
+                                                <path fill="#fff"
+                                                    d="M736 864h128.082c35.301 0 63.918-28.51 63.918-63.918v-544.082h-159.811c-35.451 0-64.189-28.375-64.189-63.939v-192.061h-319.727c-35.497 0-64.273 28.747-64.273 64.235v63.765h240l208 243.2v492.8h-32v-448h-159.811c-35.451 0-64.189-28.375-64.189-63.939v-192.061h-319.727c-35.497 0-64.273 28.747-64.273 64.235v735.531c0 35.476 28.51 64.235 63.918 64.235h480.165c35.301 0 63.918-28.51 63.918-63.918v-96.082zM736 0v191.906c0 17.725 14.431 32.094 31.705 32.094h160.295l-192-224zM544 160v191.906c0 17.725 14.431 32.094 31.705 32.094h160.295l-192-224z">
+                                                </path>
+                                            </svg>
+                                            Корзина документов
+                                            <span>(4)</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/cabinet">
+                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                viewBox="0 0 512 512" fill="white">
+                                                <g id="icomoon-ignore">
+                                                </g>
+                                                <path
+                                                    d="M512 198.525l-176.89-25.704-79.11-160.291-79.108 160.291-176.892 25.704 128 124.769-30.216 176.176 158.216-83.179 158.216 83.179-30.217-176.176 128.001-124.769z">
+                                                </path>
+                                            </svg>
+                                            Выбранные продукты
+                                            <span>(10)</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/auth">
+                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                viewBox="0 0 512 512" fill="white">
+                                                <g id="icomoon-ignore">
+                                                </g>
+                                                <path
+                                                    d="M192 256h-160v-64h160v-64l96 96-96 96zM512 0v416l-192 96v-96h-192v-128h32v96h160v-288l128-64h-288v128h-32v-160z">
+                                                </path>
+                                            </svg>
+
+                                            {{ isAuth ? 'Выйти' : 'Войти' }}
+                                        </a>
+                                    </li>
+
+
+                                </ul>
+                            </button>
                         </li>
                     </ul>
                 </div>
@@ -272,7 +320,7 @@
         width: 100%;
         margin: auto;
         max-width: 1920px;
-        padding: 10px 20px;
+        padding: 0 20px;
     }
 
     &__title {
@@ -281,7 +329,43 @@
     }
 
     &__dropdown {
-        & button {
+        display: flex;
+        align-items: center;
+
+        & li {
+            //padding: 18px 20px;
+            color: $white;
+            position: relative;
+
+            &:hover,
+            &:focus {
+
+                &::after {
+
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    bottom: 0;
+                    left: 0;
+                    border-bottom: 4px solid $sika-yellow;
+                    border-radius: 20px;
+                }
+            }
+
+            &:last-child {
+                background-color: $gray;
+            }
+        }
+
+        & a {
+            display: block;
+            height: 100%;
+            padding: 18px 20px;
+        }
+
+        &--product-list {
+            position: relative;
+            transition: all 0.2s ease-in;
             padding: 8px 20px;
             color: $white;
             position: relative;
@@ -295,63 +379,53 @@
 
             &:hover,
             &:focus {
+                z-index: 10;
 
                 &::after {
-
                     content: "";
                     position: absolute;
                     width: 100%;
-                    bottom: -12px;
+                    bottom: -10px;
                     left: 0;
                     border-bottom: 4px solid $sika-yellow;
                     border-radius: 20px;
                 }
             }
-        }
-
-        & li {
-            padding: 8px 20px;
-            color: $white;
-            position: relative;
-
-            &:hover,
-            &:focus {
-
-                &::after {
-
-                    content: "";
-                    position: absolute;
-                    width: 100%;
-                    bottom: -12px;
-                    left: 0;
-                    border-bottom: 4px solid $sika-yellow;
-                    border-radius: 20px;
-                }
-            }
-        }
-
-        & a {
-            display: block;
-            height: 100%;
         }
 
         &--product-item {
-            display: none;
             position: absolute;
-            background: $gray;
+            background: #616161;
             z-index: 100;
-            top: 50px;
+            top: 49px;
+            right: -40px;
+            width: 180px;
             text-align: left;
-            padding: 10px 25px 20px !important;
+            padding: 0 10px !important;
 
 
             & li {
-                padding: 10px 0;
                 position: relative;
-                border-bottom: 1px solid #ffffff;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid #ffffff;
+
+                    &:hover {
+
+                        border-bottom: 1px solid $sika-yellow;
+                    }
+                }
 
                 &:hover,
                 &:focus {
+                    & a {
+                        color: $sika-yellow !important;
+                    }
+
+                    & svg,
+                    & svg path {
+                        fill: $sika-yellow;
+                    }
 
                     &::after {
                         content: "";
@@ -359,44 +433,64 @@
                         border-bottom: none;
                     }
                 }
-
-                &:first-child:after {
-                    content: "";
-                    position: absolute;
-                    width: 0;
-                    height: 0;
-                    //bottom: 0;
-                    top: -19px;
-                    left: -10px;
-                    z-index: 11;
-                    filter: drop-shadow(0 -1px 1px rgba(0, 0, 0, .16));
-                    border-left: 10px solid transparent;
-                    border-right: 10px solid transparent;
-                    border-bottom: 10px solid $gray;
-
-                }
             }
         }
 
-        &--product-list {
+        &--cabinet {
             position: relative;
-            transition: all 0.2s ease-in;
+            padding: 18px 20px;
+        }
 
-            &:hover {
-                z-index: 10;
+        &--cabinet-item {
+            position: absolute;
+            background: $gray;
+            z-index: 100;
+            top: 58px;
+            right: 0px;
+            width: 280px;
+            text-align: left;
+            padding: 0 10px !important;
 
-                &::after {
-                    content: "";
-                    position: absolute;
-                    width: 100%;
-                    bottom: -11px;
-                    left: 0;
-                    border-bottom: $sika-yellow;
-                    border-radius: 20px;
-                    z-index: 10;
+
+            & li {
+                &:not(:last-child) {
+                    border-bottom: 1px solid #ffffff;
+
+                    &:hover {
+
+                        border-bottom: 1px solid $sika-yellow;
+                    }
                 }
+
+                &:hover {
+                    & a {
+                        color: $sika-yellow !important;
+                    }
+
+                    & svg,
+                    & svg path {
+                        fill: $sika-yellow;
+                    }
+
+                    &::after {
+                        border-bottom: none;
+                    }
+                }
+
             }
 
+            & a {
+                display: flex;
+                align-items: center;
+            }
+
+            & svg {
+                margin-right: 10px;
+            }
+
+            & span {
+                margin-left: 10px;
+            }
         }
     }
 
@@ -443,11 +537,21 @@
         font-size: 30px;
     }
 
+    &__content-search {
+        @include up($lg) {
+            margin-bottom: 25px;
+        }
+    }
+
     & .search-form {
         & input {
             border-bottom: 1px solid $black;
             color: $black;
             padding: 10px 5px;
+
+            @include up($lg) {
+                width: 250px;
+            }
         }
     }
 
@@ -512,7 +616,10 @@ export default {
         return {
             isHeaderScrolled: false,
             isHeaderBurgered: false,
-            showModal: false
+            showModal: false,
+            cabinetOpen: false,
+            productListOpen: false,
+            isAuth: false
         }
     },
     computed: {
@@ -546,6 +653,14 @@ export default {
                 this.isHeaderBurgered = true;
             }, 100);
             else this.isHeaderBurgered = false;
+        },
+
+        onProductListToggle() {
+            this.productListOpen = !this.productListOpen;
+        },
+
+        onCabinetMenuToggle() {
+            this.cabinetOpen = !this.cabinetOpen;
         },
 
         closeModal() {
