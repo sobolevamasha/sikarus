@@ -439,6 +439,7 @@
         &--cabinet {
             position: relative;
             padding: 18px 20px;
+            cursor: pointer;
         }
 
         &--cabinet-item {
