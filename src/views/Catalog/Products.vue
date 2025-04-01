@@ -115,7 +115,7 @@ export default {
         }
     },
     mounted() {
-        console.log('catalog: ', this.products);
+
     }
 }
 </script>

@@ -97,7 +97,7 @@
 
                                 <ul v-show="cabinetOpen" class="header__dropdown--cabinet-item">
                                     <li>
-                                        <a href="/">
+                                        <a href="/cabinet">
                                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                                                 viewBox="0 0 1024 1024">
                                                 <g id="icomoon-ignore">
@@ -111,7 +111,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/">
+                                        <a href="/cabinet">
                                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                                                 viewBox="0 0 512 512" fill="white">
                                                 <g id="icomoon-ignore">
@@ -125,7 +125,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/">
+                                        <a href="/auth">
                                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                                                 viewBox="0 0 512 512" fill="white">
                                                 <g id="icomoon-ignore">
@@ -135,7 +135,7 @@
                                                 </path>
                                             </svg>
 
-                                            Войти
+                                            {{ isAuth ? 'Выйти' : 'Войти' }}
                                         </a>
                                     </li>
 
@@ -320,7 +320,7 @@
         width: 100%;
         margin: auto;
         max-width: 1920px;
-        padding: 10px 20px;
+        padding: 0 20px;
     }
 
     &__title {
@@ -333,7 +333,7 @@
         align-items: center;
 
         & li {
-            padding: 8px 20px;
+            //padding: 18px 20px;
             color: $white;
             position: relative;
 
@@ -345,17 +345,22 @@
                     content: "";
                     position: absolute;
                     width: 100%;
-                    bottom: -12px;
+                    bottom: 0;
                     left: 0;
                     border-bottom: 4px solid $sika-yellow;
                     border-radius: 20px;
                 }
+            }
+
+            &:last-child {
+                background-color: $gray;
             }
         }
 
         & a {
             display: block;
             height: 100%;
+            padding: 18px 20px;
         }
 
         &--product-list {
@@ -389,33 +394,30 @@
         }
 
         &--product-item {
-            // position: absolute;
-            // background: $gray;
-            // z-index: 100;
-            // top: 50px;
-            // text-align: left;
-            // padding: 10px 25px 20px !important;
-
             position: absolute;
             background: #616161;
             z-index: 100;
-            top: 57px;
-            right: -27px;
+            top: 49px;
+            right: -40px;
             width: 180px;
             text-align: left;
-            padding: 10px !important;
+            padding: 0 10px !important;
 
 
             & li {
-                //padding: 10px 0;
                 position: relative;
-                border-bottom: 1px solid #ffffff;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid #ffffff;
+
+                    &:hover {
+
+                        border-bottom: 1px solid $sika-yellow;
+                    }
+                }
 
                 &:hover,
                 &:focus {
-
-                    border-bottom: 1px solid $sika-yellow;
-
                     & a {
                         color: $sika-yellow !important;
                     }
@@ -436,26 +438,31 @@
 
         &--cabinet {
             position: relative;
+            padding: 18px 20px;
         }
 
         &--cabinet-item {
             position: absolute;
             background: $gray;
             z-index: 100;
-            top: 50px;
-            right: -27px;
+            top: 58px;
+            right: 0px;
             width: 280px;
             text-align: left;
-            padding: 10px !important;
+            padding: 0 10px !important;
 
 
             & li {
-                border-bottom: 1px solid #ffffff;
+                &:not(:last-child) {
+                    border-bottom: 1px solid #ffffff;
+
+                    &:hover {
+
+                        border-bottom: 1px solid $sika-yellow;
+                    }
+                }
 
                 &:hover {
-
-                    border-bottom: 1px solid $sika-yellow;
-
                     & a {
                         color: $sika-yellow !important;
                     }
@@ -466,8 +473,6 @@
                     }
 
                     &::after {
-                        // content: "";
-                        // position: absolute;
                         border-bottom: none;
                     }
                 }
@@ -532,11 +537,21 @@
         font-size: 30px;
     }
 
+    &__content-search {
+        @include up($lg) {
+            margin-bottom: 25px;
+        }
+    }
+
     & .search-form {
         & input {
             border-bottom: 1px solid $black;
             color: $black;
             padding: 10px 5px;
+
+            @include up($lg) {
+                width: 250px;
+            }
         }
     }
 
@@ -603,7 +618,8 @@ export default {
             isHeaderBurgered: false,
             showModal: false,
             cabinetOpen: false,
-            productListOpen: false
+            productListOpen: false,
+            isAuth: false
         }
     },
     computed: {

@@ -81,8 +81,7 @@ export default {
 
     },
     created() {
-        console.log('data: ', this.regions);
-        console.log('globalLinks: ', this.globalLinks);
+
     },
     methods: {
         toggleRegion(index) {

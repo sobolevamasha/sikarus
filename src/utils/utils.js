@@ -56,6 +56,5 @@ export function iOSMobile() {
         ].includes(navigator.platform)
         // iPad on iOS 13 detection
         || (navigator.userAgent.includes("Mac") && "ontouchend" in document);
-    console.log("IsIos iOSMobile ", iOSMobile)
     return iOSMobile
 }

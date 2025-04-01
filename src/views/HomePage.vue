@@ -119,12 +119,11 @@ export default {
 			let currentAnchor = window.location.href.replace(/^.*?#(.+)/, "$1");
 			if (currentAnchor === path) currentAnchor = null;
 			if (anchor && anchor !== currentAnchor) {
-				//console.log("New anchor: "+anchor);
+			
 				window.history.pushState("", "", path + "#" + anchor);
-				//this.$router.replace({path: "/#"+anchor, query:{forced:true}});
+			
 			} else if (!anchor && currentAnchor) {
-				//console.log("New anchor: unset");
-				//this.$router.replace({path: "/", query:{forced:true}});
+
 				window.history.pushState("", "", path);
 			}
 		},
@@ -133,7 +132,7 @@ export default {
 		}
 	},
 	mounted() {
-		console.log('swiper: ', this.swiperItems)
+
 	}
 }
 </script>

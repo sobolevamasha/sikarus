@@ -299,7 +299,6 @@ export default {
         },
     },
     mounted() {
-        //console.log('product: ', this.product);
     }
 }
 </script>
