@@ -213,7 +213,6 @@ export default {
         &--item {
             border-bottom: 1px solid $black;
             padding: 15px 0;
-            cursor: pointer;
         }
 
         &--countries {
