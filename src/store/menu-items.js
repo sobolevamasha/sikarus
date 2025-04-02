@@ -50,6 +50,15 @@ export default [
           },
         ],
       },
+      {
+        isOpen: false,
+        title: "Новости",
+        to: 'news',
+        subitems: [
+          
+          
+        ],
+      },
     ],
   },
   {

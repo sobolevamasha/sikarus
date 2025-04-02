@@ -59,7 +59,16 @@ const routes = [
                 name: 'cabinet',
                 component: () => import("../views/Cabinet"),
             },
-            
+            {
+                path: '/news',
+                name: 'news',
+                component: () => import("../views/News"),
+            },
+            {
+                path: '/news/new',
+                name: 'new',
+                component: () => import("../views/New"),
+            },
 
         ]
     }

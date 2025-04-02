@@ -89,7 +89,7 @@ export default {
             return [
                 {
                     img: require('@/assets/tmp/distribuciya.jpg'),
-                    name: "Строительство",
+                    name: "Строительство и восстановление",
                     text: "Материалы для промышленного и гражданского строительства",
                     link: "about"
                 },

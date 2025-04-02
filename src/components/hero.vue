@@ -2,7 +2,7 @@
   <div class="cmp-font--klavika hero">
     <div class="cmp-hero cmp-hero--darkbg cmp-hero--parallax" :class="heroClass">
       <div v-if="background && !video" class="cmp-hero__background">
-        <picture v-if="background">
+        <picture v-show="background">
           <img :src="background">
         </picture>
       </div>
@@ -12,14 +12,14 @@
         </video>
       </div>
 
-      <v-container class="cmp-hero__content cmp-hero__content--video">
+      <div class="container cmp-hero__content">
         <div class="cmp-hero__content--wrapper">
           <div class="cmp-hero__content--wrapper--dark">
             <h1 class="cmp-display">{{ title }}</h1>
             <h4 class="cmp-font--regular">{{ subtitle }}</h4>
           </div>
         </div>
-      </v-container>
+      </div>
     </div>
   </div>
 </template>

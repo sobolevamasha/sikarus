@@ -34,9 +34,8 @@
 
             <!-- <h4>Regions</h4> -->
             <ul class="countries__section countries__section--regions">
-                <li v-for="(region, index) in regions" :key="index" @click="toggleRegion(index)"
-                    class="countries__section--item">
-                    <div class="d-flex align-center">
+                <li v-for="(region, indexRegion) in regions" :key="indexRegion" class="countries__section--item">
+                    <div class="d-flex align-center" @click="toggleRegion(indexRegion)">
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                             viewBox="0 0 887 1024">
                             <g id="icomoon-ignore">
@@ -50,7 +49,22 @@
                     </div>
                     <ul v-show="region.isOpen" class="countries__section--countries">
                         <li v-for="(country, indexCountry) in region.countries" :key="indexCountry">
-                            <a :href="country.to" target="_blank">{{ country.name }}</a>
+                            <button @click="onCountryToggle(indexRegion, indexCountry)">{{ country.name }}</button>
+                            <ul v-show="country.isExpanded" class="countries__section--linkList">
+                                <li v-for="(link, indexLink) in country.links" :key="indexLink">
+                                    <a :href="link.to" target="_blank" class="countries__section--linkList-links">
+                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 366 1024">
+                                            <g id="icomoon-ignore">
+                                            </g>
+                                            <path
+                                                d="M339.968 547.84q0 7.168-5.12 12.288l-267.264 267.264q-5.12 5.12-12.288 5.12t-13.312-5.12l-28.672-28.672q-6.144-6.144-6.144-13.312t6.144-13.312l224.256-224.256-224.256-225.28q-6.144-5.12-6.144-12.288t6.144-13.312l28.672-28.672q5.12-6.144 13.312-6.144t12.288 6.144l267.264 266.24q5.12 5.12 5.12 13.312z">
+                                            </path>
+                                        </svg>
+                                        {{ link.name }}
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </li>
@@ -66,9 +80,7 @@ import countires from '@/store/countires';
 export default {
     data() {
         return {
-            countires: countires
-
-
+            countires: countires,
         };
     },
     computed: {
@@ -77,21 +89,40 @@ export default {
         },
         regions() {
             return this.countires.filter(item => !item.global);
-        }
+        },
 
     },
     created() {
 
     },
     methods: {
-        toggleRegion(index) {
+        toggleRegion(indexRegion) {
             this.regions.forEach((item, idx) => {
-                item.isOpen = idx === index ? !item.isOpen : false;
+                item.isOpen = idx === indexRegion ? !item.isOpen : false;
             });
         },
         handleClose() {
             this.$emit('close');
-        }
+        },
+        onCountryToggle(indexRegion, indexCountry) {
+            const region = this.regions[indexRegion];
+            // Получаем нужную страну
+            const country = region.countries[indexCountry];
+
+            // Переключаем состояние isExpanded
+            country.isExpanded = !country.isExpanded;
+
+            // Закрываем все другие страны в этом регионе
+            region.countries.forEach((otherCountry, index) => {
+                if (index !== indexCountry) {
+                    otherCountry.isExpanded = false;
+                }
+            });
+        },
+    },
+    mounted() {
+        console.log('countiryList: ', this.countryList);
+
     }
 };
 </script>
@@ -191,6 +222,32 @@ export default {
             @include up($md) {
                 display: grid;
                 grid-template-columns: repeat(6, 1fr);
+            }
+
+            & li {
+                margin: 10px 0;
+            }
+
+
+        }
+
+        &--linkList {
+            position: absolute;
+            padding: 3px 10px !important;
+            background-color: #fff;
+            border: 1px solid #000;
+            z-index: 10;
+
+            & li {
+                margin: 0;
+
+            }
+
+            &-links {
+                display: flex;
+                align-items: center;
+                max-width: fit-content;
+
             }
         }
     }
