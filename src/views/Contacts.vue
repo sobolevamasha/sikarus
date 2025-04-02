@@ -2,7 +2,13 @@
     <div class="contacts">
         <hero :title="h1" :isSmall="true" />
         <div class="grid-container my-4 my-sm-8 my-lg-16">
-            <div id="acc"></div>
+
+            <h3 class="contacts__title">Региональные офисы Sika</h3>
+
+            <div class="contacts__map my-4 my-sm-8 my-lg-16">
+                <contactsMap />
+            </div>
+
 
             <div class="contacts__accordion">
                 <h4 class="contacts__accordion-header">Санкт-Петербург<svg class="arrow" viewBox="0 0 887 1024">
@@ -65,20 +71,32 @@
 <script>
 import hero from '@/components/hero.vue';
 import download from '@/components/download.vue';
+import Config from '@/config';
+
+import contactsMap from '@/components/contactsMap.vue';
+
 
 export default {
     name: "Contacts",
     components: {
         hero,
-        download
+        download,
+        contactsMap
 
     },
     data() {
         return {
             h1: 'Контакты',
-            //h4: 'Строим доверие',
-            //background: require('@/assets/hero-skyline-2.jpg'),
-            //video: 'https://sika.scene7.com/is/content/sika/glo-skyline-loop'
+            markers: [
+                {
+                    coordinates: [55.751574, 37.573856],
+                    content: 'Москва',
+                },
+                {
+                    coordinates: [59.934280, 30.335099],
+                    content: 'Санкт-Петербург',
+                },
+            ],
         }
     },
     methods: {
@@ -113,6 +131,11 @@ export default {
 
 <style lang="scss">
 .contacts {
+
+    &__title {
+        margin-bottom: 22px;
+    }
+
     & h4 {
         margin: 0;
     }
