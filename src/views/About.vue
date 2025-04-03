@@ -2,7 +2,7 @@
   <div class="about">
     <!-- <hero :title="heroTitle"  :background="background" :isSmall="true" /> -->
     <v-container>
-      <div class="about__text grid-container my-4 my-lg-16">
+      <div class="about__text grid-container section-margin">
         <p>Sika (Зика) – швейцарский концерн по производству материалов для строительства и промышленности, работающий с
           1910 года. В состав компании входят более 300 производственных предприятий, научные лаборатории, центры
           технической поддержки и торговые представительства в 100 странах мира. В компании работает свыше 25 000

@@ -2,7 +2,7 @@
     <div class="auth">
         <!-- <hero :title="h1" :background="background" :isSmall="true" /> -->
 
-        <div class="grid-container my-4 my-sm-8 my-lg-16">
+        <div class="grid-container section-margin ">
             <h3 class="mb-8">Авторизируйтесь, чтобы попасть в личный кабинет</h3>
             <form class="auth__form">
                 <div class="auth__field">

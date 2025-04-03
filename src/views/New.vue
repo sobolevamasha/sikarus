@@ -2,24 +2,24 @@
     <div class="new">
         <!-- <hero :title="this.new.title" :background="background" :isSmall="true" /> -->
         <!-- <breadcrumbs :level1="level1" :level2="level2" :level3="this.new.title" /> -->
-        <div class="grid-container my-4 my-sm-8 my-lg-12">
+        <div class="grid-container section-margin ">
             <img class="new__img" :src="this.new.img" />
             <div class="new__detail" v-html="this.new.detailText"></div>
 
             <ul>
-                <li class="new__download">
-                    <a class="new__download--link" href="/assets/tmp/map-spb.jpg" target="_blank">
-                        <div class="new__download--content">
+                <li class="download">
+                    <a class="download--link" href="/assets/tmp/map-spb.jpg" target="_blank">
+                        <div class="download--content">
                             <i class="cmp-icon cmp-icon-download"></i>
-                            <h5 class="new__download--title">Референс Sika Россия по кровельным материалам</h5>
+                            <h5 class="download--title">Референс Sika Россия по кровельным материалам</h5>
                         </div>
-                        <div class="new__download--descr">
+                        <div class="download--descr">
                             <div class="">Изображение</div>
-                            <span class="new__download--size">2 MB</span>
+                            <span class="download--size">2 MB</span>
                         </div>
                     </a>
 
-                    <button class="new__download--btn">
+                    <button class="download--btn">
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                             viewBox="0 0 768 768">
                             <g id="icomoon-ignore">
@@ -31,20 +31,20 @@
 
                     </button>
                 </li>
-                <li class="new__download">
-                    <a class="new__download--link" href="/assets/tmp/map-spb.jpg" target="_blank">
-                        <div class="new__download--content">
+                <li class="download">
+                    <a class="download--link" href="/assets/tmp/map-spb.jpg" target="_blank">
+                        <div class="download--content">
                             <i class="cmp-icon cmp-icon-download"></i>
-                            <h5 class="new__download--title">Референс Sika Россия по полам и напольным покрытиям
+                            <h5 class="download--title">Референс Sika Россия по полам и напольным покрытиям
                             </h5>
                         </div>
-                        <div class="new__download--descr">
+                        <div class="download--descr">
                             <div class="">Изображение</div>
-                            <span class="objects__download--size">2 MB</span>
+                            <span class="download--size">2 MB</span>
                         </div>
                     </a>
 
-                    <button class="new__download--btn">
+                    <button class="download--btn">
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                             viewBox="0 0 768 768">
                             <g id="icomoon-ignore">
@@ -138,6 +138,7 @@
 <script>
 import news from '@/store/news';
 import btn from '@/components/btn.vue';
+import { activeDownloadBtn } from '@/utils/utils';
 
 export default {
     components: {
@@ -155,10 +156,7 @@ export default {
 
     methods: {
         initActiveBtn() {
-            const button = document.querySelector('.new__download--btn');
-            button.addEventListener('click', () => {
-                const isButtonActive = button.classList.toggle('new__download--btn--active');
-            })
+            activeDownloadBtn();
         },
     },
 

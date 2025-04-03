@@ -2,7 +2,7 @@
     <div class="newsList">
         <!-- <hero :title="h1" :background="background" :isSmall="true" /> -->
         <!-- <breadcrumbs :level1="level1" :level2="level2" /> -->
-        <div class="grid-container my-4 my-sm-8 my-lg-12">
+        <div class="grid-container section-margin ">
             <ul class="newsList__list">
                 <li v-for="(item, index) in news" :key="index" v-show="news && news.length > 0 && index <= newsLimit"
                     class="newsList__item">

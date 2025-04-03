@@ -1,12 +1,9 @@
 <template>
-
-    <div id="map" style="width: 100%; height: 400px;"></div>
+    <div id="map" style="width: 100%; height: 500px;"></div>
 </template>
 
 <script>
 import config from '@/config';
-
-//let ymaps = null;
 
 export default {
     data() {
