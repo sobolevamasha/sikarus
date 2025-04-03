@@ -1,6 +1,6 @@
 <template>
     <div class="objects">
-        <div class="grid-container my-4 my-sm-8 my-lg-12">
+        <div class="grid-container section-margin">
             <ul class="objects__list">
                 <li v-for="(item, index) of objects" :key="index" class="objects__item mx-2 my-2">
                     <router-link to="/objects/object"></router-link>
@@ -19,19 +19,19 @@
                 </li>
             </ul>
             <ul class="my-16">
-                <li class="objects__download">
-                    <a class="objects__download--link" href="/assets/tmp/map-spb.jpg" target="_blank">
-                        <div class="objects__download--content">
+                <li class="download">
+                    <a class="download--link" href="/assets/tmp/map-spb.jpg" target="_blank">
+                        <div class="download--content">
                             <i class="cmp-icon cmp-icon-download"></i>
-                            <h5 class="objects__download--title">Референс Sika Россия по кровельным материалам</h5>
+                            <h5 class="download--title">Референс Sika Россия по кровельным материалам</h5>
                         </div>
-                        <div class="objects__download--descr">
+                        <div class="download--descr">
                             <div class="">Изображение</div>
-                            <span class="objects__download--size">2 MB</span>
+                            <span class="download--size">2 MB</span>
                         </div>
                     </a>
 
-                    <button class="objects__download--btn">
+                    <button class="download--btn">
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                             viewBox="0 0 768 768">
                             <g id="icomoon-ignore">
@@ -43,20 +43,20 @@
 
                     </button>
                 </li>
-                <li class="objects__download">
-                    <a class="objects__download--link" href="/assets/tmp/map-spb.jpg" target="_blank">
-                        <div class="objects__download--content">
+                <li class="download">
+                    <a class="download--link" href="/assets/tmp/map-spb.jpg" target="_blank">
+                        <div class="download--content">
                             <i class="cmp-icon cmp-icon-download"></i>
-                            <h5 class="objects__download--title">Референс Sika Россия по полам и напольным покрытиям
+                            <h5 class="download--title">Референс Sika Россия по полам и напольным покрытиям
                             </h5>
                         </div>
-                        <div class="objects__download--descr">
+                        <div class="download--descr">
                             <div class="">Изображение</div>
-                            <span class="objects__download--size">2 MB</span>
+                            <span class="download--size">2 MB</span>
                         </div>
                     </a>
 
-                    <button class="objects__download--btn">
+                    <button class="download--btn">
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                             viewBox="0 0 768 768">
                             <g id="icomoon-ignore">
@@ -77,7 +77,8 @@
 <script>
 
 import objectList from '@/store/objects';
-import download from '@/components/download.vue';
+import download from '@/components/brochure.vue';
+import { activeDownloadBtn } from '@/utils/utils';
 
 
 export default {
@@ -95,10 +96,7 @@ export default {
     },
     methods: {
         initActiveBtn() {
-            const button = document.querySelector('.objects__download--btn');
-            button.addEventListener('click', () => {
-                const isButtonActive = button.classList.toggle('objects__download--btn--active');
-            })
+            activeDownloadBtn();
         },
     },
 

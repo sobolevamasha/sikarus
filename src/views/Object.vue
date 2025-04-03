@@ -2,7 +2,7 @@
     <div class="object">
         <!-- <hero :title="object.name" :background="background" :isSmall="true" /> -->
         <!-- <breadcrumbs :level1="level1" :level2="level2" :level3="object.name" /> -->
-        <div class="grid-container my-4 my-sm-8 my-lg-12">
+        <div class="grid-container section-margin">
             <v-row>
                 <v-col cols="12" lg="8">
                     <slider-big :items="object.sliderItems" />
@@ -50,7 +50,7 @@
 <script>
 import hero from '@/components/hero.vue';
 import objectList from '@/store/objects';
-import download from '@/components/download.vue';
+import download from '@/components/brochure.vue';
 import sliderBig from '@/components/slider-big.vue';
 import breadcrumbs from '@/components/breadcrumbs.vue';
 import products from '@/store/products';

@@ -1,60 +1,45 @@
-/**
- * Returns merged objects as a sibgle object.
- * TS so far does not support this out of the box.
- */
-export function mergeObjects(...args) {
-    let target = args[0];
-    for (let i = 1; i < arguments.length; i++) {
-        let source = arguments[i];
-        for (let key in source) {
-            if (source.hasOwnProperty(key)) {
-                target[key] = source[key];
-            }
-        }
-    }
-    return target;
-}
-
-export function debounce(func, wait, immediate) {
-    let timeout;
-    return function() {
-        let context = this, args = arguments;
-        let later = function() {
-            timeout = null;
-            if (!immediate) func.apply(context, args);
-        };
-        let callNow = immediate && !timeout;
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-        if (callNow) func.apply(context, args);
-    };
-}
-
 export function scrollTo(id, offset = 0) {
-    const el = typeof id === "string" ? document.getElementById(id) : id;
-    const top = el.getBoundingClientRect().top + window.scrollY + offset;
-    window.scrollTo({
-        top,
-        behavior: "smooth"
+  const el = typeof id === "string" ? document.getElementById(id) : id;
+  const top = el.getBoundingClientRect().top + window.scrollY + offset;
+  window.scrollTo({
+    top,
+    behavior: "smooth",
+  });
+}
+/*Аккордеоны*/
+export function accordion() {
+  const accordionHeaders = document.querySelectorAll(".accordion-header");
+  const buttons = document.querySelectorAll(".download--btn");
+
+  accordionHeaders.forEach((header) => {
+    header.addEventListener("click", function () {
+      const accordionItem = this.parentElement;
+      const content = accordionItem.querySelector(".accordion-content");
+      content.classList.toggle("active");
+
+      const arrowElement = header.querySelector(".arrow");
+      const isActive = arrowElement.classList.toggle("active");
+      if (isActive) {
+        arrowElement.classList.add("rotate");
+      } else {
+        arrowElement.classList.remove("rotate");
+      }
     });
+  });
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const isButtonActive = button.classList.toggle("download--btn--active");
+    });
+  });
 }
 
-export function format(value, pattern) {
-    let i = 0;
-    let v = value.toString();
-    return pattern.replace(/#/g, _ => v[i++]);
-}
-
-export function iOSMobile() {
-    const iOSMobile = [
-            'iPad Simulator',
-            'iPhone Simulator',
-            'iPod Simulator',
-            'iPad',
-            'iPhone',
-            'iPod'
-        ].includes(navigator.platform)
-        // iPad on iOS 13 detection
-        || (navigator.userAgent.includes("Mac") && "ontouchend" in document);
-    return iOSMobile
+/*Добавление класса на кнопку Добавить док в корзину\избранное*/
+export function activeDownloadBtn() {
+  const buttons = document.querySelectorAll(".download--btn");
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const isButtonActive = button.classList.toggle("download--btn--active");
+    });
+  });
 }

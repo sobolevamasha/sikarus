@@ -2,7 +2,7 @@
     <div class="product">
         <!-- <hero :title="title" :background="background" :isSmall="true" /> -->
         <!-- <breadcrumbs :level1="level1" :level2="level2" :level3="level3" :level4="level4" /> -->
-        <div class="grid-container my-4 my-sm-8 my-lg-12">
+        <div class="grid-container section-margin">
             <div class="product__main">
                 <img class="product__img" v-if="product.previewImg" :src="product.previewImg" />
                 <div class="product__right">
@@ -33,7 +33,7 @@
             </div>
         </div>
         <div class="product__info">
-            <div class="grid-container my-4 my-sm-8 my-lg-16">
+            <div class="grid-container section-margin">
                 <nav class="product__info--navigation">
                     <ul>
                         <li>Описание</li>
@@ -57,12 +57,19 @@
 
                 <div class="product__info--chars">
                     <h2>Характеристики</h2>
-                    <v-expansion-panels flat accordion>
-                        <v-expansion-panel>
-                            <v-expansion-panel-header expand-icon="mdi-menu-down">
-                                <h4 class="product__info--header">Информация о материале</h4>
-                            </v-expansion-panel-header>
-                            <v-expansion-panel-content class="text-left">
+
+                    <ul class="accordion">
+                        <li class="accordion-list">
+                            <h4 class="accordion-header">
+                                Информация о материале
+                                <svg class="arrow" viewBox="0 0 887 1024">
+                                    <path
+                                        d="M64.512 285.696l378.88 364.544 380.928-364.544q22.528-26.624 49.152 0 26.624 22.528 0 49.152l-405.504 401.408q-22.528 22.528-49.152 0l-405.504-401.408q-26.624-26.624 0-49.152 24.576-24.576 51.2 0z">
+                                    </path>
+                                </svg>
+                            </h4>
+
+                            <div class="text-left accordion-content">
                                 <ul class="product__info--list">
                                     <li v-for="(char, indexChar) in product.chars">
                                         <h5>{{ char.name }}
@@ -70,36 +77,43 @@
                                         <p>{{ char.value }}</p>
                                     </li>
                                 </ul>
-                            </v-expansion-panel-content>
-                        </v-expansion-panel>
-                    </v-expansion-panels>
+                            </div>
+                        </li>
+                    </ul>
+
 
                 </div>
 
                 <div class="product__info--usage">
 
                     <h2>Применение</h2>
-                    <v-expansion-panels flat accordion>
-                        <v-expansion-panel v-for="(usage, indexUsage) in product.usage">
-                            <v-expansion-panel-header expand-icon="mdi-menu-down">
-                                <h4 class="product__info--header">{{ usage.title }}</h4>
-                            </v-expansion-panel-header>
-                            <v-expansion-panel-content class="text-left">
+                    <ul class="accordion">
+                        <li class="accordion-list" v-for="(usage, indexUsage) in product.usage">
+                            <h4 class="accordion-header">
+                                {{ usage.title }}
+                                <svg class="arrow" viewBox="0 0 887 1024">
+                                    <path
+                                        d="M64.512 285.696l378.88 364.544 380.928-364.544q22.528-26.624 49.152 0 26.624 22.528 0 49.152l-405.504 401.408q-22.528 22.528-49.152 0l-405.504-401.408q-26.624-26.624 0-49.152 24.576-24.576 51.2 0z">
+                                    </path>
+                                </svg>
+                            </h4>
+                            <div class="text-left accordion-content">
                                 <ul class="product__info--list">
+
                                     <li v-for="(item, indexItem) in usage.info">
                                         <h5>{{ item.name }}
                                         </h5>
                                         <p>{{ item.value }}</p>
                                     </li>
                                 </ul>
-                            </v-expansion-panel-content>
-                        </v-expansion-panel>
-                    </v-expansion-panels>
+                            </div>
+                        </li>
+                    </ul>
 
                 </div>
 
                 <div class="product__info--docs">
-                    <download :title="docTitle" :description="description" :fileSize="fileSize" :filePath="filePath"
+                    <brochure :title="docTitle" :description="description" :fileSize="fileSize" :filePath="filePath"
                         :brochure="brochure" />
                 </div>
             </div>
@@ -186,6 +200,7 @@
                 &:hover {
                     color: $sika-yellow !important;
                     transition: all 0.2s ease;
+
                     & svg path {
                         fill: $sika-yellow;
                     }
@@ -266,13 +281,13 @@
 
 <script>
 import products from '@/store/products';
-import download from '@/components/download.vue';
-
+import brochure from '@/components/brochure.vue';
+import { accordion } from '@/utils/utils';
 
 export default {
     data() {
         return {
-            
+
             docTitle: products[0].docs[0].title,
             description: products[0].docs[0].description,
             fileSize: products[0].docs[0].fileSize,
@@ -282,18 +297,24 @@ export default {
             level2: 'Добавки в бетон',
             level3: 'Товарный бетон',
             level4: products[0].name,
-            
+
         }
     },
     components: {
-        download
+        brochure
     },
     computed: {
         product() {
             return products[0];
         },
     },
+    methods: {
+        initAccordeon() {
+            accordion();
+        }
+    },
     mounted() {
+        this.initAccordeon();
     }
 }
 </script>

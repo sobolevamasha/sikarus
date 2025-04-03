@@ -2,7 +2,7 @@
     <div class="category">
         <!-- <hero :title="title" :background="background" :isSmall="true" /> -->
         <!-- <breadcrumbs :level1="level1" :level2="level2" /> -->
-        <div class="grid-container my-4 my-sm-8 my-lg-12">
+        <div class="grid-container section-margin">
             <ul class="category__list">
                 <li class="category__item" v-for="(item, index) in catalog">
                     <router-link  class="category__item--link" to="/products"></router-link>
