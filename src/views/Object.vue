@@ -1,7 +1,7 @@
 <template>
     <div class="object">
-        <hero :title="object.name" :background="background" :isSmall="true" />
-        <breadcrumbs :level1="level1" :level2="level2" :level3="object.name" />
+        <!-- <hero :title="object.name" :background="background" :isSmall="true" /> -->
+        <!-- <breadcrumbs :level1="level1" :level2="level2" :level3="object.name" /> -->
         <div class="grid-container my-4 my-sm-8 my-lg-12">
             <v-row>
                 <v-col cols="12" lg="8">

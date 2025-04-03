@@ -1,7 +1,5 @@
 <template>
     <div class="objects">
-        <hero :title="h1" :background="background" :isSmall="true" />
-        <breadcrumbs :level1="level1" :level2="level2" />
         <div class="grid-container my-4 my-sm-8 my-lg-12">
             <ul class="objects__list">
                 <li v-for="(item, index) of objects" :key="index" class="objects__item mx-2 my-2">
@@ -20,12 +18,6 @@
                     </div>
                 </li>
             </ul>
-            <!-- <ul class="my-16">
-                <li v-for="(document, index1) of documents" :key="index1">
-                    <download :title="document.name" :filePath="document.filePath" />
-                </li>
-            </ul> -->
-
             <ul class="my-16">
                 <li class="objects__download">
                     <a class="objects__download--link" href="/assets/tmp/map-spb.jpg" target="_blank">
@@ -83,26 +75,15 @@
 </template>
 
 <script>
-import hero from '@/components/hero.vue';
+
 import objectList from '@/store/objects';
 import download from '@/components/download.vue';
-import router from '@/router';
-import breadcrumbs from '@/components/breadcrumbs.vue';
+
 
 export default {
     name: "Objects",
     components: {
-        hero,
-        download,
-        breadcrumbs
-    },
-    data() {
-        return {
-            h1: 'Объекты',
-            background: require('@/assets/objects.jpg'),
-            level1: 'Главная',
-            level2: 'Объекты',
-        }
+        download
     },
     computed: {
         objects() {

@@ -208,6 +208,10 @@ export default {
             & li {
                 margin-bottom: 0;
             }
+
+            & h4 {
+                cursor: pointer;
+            }
         }
 
         &--item {
