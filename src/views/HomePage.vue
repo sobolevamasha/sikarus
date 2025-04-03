@@ -1,6 +1,6 @@
 <template>
 	<div class="homepage" v-scroll="handleScroll">
-		<hero :title="h1" :subtitle="h4" :background="background" :video="video" />
+		<!-- <hero :title="h1" :subtitle="h4" :background="background" :video="video" /> -->
 		<helpbox />
 		<activity />
 		<about />

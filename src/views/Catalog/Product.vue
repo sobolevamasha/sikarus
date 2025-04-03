@@ -1,7 +1,7 @@
 <template>
     <div class="product">
-        <hero :title="title" :background="background" :isSmall="true" />
-        <breadcrumbs :level1="level1" :level2="level2" :level3="level3" :level4="level4" />
+        <!-- <hero :title="title" :background="background" :isSmall="true" /> -->
+        <!-- <breadcrumbs :level1="level1" :level2="level2" :level3="level3" :level4="level4" /> -->
         <div class="grid-container my-4 my-sm-8 my-lg-12">
             <div class="product__main">
                 <img class="product__img" v-if="product.previewImg" :src="product.previewImg" />
@@ -265,17 +265,14 @@
 </style>
 
 <script>
-import hero from '@/components/hero.vue';
 import products from '@/store/products';
 import download from '@/components/download.vue';
-import breadcrumbs from '@/components/breadcrumbs.vue';
 
 
 export default {
     data() {
         return {
-            title: products[0].name,
-            background: require('@/assets/tmp/beton.jpg'),
+            
             docTitle: products[0].docs[0].title,
             description: products[0].docs[0].description,
             fileSize: products[0].docs[0].fileSize,
@@ -289,9 +286,7 @@ export default {
         }
     },
     components: {
-        hero,
-        download,
-        breadcrumbs
+        download
     },
     computed: {
         product() {

@@ -149,13 +149,13 @@
         </div>
         <div class="header__content  d-none d-md-flex">
             <div class="header__container d-flex justify-space-between align-center">
-                <router-link to="/" class="header__content-left d-flex align-center">
+                <a href="/" class="header__content-left d-flex align-center">
                     <div class="logo">
                         <img src="../assets/Sika_ClaimU_pos_rgb.svg" />
                     </div>
 
                     <div class="header__content-title">Sika Россия</div>
-                </router-link>
+                </a>
                 <div class="header__content-right">
                     <div class="header__content-search">
                         <form method="get" class="search-form">
@@ -175,6 +175,16 @@
             <mainmenu />
         </div>
 
+        <hero :title="bannerProps.title" :subtitle="bannerProps.subtitle" :background="bannerProps.background"
+            :video="bannerProps.video" :isSmall="bannerProps.isSmall" />
+
+        <breadcrumbs 
+        :level1="breadcrumbs.level1"
+        :level2="breadcrumbs.level2"
+        :level3="breadcrumbs.level3"
+        :level4="breadcrumbs.level4"
+        :level5="breadcrumbs.level5"/>
+
         <transition name="modal">
             <div class="modal-mask" v-show="showModal">
                 <countries @close="closeModal" />
@@ -185,7 +195,7 @@
             <ul>
                 <li class="isActive">
 
-                    <a href="/"></a>
+                    <router-link to="/"></router-link>
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                         viewBox="0 0 1024 1024">
                         <g id="icomoon-ignore">
@@ -200,7 +210,7 @@
                 </li>
                 <li>
 
-                    <a href="/"></a>
+                    <router-link to="/"></router-link>
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 512 512">
                         <g id="icomoon-ignore">
                         </g>
@@ -230,9 +240,10 @@
 .header {
     min-height: 75px;
     width: 100%;
+    position: relative;
 
     @include up($lg) {
-        position: absolute;
+        //position: absolute;
     }
 
     &__mainmenu--container {
@@ -247,6 +258,7 @@
         position: fixed;
         width: 100%;
         z-index: 4;
+        top: 0;
 
         &--zindex {
             z-index: 3;
@@ -605,13 +617,17 @@ import burgerMenu from '@/layout/burger-menu.vue';
 import mainmenu from '@/components/mainmenu.vue';
 import router from '@/router';
 import countries from '@/components/countries.vue';
+import hero from '@/components/hero.vue';
+import breadcrumbs from '@/components/breadcrumbs.vue';
 
 export default {
     name: "the-header",
     components: {
         burgerMenu,
         mainmenu,
-        countries
+        countries,
+        hero,
+        breadcrumbs
     },
     data() {
         return {
@@ -620,7 +636,7 @@ export default {
             showModal: false,
             cabinetOpen: false,
             productListOpen: false,
-            isAuth: false
+            isAuth: false,
         }
     },
     computed: {
@@ -645,9 +661,44 @@ export default {
                 },
 
             ]
-        }
+        },
+        bannerProps() {
+            return this.$route.meta || {};
+        },
+        breadcrumbs() {
+            return this.$route.meta.breadcrumbs || {};
+        },
     },
+    watch: {
+        bannerProps: {
+            handler(newMeta) {
+                this.updateProps(newMeta);
+            },
+            immediate: true,
+        },
+        // breadcrumbs: {
+        //     handler(newMeta) {
+        //         this.updateProps(newMeta);
+        //     },
+        //     immediate: true,
+        // },
+    },
+
     methods: {
+        updateProps(meta) {
+            this.title = meta.title;
+            this.subtitle = meta.subtitle;
+            this.background = meta.background;
+            this.video = meta.video;
+            this.isSmall = meta.isSmall;
+
+            this.level1 = meta.breadcrumbs.level1;
+            this.level2 = meta.breadcrumbs.level2;
+            this.level3 = meta.breadcrumbs.level3;
+            this.level4 = meta.breadcrumbs.level4;
+            this.level5 = meta.breadcrumbs.level5;
+        },
+
         onToggleBurgerMenu() {
             this.$store.state.withBurgerMenu = !this.$store.state.withBurgerMenu;
             if (this.$store.state.withBurgerMenu) setTimeout(() => {

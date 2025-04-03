@@ -1,7 +1,7 @@
 <template>
     <div class="products">
-        <hero :title="title" :background="background" :isSmall="true" />
-        <breadcrumbs :level1="level1" :level2="level2" :level3="level3" />
+        <!-- <hero :title="title" :background="background" :isSmall="true" /> -->
+        <!-- <breadcrumbs :level1="level1" :level2="level2" :level3="level3" /> -->
         <div class="grid-container my-4 my-sm-8 my-lg-12">
             <ul class="products__list">
                 <li v-for="(product, index) in products" class="products__item">
@@ -88,26 +88,11 @@
 </style>
 
 <script>
-import hero from '@/components/hero.vue';
-import router from '@/router';
 import products from '@/store/products';
-import breadcrumbs from '@/components/breadcrumbs.vue';
-
 
 export default {
-    data() {
-        return {
-            title: 'Товарный бетон',
-            background: require('@/assets/tmp/beton.jpg'),
-            level1: 'Продукция',
-            level2: 'Добавки в бетон',
-            level3: 'Товарный бетон',
-            
-        }
-    },
     components: {
-        hero,
-        breadcrumbs
+
     },
     computed: {
         products() {

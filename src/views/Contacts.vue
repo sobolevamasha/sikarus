@@ -1,6 +1,5 @@
 <template>
     <div class="contacts">
-        <hero :title="h1" :isSmall="true" />
         <div class="grid-container my-4 my-sm-8 my-lg-16">
 
             <h3 class="contacts__title">Региональные офисы Sika</h3>

@@ -1,7 +1,7 @@
 <template>
     <div class="new">
-        <hero :title="this.new.title" :background="background" :isSmall="true" />
-        <breadcrumbs :level1="level1" :level2="level2" :level3="this.new.title" />
+        <!-- <hero :title="this.new.title" :background="background" :isSmall="true" /> -->
+        <!-- <breadcrumbs :level1="level1" :level2="level2" :level3="this.new.title" /> -->
         <div class="grid-container my-4 my-sm-8 my-lg-12">
             <img class="new__img" :src="this.new.img" />
             <div class="new__detail" v-html="this.new.detailText"></div>
@@ -137,24 +137,14 @@
 
 <script>
 import news from '@/store/news';
-import hero from '@/components/hero.vue';
-import breadcrumbs from '@/components/breadcrumbs.vue';
 import btn from '@/components/btn.vue';
 
 export default {
     components: {
-        hero,
-        breadcrumbs,
         btn
     },
     data() {
         return {
-            // news: news,
-            //h1: 'Новость',
-            background: require('@/assets/objects.jpg'),
-            level1: 'Главная',
-            level2: 'Новости',
-
         }
     },
     computed: {

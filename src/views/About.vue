@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <hero :title="heroTitle"  :background="background" :isSmall="true" />
+    <!-- <hero :title="heroTitle"  :background="background" :isSmall="true" /> -->
     <v-container>
       <div class="about__text grid-container my-4 my-lg-16">
         <p>Sika (Зика) – швейцарский концерн по производству материалов для строительства и промышленности, работающий с

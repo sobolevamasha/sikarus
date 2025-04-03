@@ -1,5 +1,5 @@
 <template>
-    <div class="breadcrumbs d-none d-sm-block">
+    <div v-if="level1" class="breadcrumbs d-none d-sm-block">
         <div class="grid-container">
             <ul>
                 <li v-show="level1">
@@ -63,6 +63,7 @@
     & a {
         color: $black !important;
         transition: all 0.2s ease-in;
+
         &:hover {
             color: $sika-yellow !important;
         }
@@ -73,7 +74,14 @@
 <script>
 export default {
     name: "breadcrumbs",
-    props: ["level1", "level2", "level3", "level4", "level5"],
+    props: {
+        level1: String,
+        level2: String,
+        level3: String,
+        level4: String,
+        level5: String,
+    },
+    //["level1", "level2", "level3", "level4", "level5"],
     methods: {
 
     },
