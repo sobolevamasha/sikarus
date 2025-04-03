@@ -7,7 +7,7 @@
         </picture>
       </div>
       <div v-else class="cmp-video">
-        <video playsinline="" autoplay="autoplay" muted="muted" loop="loop">
+        <video v-if="video" playsinline="" autoplay="autoplay" muted="muted" loop="loop">
           <source :src="video" type="video/mp4">
         </video>
       </div>
