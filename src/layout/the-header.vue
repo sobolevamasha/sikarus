@@ -149,13 +149,13 @@
         </div>
         <div class="header__content  d-none d-md-flex">
             <div class="header__container d-flex justify-space-between align-center">
-                <a href="/" class="header__content-left d-flex align-center">
+                <router-link to="/" class="header__content-left d-flex align-center">
                     <div class="logo">
                         <img src="../assets/Sika_ClaimU_pos_rgb.svg" />
                     </div>
 
                     <div class="header__content-title">Sika Россия</div>
-                </a>
+                </router-link>
                 <div class="header__content-right">
                     <div class="header__content-search">
                         <form method="get" class="search-form">
