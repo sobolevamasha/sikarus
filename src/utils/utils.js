@@ -6,7 +6,7 @@ export function scrollTo(id, offset = 0) {
     behavior: "smooth",
   });
 }
-/*Аккордеоны*/
+/*Аккордеоны*//**/
 export function accordion() {
   const accordionHeaders = document.querySelectorAll(".accordion-header");
   const buttons = document.querySelectorAll(".download--btn");
