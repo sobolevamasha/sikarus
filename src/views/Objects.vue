@@ -164,7 +164,7 @@ export default {
                 bottom: 0;
                 left: 0;
                 padding: 25px;
-                z-index: 5;
+                z-index: 1;
                 text-align: left;
                 color: $white;
             }

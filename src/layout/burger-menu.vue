@@ -1,5 +1,5 @@
 <template>
-    <div class="burger-menu d-md-none" :class="{ 'burger-menu--zindex': showModal }">
+    <div class="burger-menu" id="burgerMenu">
         <div class="burger-menu__top">
             <div class="container">
                 <div class="d-flex flex-column burger-menu__block">
@@ -7,10 +7,8 @@
                         <ul class="burger-menu__list">
                             <li v-for="(menuItem, index) in menuData" :key="index" class="burger-menu__list--item">
                                 <router-link v-show="menuItem.to" :to="menuItem.to"></router-link>
-                                <div @click="toggleMenu(index)" :class="{ 'isOpen': menuItem.isOpen && menuItem.items }"
-                                    class="d-flex align-center justify-space-between">
+                                <div class="burger-menu__toggleInnerMenu d-flex align-center justify-space-between">
                                     <div class="burger-menu__list-name">
-
                                         {{ menuItem.name }}
                                     </div>
                                     <svg v-show="!menuItem.to" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -24,13 +22,14 @@
 
 
                                 </div>
-                                <ul class="burger-menu__sublist" v-show="menuItem.isOpen">
+                                <ul class="burger-menu__sublist">
                                     <li v-for="(item, itemIndex) in menuItem.items" :key="itemIndex"
                                         class="burger-menu__sublist--item">
-                                        <div @click="toggleSubMenu(menuItem, item)" :class="{ 'isOpen': item.isOpen }">
+                                        <div class="burger-menu__toggleInnerSubMenu">
+                                            <router-link v-show="item.to" :to="item.to"></router-link>
                                             {{ item.title }}
                                         </div>
-                                        <ul class="burger-menu__subsublist" v-show="item.isOpen">
+                                        <ul class="burger-menu__subsublist">
                                             <li v-for="(subitem, subIndex) in item.subitems" :key="subIndex">
                                                 <router-link :to="subitem.to">{{ subitem.name }}</router-link>
                                             </li>
@@ -50,17 +49,12 @@
                         <router-link v-show="item.to" :to="item.to"></router-link>
                         <div class="d-flex align-center justify-space-between">
                             <div class="burger-menu__list-name">
-
                                 {{ item.name }}
                             </div>
-
-
-
                         </div>
-
                     </li>
                     <li>
-                        <button class="d-flex align-center" @click="showModal = true">
+                        <button id="open-modal" class="d-flex align-center">
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="28" height="25"
                                 viewBox="0 0 512 512" fill="white" class="mr-2">
                                 <g id="icomoon-ignore">
@@ -69,10 +63,7 @@
                                     d="M256 0c-141.385 0-256 114.615-256 256s114.615 256 256 256 256-114.615 256-256-114.615-256-256-256zM256 480.001c-31.479 0-61.436-6.506-88.615-18.226l116.574-131.145c2.603-2.929 4.041-6.711 4.041-10.63v-48c0-8.837-7.163-16-16-16-56.495 0-116.102-58.731-116.687-59.313-3-3.001-7.070-4.687-11.313-4.687h-64c-8.836 0-16 7.164-16 16v96c0 6.061 3.424 11.601 8.845 14.311l55.155 27.578v93.943c-58.026-40.478-96-107.716-96-183.832 0-34.357 7.745-66.903 21.569-96h58.431c4.244 0 8.313-1.686 11.314-4.686l64-64c3-3.001 4.686-7.070 4.686-11.314v-38.706c20.281-6.037 41.759-9.294 64-9.294 35.203 0 68.502 8.13 98.141 22.6-2.072 1.751-4.088 3.582-6.023 5.518-18.133 18.132-28.118 42.239-28.118 67.882s9.985 49.75 28.118 67.882c18.217 18.216 42.609 28.132 67.817 28.13 1.583 0 3.171-0.040 4.759-0.118 6.907 25.901 19.376 93.328-4.202 186.167-0.222 0.872-0.348 1.744-0.421 2.612-40.662 41.54-97.35 67.328-160.071 67.328z">
                                 </path>
                             </svg>
-
                             Countries
-
-
                         </button>
                     </li>
                 </ul>
@@ -111,11 +102,11 @@
             </div>
 
         </div>
-        <transition name="modal">
-            <div class="modal-mask" v-show="showModal">
-                <countries @close="closeModal" />
+        <!-- <transition name="modal">
+            <div id="modalCountires" class="modalCountires">
+                <countries />
             </div>
-        </transition>
+        </transition> -->
     </div>
 
 
@@ -125,126 +116,15 @@
 import menuData from '@/store/menu-items.js'
 import countries from '@/components/countries.vue';
 
+import { onToggleInnerMenu } from '@/utils/utils';
+import { onToggleInnerSubMenu } from '@/utils/utils';
+
 export default {
     name: "burger-menu",
     data() {
         return {
-            showModal: false,
-            menuData: [
-                {
-                    name: "О нас",
-                    to: '',
-                    isOpen: false,
-                    items: [
-                        {
-                            isOpen: false,
-                            title: "Концерн Sika",
-                            subitems: [
-                                {
-                                    name: "Цели и бренд Sika",
-                                    to: "",
-                                },
-                                {
-                                    name: "Ценности и принципы",
-                                    to: "",
-                                },
-                                {
-                                    name: "История",
-                                    to: "",
-                                },
-                                {
-                                    name: "Целевые рынки сбыта",
-                                    to: "",
-                                },
-                            ],
-                        },
-                        {
-                            isOpen: false,
-                            title: "Sika Россия",
-                            subitems: [
-                                {
-                                    name: "О компании",
-                                    to: "",
-                                },
-                                {
-                                    name: "Заводы Sika в России",
-                                    to: "",
-                                },
-                                {
-                                    name: "Лаборатории Sika в России",
-                                    to: "",
-                                },
-                                {
-                                    name: "Техподдержка",
-                                    to: "",
-                                },
-                            ],
-                        },
-                    ],
-                },
-                {
-                    name: "Продукция",
-                    to: '',
-                    isOpen: false,
-                    items: [
-                        {
-                            isOpen: false,
-                            title: "Концерн Sika",
-                            subitems: [
-                                {
-                                    name: "Цели и бренд Sika",
-                                    to: "",
-                                },
-
-                            ],
-                        },
-                    ],
-                },
-                {
-                    name: "Отраслевые решения",
-                    to: '',
-                    isOpen: false,
-                    items: [
-                        {
-                            isOpen: false,
-                            title: "Концерн Sika",
-                            subitems: [
-                                {
-                                    name: "Цели и бренд Sika",
-                                    to: "",
-                                },
-                                {
-                                    name: "Ценности и принципы",
-                                    to: "",
-                                },
-                                {
-                                    name: "История",
-                                    to: "",
-                                },
-                                {
-                                    name: "Целевые рынки сбыта",
-                                    to: "",
-                                },
-                            ],
-                        },
-                    ],
-                },
-                {
-                    name: "Продуктовые бренды",
-                    to: '/contacts',
-                    isOpen: false,
-                },
-                {
-                    name: "Сервис",
-                    to: '/about',
-                    isOpen: false,
-                },
-                {
-                    name: "Где купить",
-                    to: '/objects',
-                    isOpen: false,
-                },
-            ],
+            menuData: menuData,
+            
             bottomMenu: [
                 {
                     name: "О компании",
@@ -269,22 +149,14 @@ export default {
         countries
     },
     methods: {
-        toggleMenu(index) {
-            this.menuData[index].isOpen = !this.menuData[index].isOpen;
-        },
-        toggleSubMenu(menuItem, item) {
-            // Закрываем все подменю, кроме текущего
-            menuItem.items.forEach(i => {
-                if (i !== item) {
-                    i.isOpen = false;
-                }
-            });
-            item.isOpen = !item.isOpen;
-        },
-        closeModal() {
-            this.showModal = false;
+        initScripts() {
+            onToggleInnerMenu();
+            onToggleInnerSubMenu();
         }
     },
+    mounted() {
+        this.initScripts();
+    }
 }
 </script>
 
@@ -301,6 +173,18 @@ export default {
     box-sizing: border-box;
     overflow: scroll;
     z-index: 4;
+
+    display: none;
+
+
+
+    &--opened {
+        display: block;
+
+        @include up($md) {
+            display: none;
+        }
+    }
 
     &--zindex {
         z-index: 5;
@@ -362,16 +246,6 @@ export default {
         margin-top: 75px;
     }
 
-    // & ul {
-    //     & li {
-
-    //         text-align: left;
-
-    //         &:not(:last-child) {
-    //             border-bottom: 1px solid #e0e0e0;
-    //         }
-    //     }
-    // }
 
     a {
         display: inline-block;
@@ -410,19 +284,36 @@ export default {
         position: relative;
     }
 
-    &__sublist li {
-        padding: 20px;
-        font-weight: 700;
 
-        text-align: left;
+    &__sublist {
+        display: none;
 
-        &:not(:last-child) {
-            border-bottom: 1px solid #e0e0e0;
+        &.active {
+            display: block;
         }
+
+        & li {
+            padding: 20px;
+            font-weight: 700;
+
+            text-align: left;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid #e0e0e0;
+            }
+        }
+
+
     }
 
     &__subsublist {
         padding: 20px;
+
+        display: none;
+
+        &.active {
+            display: block;
+        }
 
         & li {
             font-weight: 400;
@@ -433,6 +324,14 @@ export default {
                 align-items: center;
 
             }
+        }
+    }
+
+    & .modalCountires {
+        display: none;
+
+        &.active {
+            display: block;
         }
     }
 }

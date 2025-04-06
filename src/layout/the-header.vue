@@ -1,8 +1,8 @@
 <template>
-    <nav class="header" :class="headerClass">
+    <nav class="header">
 
         <transition name="burger" appear>
-            <burger-menu v-show="withBurgerMenu" />
+            <burger-menu />
         </transition>
 
         <div class="header__mobile d-md-none">
@@ -20,8 +20,7 @@
                 </div>
                 <div class="header__mobile--right">
                     <transition name="fade-quick" mode="out-in">
-                        <button @click="onToggleBurgerMenu" class="header__mobile--btn d-flex flex-column"
-                            :class="{ 'header__mobile--close-btn': withBurgerMenu }">
+                        <button id="toggleBurgerMenu" class="header__mobile--btn d-flex flex-column">
                             <span></span>
                             <span></span>
                             <span></span>
@@ -37,7 +36,8 @@
                         <a href="https://www.sika.com" target="_blank">Sika Group</a>
                     </div>
                     <div class="header__dropdown d-flex ">
-                        <button class="header__dropdown--product-list d-flex align-center" @click="showModal = true">
+                        <button id="openModalBtn" class="header__dropdown--product-list d-flex align-center"
+                            @click="showModal = true">
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                                 viewBox="0 0 512 512" fill="white" class="mr-2">
                                 <g id="icomoon-ignore">
@@ -60,7 +60,7 @@
 
 
                         </button>
-                        <button @click="onProductListToggle" class="header__dropdown--product-list">
+                        <button id="toggleProducts" class="header__dropdown--product-list">
                             Продукция
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="15" height="15"
                                 viewBox="0 0 887 1024">
@@ -70,7 +70,7 @@
                                     d="M64.512 285.696l378.88 364.544 380.928-364.544q22.528-26.624 49.152 0 26.624 22.528 0 49.152l-405.504 401.408q-22.528 22.528-49.152 0l-405.504-401.408q-26.624-26.624 0-49.152 24.576-24.576 51.2 0z">
                                 </path>
                             </svg>
-                            <ul v-show="productListOpen" class="header__dropdown--product-item">
+                            <ul class="productItems header__dropdown--product-item">
                                 <li v-for="(product, index) in products" :key="index">
                                     <router-link :to="product.link" target="_blank">
                                         {{ product.title }}
@@ -93,9 +93,9 @@
                             <router-link to="/">Дилеры</router-link>
                         </li>
                         <li>
-                            <button @click="onCabinetMenuToggle" class="header__dropdown--cabinet">Моя Sika
+                            <button class="header__dropdown--cabinet">Моя Sika
 
-                                <ul v-show="cabinetOpen" class="header__dropdown--cabinet-item">
+                                <ul class="header__dropdown--cabinet-item">
                                     <li>
                                         <router-link to="/cabinet">
                                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
@@ -178,16 +178,12 @@
         <hero :title="bannerProps.title" :subtitle="bannerProps.subtitle" :background="bannerProps.background"
             :video="bannerProps.video" :isSmall="bannerProps.isSmall" />
 
-        <breadcrumbs 
-        :level1="breadcrumbs.level1"
-        :level2="breadcrumbs.level2"
-        :level3="breadcrumbs.level3"
-        :level4="breadcrumbs.level4"
-        :level5="breadcrumbs.level5"/>
+        <breadcrumbs :level1="breadcrumbs.level1" :level2="breadcrumbs.level2" :level3="breadcrumbs.level3"
+            :level4="breadcrumbs.level4" :level5="breadcrumbs.level5" />
 
         <transition name="modal">
-            <div class="modal-mask" v-show="showModal">
-                <countries @close="closeModal" />
+            <div id="modalCountires" class="modalCountires">
+                <countries />
             </div>
         </transition>
 
@@ -231,10 +227,6 @@
 <style lang="scss">
 .header__dropdown--product-list:hover {
     transition: all 0.2s ease-in;
-
-    .header__dropdown--product-item {
-        display: block;
-    }
 }
 
 .header {
@@ -423,7 +415,6 @@
                     border-bottom: 1px solid #ffffff;
 
                     &:hover {
-
                         border-bottom: 1px solid $sika-yellow;
                     }
                 }
@@ -464,13 +455,18 @@
             text-align: left;
             padding: 0 10px !important;
 
+            display: none;
+
+            &.active {
+                display: block;
+            }
+
 
             & li {
                 &:not(:last-child) {
                     border-bottom: 1px solid #ffffff;
 
                     &:hover {
-
                         border-bottom: 1px solid $sika-yellow;
                     }
                 }
@@ -504,6 +500,14 @@
             & span {
                 margin-left: 10px;
             }
+        }
+    }
+
+    & .productItems {
+        display: none;
+
+        &.active {
+            display: block;
         }
     }
 
@@ -608,6 +612,14 @@
         }
     }
 
+    & .modalCountires {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
 
 }
 </style>
@@ -620,6 +632,11 @@ import countries from '@/components/countries.vue';
 import hero from '@/components/hero.vue';
 import breadcrumbs from '@/components/breadcrumbs.vue';
 
+import { onToggleBurgerMenu } from '@/utils/utils';
+import { onToggleModal } from '@/utils/utils';
+import { onToggleProducts } from '@/utils/utils';
+import { onToggleCabinetitems } from '@/utils/utils';
+
 export default {
     name: "the-header",
     components: {
@@ -631,23 +648,13 @@ export default {
     },
     data() {
         return {
-            isHeaderScrolled: false,
-            isHeaderBurgered: false,
-            showModal: false,
-            cabinetOpen: false,
-            productListOpen: false,
             isAuth: false,
         }
     },
     computed: {
-        headerClass() {
-            return {
-                'burgered': this.isHeaderBurgered,
-            }
-        },
-        withBurgerMenu() {
-            return this.$store.state.withBurgerMenu;
-        },
+        // withBurgerMenu() {
+        //     return this.$store.state.withBurgerMenu;
+        // },
 
         products() {
             return [
@@ -676,12 +683,6 @@ export default {
             },
             immediate: true,
         },
-        // breadcrumbs: {
-        //     handler(newMeta) {
-        //         this.updateProps(newMeta);
-        //     },
-        //     immediate: true,
-        // },
     },
 
     methods: {
@@ -699,29 +700,16 @@ export default {
             this.level5 = meta.breadcrumbs.level5;
         },
 
-        onToggleBurgerMenu() {
-            this.$store.state.withBurgerMenu = !this.$store.state.withBurgerMenu;
-            if (this.$store.state.withBurgerMenu) setTimeout(() => {
-                this.isHeaderBurgered = true;
-            }, 100);
-            else this.isHeaderBurgered = false;
-        },
-
-        onProductListToggle() {
-            this.productListOpen = !this.productListOpen;
-        },
-
-        onCabinetMenuToggle() {
-            this.cabinetOpen = !this.cabinetOpen;
-        },
-
-        closeModal() {
-            this.showModal = false;
+        initScripts() {
+            onToggleBurgerMenu();
+            onToggleModal();
+            onToggleProducts();
+            onToggleCabinetitems();
         }
-
-
-
     },
+    mounted() {
+        this.initScripts();
+    }
 }
 
 </script>

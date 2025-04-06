@@ -13,7 +13,7 @@
                     <h3 class="cmp-website-selection__title">Choose a country</h3>
                 </div>
             </div>
-            <button class="close-button" @click="handleClose">×</button>
+            <button id="close-modal" class="close-button">×</button>
         </div>
         <div class="countries-content">
 
@@ -35,7 +35,7 @@
             <!-- <h4>Regions</h4> -->
             <ul class="countries__section countries__section--regions">
                 <li v-for="(region, indexRegion) in regions" :key="indexRegion" class="countries__section--item">
-                    <div class="d-flex align-center" @click="toggleRegion(indexRegion)">
+                    <div class="d-flex align-center toggleRegions">
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                             viewBox="0 0 887 1024">
                             <g id="icomoon-ignore">
@@ -47,10 +47,10 @@
 
                         <h4>{{ region.region }}</h4>
                     </div>
-                    <ul v-show="region.isOpen" class="countries__section--countries">
+                    <ul class="countries__section--countries">
                         <li v-for="(country, indexCountry) in region.countries" :key="indexCountry">
-                            <button @click="onCountryToggle(indexRegion, indexCountry)">{{ country.name }}</button>
-                            <ul v-show="country.isExpanded" class="countries__section--linkList">
+                            <button class="toggleCountries">{{ country.name }}</button>
+                            <ul class="countries__section--linkList">
                                 <li v-for="(link, indexLink) in country.links" :key="indexLink">
                                     <a :href="link.to" target="_blank" class="countries__section--linkList-links">
                                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -76,6 +76,7 @@
 <script>
 
 import countires from '@/store/countires';
+import { toggleRegions } from '@/utils/utils';
 
 export default {
     data() {
@@ -96,14 +97,11 @@ export default {
 
     },
     methods: {
-        toggleRegion(indexRegion) {
-            this.regions.forEach((item, idx) => {
-                item.isOpen = idx === indexRegion ? !item.isOpen : false;
-            });
-        },
-        handleClose() {
-            this.$emit('close');
-        },
+        // toggleRegion(indexRegion) {
+        //     this.regions.forEach((item, idx) => {
+        //         item.isOpen = idx === indexRegion ? !item.isOpen : false;
+        //     });
+        // },
         onCountryToggle(indexRegion, indexCountry) {
             const region = this.regions[indexRegion];
             // Получаем нужную страну
@@ -119,10 +117,12 @@ export default {
                 }
             });
         },
+        initScripts() {
+            toggleRegions();
+        }
     },
     mounted() {
-        console.log('countiryList: ', this.countryList);
-
+        this.initScripts();
     }
 };
 </script>
@@ -221,10 +221,14 @@ export default {
 
         &--countries {
             padding: 15px !important;
+            display: none;
+            &.active {
+                display: block;
 
-            @include up($md) {
-                display: grid;
-                grid-template-columns: repeat(6, 1fr);
+                @include up($md) {
+                    display: grid;
+                    grid-template-columns: repeat(6, 1fr);
+                }
             }
 
             & li {
@@ -240,6 +244,10 @@ export default {
             background-color: #fff;
             border: 1px solid #000;
             z-index: 10;
+            display: none;
+            &.active {
+                display: block;
+            }
 
             & li {
                 margin: 0;
@@ -254,7 +262,6 @@ export default {
             }
         }
     }
-
 
 
 
