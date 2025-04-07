@@ -20982,6 +20982,7 @@ body.rtl .cmp-helpbox__icon .cmp-icon {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  line-height: 100%;
 }
 
 .cmp-helpbox__icon:hover {
@@ -22495,11 +22496,11 @@ button {
   margin: 16px auto;
 
   @include up($sm) {
-    margin: 32px auto;
+    margin: 22px auto 32px;
   }
 
   @include up($lg) {
-    margin: 48px auto;
+    margin: 24px auto 48px;
   }
 }
 

@@ -47,24 +47,6 @@ export default {
     },
     
   },
-  // watch: {
-  //   currentMeta: {
-  //     handler(newMeta) {
-  //       this.updateProps(newMeta);
-  //     },
-  //     immediate: true,
-  //   },
-  // },
-  // methods: {
-  //   updateProps(meta) {
-  //     this.title = meta.title;
-  //     this.subtitle = meta.subtitle;
-  //     this.background = meta.background;
-  //     this.video = meta.video;
-  //     this.isSmall = meta.isSmall;
-  //   },
-  // },
-
 }
 </script>
 
@@ -87,12 +69,6 @@ export default {
 
   &--small {
     height: 600px;
-  }
-
-
-
-  @include up($md) {
-    //margin-top: -30px;
   }
 }
 </style>

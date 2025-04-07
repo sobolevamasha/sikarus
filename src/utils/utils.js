@@ -1,3 +1,6 @@
+import router from "@/router";
+import routes from "@/router/routes";
+
 export function scrollTo(id, offset = 0) {
   const el = typeof id === "string" ? document.getElementById(id) : id;
   const top = el.getBoundingClientRect().top + window.scrollY + offset;
@@ -168,12 +171,59 @@ export function onToggleCabinetitems() {
   document.addEventListener("click", closeItemList);
 }
 
+/*Тоггл главного меню */
+export function onToggleMainMenu() {
+  const menuToggleBtn = document.querySelectorAll(".mainMenuToggle");
+  const mainMenuSublist = document.querySelectorAll(".mainmenu__list-subitem");
+
+  function closeAllSublists() {
+    mainMenuSublist.forEach((sublist) => {
+      sublist.classList.remove("active");
+    });
+  }
+
+  function toggleMainMenu(event) {
+    const index = Array.from(menuToggleBtn).indexOf(event.currentTarget);
+    const correspondingSublist = mainMenuSublist[index];
+
+    // Если дропдаун уже открыт, просто закроем его
+    if (correspondingSublist.classList.contains("active")) {
+      correspondingSublist.classList.remove("active");
+    } else {
+      // Закрываем все дропдауны и открываем только соответствующий
+      closeAllSublists();
+      correspondingSublist.classList.add("active");
+    }
+  }
+
+  // Обработчик клика вне меню
+  function handleClickOutside(event) {
+    if (
+      !event.target.closest(".mainMenuToggle") &&
+      !event.target.closest(".mainmenu__list-subitem")
+    ) {
+      closeAllSublists();
+    }
+  }
+
+  menuToggleBtn.forEach((el) => {
+    el.addEventListener("click", toggleMainMenu);
+  });
+
+  // Добавляем обработчик события на документ
+  document.addEventListener("click", handleClickOutside);
+}
+
 /*Модалка countries*/
 export function toggleRegions() {
   const regionsBtn = document.querySelectorAll(".toggleRegions");
   const countriesBtn = document.querySelectorAll(".toggleCountries");
-  const regionList = document.querySelectorAll(".countries__section--countries");
-  const countriesLinks = document.querySelectorAll(".countries__section--linkList");
+  const regionList = document.querySelectorAll(
+    ".countries__section--countries"
+  );
+  const countriesLinks = document.querySelectorAll(
+    ".countries__section--linkList"
+  );
 
   function toggleCountries(event) {
     const index = Array.from(regionsBtn).indexOf(event.currentTarget);
@@ -198,6 +248,5 @@ export function toggleRegions() {
   countriesBtn.forEach((button) => {
     button.addEventListener("click", toggleCountryItems);
   });
-
-
 }
+
