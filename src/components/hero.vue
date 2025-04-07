@@ -1,5 +1,5 @@
 <template>
-  <div class="cmp-font--klavika hero">
+  <div class="hero">
     <div class="cmp-hero cmp-hero--darkbg cmp-hero--parallax" :class="heroClass">
       <div v-if="background && !video" class="cmp-hero__background">
         <picture v-show="background">
@@ -89,10 +89,7 @@ export default {
     height: 600px;
   }
 
-  & h1,
-  & h4 {
-    font-family: $secondary-font-family !important;
-  }
+
 
   @include up($md) {
     //margin-top: -30px;

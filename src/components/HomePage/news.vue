@@ -6,18 +6,17 @@
                     Последние новости
                 </h2>
                 <ul class="news__list">
-                    <li v-for="(item, index) in news" :key="index" v-show="news && news.length > 0 && index <= newsLimit"
-                        class="news__item">
+                    <li v-for="(item, index) in news" :key="index"
+                        v-show="news && news.length > 0 && index <= newsLimit" class="news__item">
                         <router-link :to="item.link"></router-link>
                         <img :src="item.img" />
                         <div class="news__content">
-                            <span class="text-left d-block">{{ item.lang }}</span>
                             <div>
-                                <h4 class="text-left my-4">{{ item.title }}</h4>
-                                <span class="text-left small cmp-font--bold d-block">{{ item.date }}</span>
+                                <span>{{ item.lang }}</span>
+                                <h4>{{ item.title }}</h4>
                             </div>
+                            <span>{{ item.date }}</span>
                         </div>
-
                     </li>
                 </ul>
                 <btn :label="!fullLimit ? 'Показать еще' : 'Скрыть'" @click="onShowMore" class="mt-2 mt-md-8"></btn>
@@ -28,13 +27,13 @@
 
 <style lang="scss">
 .news {
-    background-color: #f5f5f5;
+    //background-color: #f5f5f5;
 
     &__list {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         grid-gap: 15px;
-       
+
         justify-self: center;
 
         & img {
@@ -60,29 +59,52 @@
     }
 
     &__item {
-        max-width: 280px;
-        box-shadow: 0 1px 2px #0003, 0 1px 3px #0000001a;
-        transition: all .3s ease-in-out;
-        outline: 1px solid transparent;
+        //max-width: 280px;
+        
+        transition: all .3s ease-in;
+        //outline: 1px solid transparent;
         margin: 0 auto;
         position: relative;
 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        border: 4px solid transparent;
+
+        &:hover {
+            background-color: $sika-yellow;
+            border: 4px solid $sika-yellow;
+            & .news__content {
+                box-shadow: none;
+            }
+        }
+
         @include up($md) {
-            max-width: 320px;
+            //max-width: 320px;
         }
 
         @include up($lg) {
-            max-width: 370px;
+            //max-width: 370px;
         }
     }
 
     &__content {
-        //max-width: 250px;
-        padding: 15px;
+        padding: 20px 25px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: left;
+        box-shadow: 0 1px 2px #0003, 0 1px 3px #0000001a;
+
+        & h4 {
+            margin: 5px 0 20px;
+        }
 
         @include up($lg) {
             max-width: 370px;
-            padding: 20px 30px 30px;
+            padding: 20px 25px 25px;
         }
     }
 

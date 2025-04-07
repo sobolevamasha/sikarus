@@ -1,5 +1,5 @@
 <template>
-    <div v-if="level1" class="breadcrumbs d-none d-sm-block">
+    <div v-if="level1" class="breadcrumbs">
         <div class="grid-container">
             <ul>
                 <li v-show="level1">

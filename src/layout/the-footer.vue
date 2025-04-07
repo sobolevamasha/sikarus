@@ -223,6 +223,5 @@ export default {
 <style lang="scss">
 .footer {
   background-color: #616161;
-  font-family: $secondary-font-family;
 }
 </style>

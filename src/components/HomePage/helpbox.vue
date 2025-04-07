@@ -24,7 +24,7 @@
         :key="index">
         <div class="helpbox__item--content">
           <img class="cmp-icon cmp-icon-map-marker helpbox__item--icon" :src="button.icon" />
-          <div class="cmp-helpbox__icon-text text-left">{{ button.name }}</div>
+          <div class="cmp-helpbox__icon-text text-left helpbox__item--text">{{ button.name }}</div>
         </div>
       </a>
     </div>
@@ -37,6 +37,7 @@
   & h2 {
     margin-bottom: 0;
   }
+
   &__wrap {
     @include up($sm) {
       margin-top: -50px;
@@ -54,7 +55,7 @@
     max-width: 250px;
     margin: -50px auto 0;
 
-    
+
 
     @include up($md) {
       grid-template-columns: repeat(3, 1fr);
@@ -71,6 +72,11 @@
 
   &__item {
     margin: 5px 0;
+    transition: all 0.2s ease-in;
+
+    &:hover {
+      color: $sika-yellow !important;
+    }
 
     @include up($md) {
       margin: 10px;
