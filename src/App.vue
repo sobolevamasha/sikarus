@@ -15,7 +15,7 @@
 
 <style lang="scss">
 #app {
-  font-family: $secondary-font-family;
+  font-family: 'Gidole', sans-serif;
   text-align: center;
   color: $black;
 

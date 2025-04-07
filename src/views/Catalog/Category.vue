@@ -1,11 +1,19 @@
 <template>
     <div class="category">
-        <!-- <hero :title="title" :background="background" :isSmall="true" /> -->
-        <!-- <breadcrumbs :level1="level1" :level2="level2" /> -->
+
         <div class="grid-container section-margin">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad alias cupiditate fugiat quos aspernatur ab
+                officiis, dignissimos odio quae temporibus labore! Quo eius laudantium, similique harum necessitatibus
+                commodi magnam perferendis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad alias cupiditate
+                fugiat quos aspernatur ab
+                officiis, dignissimos odio quae temporibus labore! Quo eius laudantium, similique harum necessitatibus
+                commodi magnam perferendis?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad alias cupiditate fugiat quos aspernatur ab
+                officiis, dignissimos odio quae temporibus labore! Quo eius laudantium, similique harum necessitatibus
+                commodi magnam perferendis?</p>
             <ul class="category__list">
-                <li class="category__item" v-for="(item, index) in catalog">
-                    <router-link  class="category__item--link" to="/products"></router-link>
+                <!-- <li class="category__item" v-for="(item, index) in catalog">
+                    <router-link class="category__item--link" to="/products"></router-link>
                     <img :src="item.img" />
                     <div class="category__item--content">
                         <h4>
@@ -14,6 +22,20 @@
                         <p v-if="item.descr" class="cmp-text cmp-line-clamp cmp-line-clamp--3"> {{ item.descr }}</p>
                     </div>
 
+                </li> -->
+
+                <li class="category__item" v-for="(item, index) in catalog" :key="index">
+                    <div class="category__item--imagebackground">
+                        <img :src="item.img" />
+                    </div>
+                    <div class="category__item--content">
+                        <router-link class="category__item--link" to="/products">
+                            <h4 class="category__item--title">
+                                {{ item.title }}
+                            </h4>
+                        </router-link>
+
+                    </div>
                 </li>
             </ul>
         </div>
@@ -28,8 +50,10 @@
         justify-self: center;
         grid-gap: 35px;
 
+
         @include up($sm) {
             grid-template-columns: repeat(2, 1fr);
+            padding-top: 30px !important;
         }
 
         @include up($md) {
@@ -38,23 +62,52 @@
     }
 
     &__item {
-        max-width: 360px;
-        box-shadow: 0 1px 2px #0003, 0 1px 3px #0000001a;
-        transition: all .3s ease-in-out;
-        outline: 1px solid transparent;
+        // max-width: 360px;
+        // box-shadow: 0 1px 2px #0003, 0 1px 3px #0000001a;
+        // transition: all .3s ease-in-out;
+        // outline: 1px solid transparent;
         position: relative;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
 
-        &--content {
-            padding: 30px;
-            text-align: left;
-        }
-
-        &--link {
+        &--imagebackground {
             position: absolute;
             width: 100%;
+            overflow: hidden;
             height: 100%;
             top: 0;
             left: 0;
+            //z-index: -1;
+        }
+
+        &--content {
+            position: relative;
+            z-index: 1;
+            padding: 20px 20px 40px;
+            width: 100%;
+            display: flex;
+            min-height: 230px;
+        }
+
+        &--link {
+            background-color: #ffffffb3;
+            display: flex;
+            flex-direction: column;
+            margin-right: auto;
+            transition: all .3s ease-in;
+            width: 80%;
+            color: $black !important;
+            &:hover {
+                background-color: $sika-yellow;
+            }
+        }
+
+        &--title {
+            padding: 20px 15px 10px;
+            text-align: left;
+            word-break: break-word;
         }
     }
 

@@ -22,7 +22,6 @@ export default {
     color: $dark-gray !important;
     height: 40px !important;
     padding: 8px 30px !important;
-    font-family: $secondary-font-family;
     font-size: 16px !important;
     line-height: 10px !important;
 }

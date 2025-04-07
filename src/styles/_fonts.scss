@@ -1,23 +1,17 @@
 @font-face {
-    font-family: 'Klavika';
-    src: url('~@/assets/fonts/klavika-regular.woff');
-    src: local('Klavika Regular'), local('Klavika-Regular');
-    font-weight: normal;
-    font-style: normal;
-  }
+  font-family: "AlumniSans";
+  src: local("AlumniSans Regular"), local("AlumniSans-Regular"),
+    url("~@/assets/fonts/AlumniSans-VariableFont_wght.woff2") format("woff2"),
+    url("~@/assets/fonts/AlumniSans-VariableFont_wght.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
 
-  @font-face {
-    font-family: 'Klavika';
-    src: url('~@/assets/fonts/klavika-medium.woff');
-    src: local('Klavika Medium'), local('Klavika-Medium');
-    font-weight: 500;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Klavika';
-    src: url('~@/assets/fonts/klavika-light.woff');
-    src: local('Klavika Light'), local('Klavika-Light');
-    font-weight: 300;
-    font-style: normal;
-  }
+@font-face {
+  font-family: "Gidole";
+  src: local("Gidole Regular"), local("Gidole-Regular"),
+    url("~@/assets/fonts/Gidole-Regular.woff2") format("woff2"),
+    url("~@/assets/fonts/Gidole-Regular.woff2") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}

@@ -130,7 +130,7 @@ export default {
 <style lang="scss">
 .countries {
     /* Стили для модального окна */
-    font-family: $secondary-font-family;
+
     position: fixed;
     top: 0;
     left: 0;
@@ -154,7 +154,6 @@ export default {
         & h3 {
             font-weight: 700;
             padding: 15px;
-            font-family: $secondary-font-family;
         }
 
 
@@ -182,7 +181,6 @@ export default {
         & h4 {
             font-weight: 700;
             //padding: 15px 0 0;
-            font-family: $secondary-font-family;
             text-transform: uppercase !important;
             margin-left: 10px;
             margin-bottom: 0;
