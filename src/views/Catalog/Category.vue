@@ -1,6 +1,5 @@
 <template>
     <div class="category">
-
         <div class="grid-container section-margin">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad alias cupiditate fugiat quos aspernatur ab
                 officiis, dignissimos odio quae temporibus labore! Quo eius laudantium, similique harum necessitatibus
@@ -12,18 +11,6 @@
                 officiis, dignissimos odio quae temporibus labore! Quo eius laudantium, similique harum necessitatibus
                 commodi magnam perferendis?</p>
             <ul class="category__list">
-                <!-- <li class="category__item" v-for="(item, index) in catalog">
-                    <router-link class="category__item--link" to="/products"></router-link>
-                    <img :src="item.img" />
-                    <div class="category__item--content">
-                        <h4>
-                            {{ item.title }}
-                        </h4>
-                        <p v-if="item.descr" class="cmp-text cmp-line-clamp cmp-line-clamp--3"> {{ item.descr }}</p>
-                    </div>
-
-                </li> -->
-
                 <li class="category__item" v-for="(item, index) in catalog" :key="index">
                     <div class="category__item--imagebackground">
                         <img :src="item.img" />
@@ -44,6 +31,11 @@
 
 <style lang="scss">
 .category {
+
+    & p {
+        text-align: left;
+    }
+
     &__list {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
@@ -99,6 +91,7 @@
             transition: all .3s ease-in;
             width: 80%;
             color: $black !important;
+
             &:hover {
                 background-color: $sika-yellow;
             }

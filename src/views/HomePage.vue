@@ -158,7 +158,7 @@ export default {
 		padding: 30px 0;
 
 		@include up($lg) {
-			padding: 60px 0;
+			padding: 40px 0;
 		}
 	}
 

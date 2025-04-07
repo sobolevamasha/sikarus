@@ -78,7 +78,7 @@
             margin-bottom: 10px;
             font-weight: 700;
             line-height: 100%;
-            min-height: 45px;
+            min-height: 52px;
         }
 
         & p {
