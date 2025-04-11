@@ -94,11 +94,6 @@ export default {
         padding-right: 40px;
     }
 
-    @include up($xl) {
-        //width: 80%;
-        //max-width: 2200px;
-    }
-
     h6 {
         font-weight: 700;
         border-bottom: 2px solid #3c3c3c;
@@ -109,7 +104,6 @@ export default {
         background: $white;
         z-index: 5;
         position: relative;
-        //width: auto;
         height: 70px;
         display: flex;
         justify-content: left;
@@ -151,6 +145,8 @@ export default {
             height: 100%;
             top: 0;
             left: 0;
+            color: black !important;
+            display: contents;
         }
 
 
