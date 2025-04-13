@@ -171,6 +171,25 @@ const routes = [
         },
       },
       {
+        path: "/search",
+        name: "search",
+        component: () => import("../views/Search"),
+        meta: {
+          title: "Результаты поиска",
+          subtitle: "",
+          background: "",
+          video: "",
+          isSmall: true,
+          breadcrumbs: {
+            level1: "Главная",
+            level2: "Результаты поиска",
+            level3: "",
+            level4: "",
+            level5: "",
+          },
+        },
+      },
+      {
         path: "/cabinet",
         name: "cabinet",
         component: () => import("../views/Cabinet"),

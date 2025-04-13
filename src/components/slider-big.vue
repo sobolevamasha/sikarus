@@ -59,17 +59,12 @@
     }
 
     & .mySwiper2 {
-        //max-width: 700px;
         padding: 10px 0;
 
-        & .swiper-wrapper {
-            //justify-content: center;
-        }
-
         & .swiper-slide {
-            height: 100px;
-            //width: 100px !important;
+            //height: 100px;
             opacity: 0.7;
+            cursor: pointer;
         }
 
         & .swiper-slide-thumb-active {
@@ -78,8 +73,6 @@
         }
 
         & img {
-            height: 100px;
-            width: 100px;
             object-fit: cover;
         }
     }

@@ -250,3 +250,34 @@ export function toggleRegions() {
   });
 }
 
+/*Кнопка "Показать еще" на странице поиска*/
+export function showMoreResults() {
+  const items = document.querySelectorAll(".search__item");
+  const showMoreBtn = document.getElementById("showMoreBtn");
+
+  let visibleItemsCount = 3;
+
+  const showItems = (count) => {
+    items.forEach((item, index) => {
+      if (index < count) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
+
+    if (count >= items.length) {
+      showMoreBtn.style.display = "none";
+    } else {
+      showMoreBtn.style.display = "inline-block";
+    }
+  };
+
+  showMoreBtn.addEventListener("click", () => {
+    visibleItemsCount += 3;
+    showItems(visibleItemsCount);
+  });
+
+  showItems(visibleItemsCount);
+}
+
