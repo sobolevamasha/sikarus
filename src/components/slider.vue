@@ -5,19 +5,17 @@
             <div class="swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide" v-for="(item, index) in items" :key="index">
-                        <router-link  :to="item.to"></router-link>
-                        <div class="">
-                            <div class="">
+                        <router-link :to="item.to"></router-link>
 
-                                <v-img :src="item.img" :alt="item.name" />
 
-                                <div class="slider__descr">
-                                    <h4>{{ item.name }}</h4>
-                                    <span >{{ item.location }}</span>
-                                </div>
-                                <div class="slider__gradient"></div>
-                            </div>
+                        <img :src="item.img" :alt="item.name" />
+
+                        <div class="slider__descr">
+                            <h4>{{ item.name }}</h4>
+                            <span>{{ item.location }}</span>
                         </div>
+                        <div class="slider__gradient"></div>
+
                     </div>
                 </div>
                 <div class="swiper-navigation">
@@ -81,7 +79,26 @@
     }
 
     & .swiper-slide {
-        
+        transition: all 0.3s ease;
+
+        &:hover {
+            transition: all 0.3s ease;
+            background: $sika-yellow;
+
+            & img {
+                transition: all 0.3s ease;
+                opacity: 0.2;
+            }
+            & .slider__descr {
+                transition: all 0.3s ease;
+                color: #000 !important;
+            }
+
+            & .slider__gradient {
+                transition: all 0.3s ease;
+                display: none;
+            }
+        }
 
         & a {
             position: absolute;
@@ -97,10 +114,15 @@
         width: 55px;
         height: 55px;
         background-color: $white;
+        transition: all 0.2s ease-in;
 
         & svg {
             width: 36px;
             height: 36px;
+        }
+
+        &:hover {
+            background-color: $sika-yellow;
         }
     }
 

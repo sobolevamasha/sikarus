@@ -149,6 +149,7 @@
             font-size: 20px;
             position: relative;
             margin-left: 30px;
+            margin-bottom: 10px;
 
             &::before {
                 position: absolute;
