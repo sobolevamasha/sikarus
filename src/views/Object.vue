@@ -4,8 +4,8 @@
         <!-- <breadcrumbs :level1="level1" :level2="level2" :level3="object.name" /> -->
         <div class="grid-container section-margin">
             <v-row>
-                <v-col cols="12" lg="8">
-                    <slider-big :items="object.sliderItems" />
+                <v-col cols="12" lg="6">
+                    <!-- <slider-big :items="object.sliderItems" /> -->
 
                     <div class="text-left">
                         <span>{{ object.date }}</span>
@@ -13,7 +13,7 @@
                         <span>{{ object.location }}</span>
                     </div>
                 </v-col>
-                <v-col cols="12" lg="4">
+                <v-col cols="12" lg="6">
                     <div v-if="object.about" class="object__about">
                         <h4>О проекте</h4>
                         <ul class="pt-4">

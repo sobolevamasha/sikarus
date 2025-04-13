@@ -1,11 +1,10 @@
 <template>
 	<div class="homepage" v-scroll="handleScroll">
-		<!-- <hero :title="h1" :subtitle="h4" :background="background" :video="video" /> -->
 		<helpbox />
 		<activity />
 		<about />
 		<news />
-		
+
 		<slider :title="title" :items="swiperItems" />
 		<statistics :blocks="blocks" />
 	</div>
@@ -119,9 +118,9 @@ export default {
 			let currentAnchor = window.location.href.replace(/^.*?#(.+)/, "$1");
 			if (currentAnchor === path) currentAnchor = null;
 			if (anchor && anchor !== currentAnchor) {
-			
+
 				window.history.pushState("", "", path + "#" + anchor);
-			
+
 			} else if (!anchor && currentAnchor) {
 
 				window.history.pushState("", "", path);
@@ -141,14 +140,14 @@ export default {
 .homepage {
 
 
-	 & .activity {
-	 	padding-top: 30px;
+	& .activity {
+		padding-top: 30px;
 
-	 	@include up($lg) {
-	 		padding-top: 60px;
-	 	}
+		@include up($lg) {
+			padding-top: 60px;
+		}
 
-	 }
+	}
 
 	& .about,
 	//& .activity,

@@ -113,7 +113,7 @@ export default {
 
     &__list-item {
         padding: 0 15px;
-        height: 100%;
+        //height: 100%;
         display: flex;
         align-items: center;
         cursor: pointer;
@@ -135,18 +135,18 @@ export default {
 
     &__list-item-name {
         position: relative;
-        display: flex;
+        //display: flex;
         height: 100%;
         align-items: center;
 
         & a {
-            position: absolute;
+            //position: absolute;
             width: 100%;
             height: 100%;
             top: 0;
             left: 0;
             color: black !important;
-            display: contents;
+            //display: contents;
         }
 
 

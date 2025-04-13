@@ -162,9 +162,9 @@
                             <input type="text" name="q" placeholder="Поиск"
                                 data-placeholder-large="Найти Продукт, Систему или Решение" autocomplete="off"
                                 class="cmp-search-form__field cmp-font--light" />
-                            <button type="submit">
+                            <router-link to="search">
                                 <img src="../assets/icons/search.svg" />
-                            </button>
+                            </router-link>
 
                         </form>
                     </div>
