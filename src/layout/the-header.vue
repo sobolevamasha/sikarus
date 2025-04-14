@@ -191,7 +191,7 @@
             <ul>
                 <li class="isActive">
 
-                    <router-link to="/"></router-link>
+                    <router-link to="/cabinet"></router-link>
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                         viewBox="0 0 1024 1024">
                         <g id="icomoon-ignore">
@@ -206,7 +206,7 @@
                 </li>
                 <li>
 
-                    <router-link to="/"></router-link>
+                    <router-link to="/cabinet"></router-link>
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 512 512">
                         <g id="icomoon-ignore">
                         </g>
@@ -589,6 +589,11 @@
                 padding: 16px;
                 display: flex;
                 position: relative;
+                border-bottom: 2px solid transparent;
+
+                &:hover {
+                    border-bottom: 2px solid $sika-yellow;
+                }
 
                 & svg {
                     margin-right: 25px;

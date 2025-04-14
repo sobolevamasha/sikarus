@@ -1,12 +1,13 @@
 <template>
     <div class="product">
-        <!-- <hero :title="title" :background="background" :isSmall="true" /> -->
-        <!-- <breadcrumbs :level1="level1" :level2="level2" :level3="level3" :level4="level4" /> -->
         <div class="grid-container section-margin">
             <div class="product__main">
                 <img class="product__img" v-if="product.previewImg" :src="product.previewImg" />
                 <div class="product__right">
-                    <h1> {{ product.name }}</h1>
+                    <div class="product__head">
+                        <h1> {{ product.name }}</h1>
+                        <favoriteBtn />
+                    </div>
                     <h4 class="cmp-line-clamp cmp-line-clamp--3">{{ product.descr }}</h4>
                     <p>{{ product.detailText }}</p>
                     <ul class="cmp-product__attributes">
@@ -36,15 +37,35 @@
             <div class="grid-container section-margin">
                 <nav class="product__info--navigation">
                     <ul>
-                        <li>Описание</li>
-                        <li>Характеристики</li>
-                        <li>Применение</li>
-                        <li>Документы</li>
-                        <li>Видео</li>
+                        <li>
+                            <a class="product__info--anchor" href="#description">
+                                Описание
+                            </a>
+                        </li>
+                        <li>
+                            <a class="product__info--anchor" href="#chars">
+                                Характеристики
+                            </a>
+                        </li>
+                        <li>
+                            <a class="product__info--anchor" href="#usage">
+                                Применение
+                            </a>
+                        </li>
+                        <li>
+                            <a class="product__info--anchor" href="#docs">
+                                Документы
+                            </a>
+                        </li>
+                        <li>
+                            <a class="product__info--anchor" href="#media">
+                                Видео
+                            </a>
+                        </li>
                     </ul>
                 </nav>
 
-                <ul class="product__info--description">
+                <ul id="description" class="product__info--description">
                     <li v-for="(item, index) in product.descriptionItems">
                         <h4>{{ item.name }}</h4>
                         <ul class="list-style">
@@ -55,7 +76,7 @@
                     </li>
                 </ul>
 
-                <div class="product__info--chars">
+                <div id="chars" class="product__info--chars">
                     <h2>Характеристики</h2>
 
                     <ul class="accordion">
@@ -84,7 +105,7 @@
 
                 </div>
 
-                <div class="product__info--usage">
+                <div id="usage" class="product__info--usage">
 
                     <h2>Применение</h2>
                     <ul class="accordion">
@@ -112,9 +133,14 @@
 
                 </div>
 
-                <div class="product__info--docs">
+                <div id="docs" class="product__info--docs">
+                    <h2>Документы</h2>
                     <brochure :title="docTitle" :description="description" :fileSize="fileSize" :filePath="filePath"
                         :brochure="brochure" />
+                </div>
+
+                <div id="media" class="product__info--media">
+                    <h2>Видео</h2>
                 </div>
             </div>
         </div>
@@ -123,6 +149,13 @@
 
 <style lang="scss">
 .product {
+
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     &__img {
         max-width: 250px;
         object-fit: contain;
@@ -212,6 +245,16 @@
 
     &__info {
 
+        &--anchor {
+            color: #000 !important;
+
+            &:hover,
+            &:active {
+                color: $sika-yellow !important;
+                border-bottom: 2px solid $sika-yellow;
+            }
+        }
+
         &--list h5 {
             font-weight: 700;
             margin-bottom: 10px;
@@ -283,6 +326,8 @@
 import products from '@/store/products';
 import brochure from '@/components/brochure.vue';
 import { accordion } from '@/utils/utils';
+import { scrollToAnchor } from '@/utils/utils';
+import favoriteBtn from '@/components/favoriteBtn.vue';
 
 export default {
     data() {
@@ -301,7 +346,8 @@ export default {
         }
     },
     components: {
-        brochure
+        brochure,
+        favoriteBtn
     },
     computed: {
         product() {
@@ -309,12 +355,13 @@ export default {
         },
     },
     methods: {
-        initAccordeon() {
+        initScripts() {
             accordion();
+            scrollToAnchor();
         }
     },
     mounted() {
-        this.initAccordeon();
+        this.initScripts();
     }
 }
 </script>

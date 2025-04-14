@@ -23,7 +23,7 @@
                     <a class="download--link" href="/assets/tmp/map-spb.jpg" target="_blank">
                         <div class="download--content">
                             <i class="cmp-icon cmp-icon-download"></i>
-                            <h5 class="download--title">Референс Sika Россия по кровельным материалам</h5>
+                            <h6 class="download--title">Референс Sika Россия по кровельным материалам</h6>
                         </div>
                         <div class="download--descr">
                             <div class="">Изображение</div>
@@ -47,8 +47,8 @@
                     <a class="download--link" href="/assets/tmp/map-spb.jpg" target="_blank">
                         <div class="download--content">
                             <i class="cmp-icon cmp-icon-download"></i>
-                            <h5 class="download--title">Референс Sika Россия по полам и напольным покрытиям
-                            </h5>
+                            <h6 class="download--title">Референс Sika Россия по полам и напольным покрытиям
+                            </h6>
                         </div>
                         <div class="download--descr">
                             <div class="">Изображение</div>

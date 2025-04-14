@@ -11,7 +11,7 @@
                     <a class="download--link" href="/assets/tmp/map-spb.jpg" target="_blank">
                         <div class="download--content">
                             <i class="cmp-icon cmp-icon-download"></i>
-                            <h5 class="download--title">Референс Sika Россия по кровельным материалам</h5>
+                            <h6 class="download--title">Референс Sika Россия по кровельным материалам</h6>
                         </div>
                         <div class="download--descr">
                             <div class="">Изображение</div>
@@ -35,8 +35,8 @@
                     <a class="download--link" href="/assets/tmp/map-spb.jpg" target="_blank">
                         <div class="download--content">
                             <i class="cmp-icon cmp-icon-download"></i>
-                            <h5 class="download--title">Референс Sika Россия по полам и напольным покрытиям
-                            </h5>
+                            <h6 class="download--title">Референс Sika Россия по полам и напольным покрытиям
+                            </h6>
                         </div>
                         <div class="download--descr">
                             <div class="">Изображение</div>
@@ -126,11 +126,18 @@
     &__img {
         display: block;
         margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 20px;
+        @include up($md) {
+            float: right;
+            margin-left: 20px;
+        }
+        
     }
 
     &__detail {
         text-align: left;
-        padding: 40px 0;
+        padding: 0 0 40px 0;
         font-size: 18px;
 
         & a {

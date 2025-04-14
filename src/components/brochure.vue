@@ -5,9 +5,9 @@
             <a target="_blank" class="brochure__link" :href="filePath">
                 <div class="brochure__content text-left">
                     <i class="cmp-icon cmp-icon-download mr-4"></i>
-                    <h5 class="brochure__content--title mb-0 mr-4">
+                    <h6 class="brochure__content--title mb-0 mr-4">
                         {{ title }}
-                    </h5>
+                    </h6>
                 </div>
 
                 <div class="d-flex align-center">
@@ -71,7 +71,7 @@ export default {
         justify-content: space-between;
         align-items: center;
         transition: all 0.3s ease-in;
-        padding: 15px 25px;
+        padding: 10px 20px;
         background-color: $light-gray-section;
         margin-bottom: 15px;
 
