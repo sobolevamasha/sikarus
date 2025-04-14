@@ -10,8 +10,8 @@ export default {
         return {
             map: null,
             markers: [
-                { coords: [55.751574, 37.573856], hint: "Marker 1" },
-                { coords: [55.761574, 37.583856], hint: "Marker 2" },
+                { coords: [60.069984, 30.357676], hint: "Офис Санкт-Петербург" },
+                { coords: [55.751426, 37.618879], hint: "Офис Москва" },
             ],
         };
     },
@@ -33,7 +33,7 @@ export default {
             ymaps.ready(() => {
                 this.map = new ymaps.Map("map", {
                     center: [55.755814, 37.617673],
-                    zoom: 10,
+                    zoom: 4,
                 });
 
                 this.markers.forEach(marker => {

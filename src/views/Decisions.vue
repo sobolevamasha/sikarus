@@ -1,13 +1,13 @@
 <template>
     <div class="decisions">
         <div class="section-margin grid-container">
+           
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nobis autem ipsam sit reprehenderit odio
                 perferendis! Minus fugiat illum voluptatibus iste reprehenderit temporibus nostrum laborum odio, odit
                 nam, quisquam repudiandae.</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nobis autem ipsam sit reprehenderit odio
                 perferendis! Minus fugiat illum voluptatibus iste reprehenderit temporibus nostrum laborum odio, odit
                 nam, quisquam repudiandae.</p>
-
 
             <ul class="accordion">
                 <li class="accordion-list">
@@ -165,6 +165,14 @@
                     </div>
                 </li>
             </ul>
+
+            <img class="decisions__img right" src="@/assets/tmp/decision.jpg" />
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nobis autem ipsam sit reprehenderit odio
+                perferendis! Minus fugiat illum voluptatibus iste reprehenderit temporibus nostrum laborum odio, odit
+                nam, quisquam repudiandae.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nobis autem ipsam sit reprehenderit odio
+                perferendis! Minus fugiat illum voluptatibus iste reprehenderit temporibus nostrum laborum odio, odit
+                nam, quisquam repudiandae.</p>
         </div>
     </div>
 </template>
@@ -176,9 +184,24 @@
     & a {
         color: #000 !important;
         border-bottom: 1px solid $sika-yellow;
+
         &:hover {
             color: $sika-yellow !important;
         }
+    }
+
+    &__img {
+        margin-bottom: 20px;
+
+        &.right {
+            float: right;
+            margin-left: 10px;
+        }
+        &.left {
+            float: left;
+            margin-right: 10px;
+        }
+
     }
 }
 </style>

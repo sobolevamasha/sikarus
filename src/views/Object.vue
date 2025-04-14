@@ -5,7 +5,7 @@
         <div class="grid-container section-margin">
             <v-row>
                 <v-col cols="12" lg="6">
-                    <!-- <slider-big :items="object.sliderItems" /> -->
+                    <slider-big :items="object.sliderItems" />
 
                     <div class="text-left">
                         <span>{{ object.date }}</span>
@@ -25,23 +25,21 @@
                     </div>
                 </v-col>
             </v-row>
-            <v-row class="mt-8">
-                <v-col cols="12">
-                    <p v-html="object.detailText"></p>
-                </v-col>
-            </v-row>
-            <v-row>
-                <v-col cols="12">
-                    <h3>Использованные продукты Sika</h3>
-                    <ul class="object__products">
-                        <li v-for="(product, index) in products" :key="index">
-                            <router-link to="/product"></router-link>
-                            <h4> {{ product.name }} </h4>
-                            <div>{{ product.descr }}</div>
-                        </li>
-                    </ul>
-                </v-col>
-            </v-row>
+
+            <p class="object__text" v-html="object.detailText"></p>
+
+
+            <h3>Использованные продукты Sika</h3>
+            <ul class="object__products">
+                <li v-for="(product, index) in products" :key="index">
+                    <router-link to="/product"></router-link>
+                    <h4> {{ product.name }} </h4>
+                    <div>{{ product.descr }}</div>
+                </li>
+            </ul>
+
+            <brochure :title="title" :description="description" :brochure="brochure" :filePath="filePath" :fileSize="fileSize" />
+
         </div>
 
     </div>
@@ -50,28 +48,27 @@
 <script>
 import hero from '@/components/hero.vue';
 import objectList from '@/store/objects';
-import download from '@/components/brochure.vue';
+import brochure from '@/components/brochure.vue';
 import sliderBig from '@/components/slider-big.vue';
 import breadcrumbs from '@/components/breadcrumbs.vue';
 import products from '@/store/products';
-import router from '@/router';
+
 
 export default {
     name: "Object",
     components: {
         hero,
-        download,
+        brochure,
         sliderBig,
         breadcrumbs
     },
     data() {
         return {
-            h1: 'Объект',
-            //h4: 'Строим доверие',
-            background: require('@/assets/objects.jpg'),
-            //video: 'https://sika.scene7.com/is/content/sika/glo-skyline-loop'
-            level1: 'Главная',
-            level2: 'Объекты',
+           title: 'Брошюра 2',
+           description: 'Описание брошюры 2',
+           brochure: require('@/assets/tmp/brochure.jpeg'),
+           filePath: require('@/assets/tmp/brochure.jpeg'),
+           fileSize: '10 Mb'
         }
     },
     computed: {
@@ -107,6 +104,11 @@ export default {
         }
     }
 
+    &__text {
+        margin: 40px 0 !important;
+        text-align: left;
+    }
+
     & p {
         font-size: 18px;
     }
@@ -121,9 +123,12 @@ export default {
         grid-template-columns: repeat(1, 1fr);
         grid-gap: 15px;
         justify-content: center;
+        margin-bottom: 40px !important;
+
         @include up($sm) {
             grid-template-columns: repeat(2, 1fr);
         }
+
         @include up($md) {
             grid-template-columns: repeat(4, 1fr);
         }
@@ -137,11 +142,11 @@ export default {
             position: relative;
             transition: all 0.2s ease;
 
-                &:hover {
-                  
-                    background-color: $sika-yellow;
-                    color: $white !important;
-                }
+            &:hover {
+
+                background-color: $sika-yellow;
+                color: $white !important;
+            }
 
             & h4 {
                 font-weight: 700;
@@ -155,8 +160,8 @@ export default {
                 top: 0;
                 left: 0;
                 //z-index: 10;
-                
-                
+
+
             }
         }
 

@@ -27,7 +27,7 @@
                             <li v-for="(product, index) in products" class="products__item">
                                 <img v-if="product.previewImg" :src="product.previewImg" />
                                 <div class="products__item--content">
-                                    <h3> {{ product.name }}</h3>
+                                    <h4> {{ product.name }}</h4>
                                     <p class="cmp-line-clamp cmp-line-clamp--3">{{ product.descr }}</p>
                                     <ul
                                         class="cmp-product__attributes cmp-font--light cmp-line-clamp cmp-line-clamp--3">
@@ -119,17 +119,19 @@
         &.left {
             float: left;
             margin-right: 20px;
+            margin-bottom: 30px;
         }
 
         &.right {
             float: right;
             margin-left: 20px;
+            margin-bottom: 30px;
         }
     }
 
     & .products__item {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         padding-bottom: 20px;
         border-bottom: 2px solid #e0e0e0;
         margin: 20px 0;
@@ -141,7 +143,7 @@
         &:hover {
             border-bottom: 2px solid $sika-yellow;
 
-            & h3 {
+            & h4 {
                 transition: all 0.2s ease-in;
                 color: $sika-yellow;
             }
@@ -170,16 +172,16 @@
             left: 0;
         }
 
-        & p {
-            font-size: 22px;
+        // & p {
+        //     font-size: 22px;
 
-            @include up($md) {
-                font-size: 24px;
-            }
-        }
+        //     @include up($md) {
+        //         font-size: 24px;
+        //     }
+        // }
 
         & li {
-            font-size: 20px;
+            //font-size: 20px;
             position: relative;
             margin-left: 30px;
             margin-bottom: 10px;

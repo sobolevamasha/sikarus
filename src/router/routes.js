@@ -140,14 +140,14 @@ const routes = [
         name: "product",
         component: () => import("../views/Catalog/Product"),
         meta: {
-          title: 'Название продукта',
+          title: "Название продукта",
           background: require("@/assets/tmp/beton.jpg"),
           isSmall: true,
           breadcrumbs: {
-            level1: 'Продукция',
-            level2: 'Добавки в бетон',
-            level3: 'Товарный бетон',
-            level4: 'Название продукта',
+            level1: "Продукция",
+            level2: "Добавки в бетон",
+            level3: "Товарный бетон",
+            level4: "Название продукта",
           },
         },
       },
@@ -229,7 +229,7 @@ const routes = [
         meta: {
           title: "Название новости",
           subtitle: "",
-          background: require('@/assets/objects.jpg'),
+          background: require("@/assets/objects.jpg"),
           video: "",
           isSmall: true,
           breadcrumbs: {
@@ -248,7 +248,7 @@ const routes = [
         meta: {
           title: "Отраслевые решения",
           subtitle: "",
-          background: require('@/assets/objects.jpg'),
+          background: require("@/assets/objects.jpg"),
           video: "",
           isSmall: true,
           breadcrumbs: {
@@ -267,13 +267,32 @@ const routes = [
         meta: {
           title: "Отраслевое решение",
           subtitle: "",
-          background: require('@/assets/objects.jpg'),
+          background: require("@/assets/objects.jpg"),
           video: "",
           isSmall: true,
           breadcrumbs: {
             level1: "Главная",
             level2: "Отраслевые решения",
             level3: "Отраслевое решение",
+            level4: "",
+            level5: "",
+          },
+        },
+      },
+      {
+        path: "/dealers",
+        name: "dealers",
+        component: () => import("../views/Dealers"),
+        meta: {
+          title: "Дилеры",
+          subtitle: "",
+          background: require("@/assets/about.jpg"),
+          video: "",
+          isSmall: true,
+          breadcrumbs: {
+            level1: "Главная",
+            level2: "Дилеры",
+            level3: "",
             level4: "",
             level5: "",
           },
