@@ -6157,76 +6157,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   right: 10%;
 }
 
-.accordion {
-  margin-left: 0;
-  background: #ffffff;
-  list-style-type: none;
-}
-
-.accordion[disabled] .accordion-title {
-  cursor: not-allowed;
-}
-
-.accordion-item:first-child > :first-child {
-  -webkit-border-radius: 0 0 0 0;
-  -moz-border-radius: 0 0 0 0;
-  border-radius: 0 0 0 0;
-}
-
-.accordion-item:last-child > :last-child {
-  -webkit-border-radius: 0 0 0 0;
-  -moz-border-radius: 0 0 0 0;
-  border-radius: 0 0 0 0;
-}
-
-.accordion-title {
-  position: relative;
-  display: block;
-  padding: 1rem;
-  border: 0;
-  border-bottom: 0;
-  font-size: 1.3125rem;
-  line-height: 1;
-  color: #ffc510;
-}
-
-:last-child:not(.is-active) > .accordion-title {
-  border-bottom: 0;
-  -webkit-border-radius: 0 0 0 0;
-  -moz-border-radius: 0 0 0 0;
-  border-radius: 0 0 0 0;
-}
-
-.accordion-title:hover,
-.accordion-title:focus {
-  background-color: #f5f5f5;
-}
-
-.accordion-title::before {
-  position: absolute;
-  top: 50%;
-  right: 1rem;
-  margin-top: -0.5rem;
-  content: "+";
-}
-
-.is-active > .accordion-title::before {
-  content: "\2013";
-}
-
-.accordion-content {
-  display: none;
-  padding: 1.5rem 1rem 1rem 1rem;
-  border: 0;
-  border-bottom: 0;
-  background-color: #ffffff;
-  color: #000000;
-}
-
-:last-child > .accordion-content:last-child {
-  border-bottom: 0;
-}
-
 .tabs {
   margin: 0;
   border: 1px solid #f5f5f5;
@@ -22533,19 +22463,26 @@ button {
 
     & .accordion-content {
         display: none;
-        padding: 24px 24px;
+        margin: 15px 25px;
         text-align: left;
 
+        &--item {
+          margin: 15px 0;
+        }
+
         & li {
-            margin-bottom: 32px;
-
-            & div {
-                margin-bottom: 10px;
+            & h6 {
+              //margin-top: 16px;
             }
-
             & a {
-                display: table;
-            }
+              color: #000 !important;
+              border-bottom: 2px solid $sika-yellow;
+              margin-bottom: 5px;
+              display: table;
+              &:hover {
+                  color: $sika-yellow !important;
+              }
+          }
         }
 
         &.active {
@@ -22570,7 +22507,7 @@ button {
         justify-content: space-between;
         align-items: center;
         transition: all 0.3s ease-in;
-        padding: 15px 25px;
+        padding: 10px 20px;
         background-color: $light-gray-section;
         margin: 15px 0;
 
@@ -22594,8 +22531,9 @@ button {
         }
 
         &--title {
-            margin-left: 20px;
+            margin: 0 20px;
             margin-bottom: 0;
+            text-align: left;
         }
 
         &--btn {

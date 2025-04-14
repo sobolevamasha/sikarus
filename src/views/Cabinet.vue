@@ -7,7 +7,7 @@
                     <a class="download--link" href="/assets/tmp/map-spb.jpg" target="_blank">
                         <div class="download--content">
                             <i class="cmp-icon cmp-icon-download"></i>
-                            <h5 class="download--title">Референс Sika Россия по кровельным материалам</h5>
+                            <h6 class="download--title">Референс Sika Россия по кровельным материалам</h6>
                         </div>
                         <div class="download--descr">
                             <div class="">PDF-файл</div>
@@ -31,8 +31,8 @@
                     <a class="download--link" href="/assets/tmp/map-spb.jpg" target="_blank">
                         <div class="download--content">
                             <i class="cmp-icon cmp-icon-download"></i>
-                            <h5 class="download--title">Референс Sika Россия по полам и напольным покрытиям
-                            </h5>
+                            <h6 class="download--title">Референс Sika Россия по полам и напольным покрытиям
+                            </h6>
                         </div>
                         <div class="download--descr">
                             <div class="">PDF-файл</div>
@@ -54,16 +54,34 @@
                 </li>
             </ul>
             <h3 class="mb-8">Ваши выбранные продукты</h3>
+            <productListBlocks />
+            <h3 class="mb-8">Ваши выбранные брошюры</h3>
+            <brochure :title="title" :description="description" :brochure="brochure" :filePath="filePath"
+                :fileSize="fileSize" />
+            <brochure :title="title" :description="description" :brochure="brochure" :filePath="filePath"
+                :fileSize="fileSize" />
         </div>
     </div>
 </template>
 
 <script>
 import { activeDownloadBtn } from '@/utils/utils';
+import productListBlocks from '@/components/product-list-blocks.vue';
+import brochure from '@/components/brochure.vue';
 export default {
     name: "Cabinet",
-
+    data() {
+        return {
+            title: 'Брошюра 2',
+            description: 'Описание брошюры 2',
+            brochure: require('@/assets/tmp/brochure.jpeg'),
+            filePath: require('@/assets/tmp/brochure.jpeg'),
+            fileSize: '10 Mb'
+        }
+    },
     components: {
+        productListBlocks,
+        brochure
     },
     methods: {
         initActiveBtn() {

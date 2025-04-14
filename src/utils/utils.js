@@ -281,3 +281,27 @@ export function showMoreResults() {
   showItems(visibleItemsCount);
 }
 
+/*Скролл к якорю в карточке продукта */
+export function scrollToAnchor() {
+  document.querySelectorAll('product__info--anchor').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+}
+
+/*Выделяем желтым иконку "Добавить в избранное" по клику на кнопку */
+export function addToFavorite() {
+  const button = document.querySelector('.add-to-favorite');
+
+  button.addEventListener("click", () => {
+    const isButtonActive = button.classList.toggle("active");
+  });
+
+
+}

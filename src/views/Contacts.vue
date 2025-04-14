@@ -16,19 +16,19 @@
                         </svg></h4>
                     <div class="accordion-content">
                         <ul>
-                            <li>
+                            <li class="accordion-content--item">
                                 <h6>Офис</h6>
                                 <div>194292, Россия, Санкт-Петербург, 4-й Верхний переулок, 7</div><a
                                     href="tel:+7 (812) 334-79-79">Тел.: +7 (812) 334-79-79</a><a
                                     href="mailto:spb@ru.sika.com">E-mail: spb@ru.sika.com</a>
                             </li>
-                            <li>
+                            <li class="accordion-content--item">
                                 <h6>Руководитель подразделения Санкт-Петербург</h6>
                                 <div>Лобастов Антон Александрович</div><a href="tel:+7 981 698 01 52">Тел.: +7 981 698
                                     01
                                     52</a><a href="mailto:spb@ru.sika.com">E-mail: spb@ru.sika.com</a>
                             </li>
-                            <li>
+                            <li class="accordion-content--item">
                                 <h6>Склад</h6>
                                 <div>195279, г. Санкт-Петербург, шоссе Революции, д. 88/3</div><a
                                     href="tel:+7 (495) 5 777 333">Тел.: +7 (495) 5 777 333</a>
@@ -37,13 +37,13 @@
 
                         <div class="download">
                             <a class="download--link" href="/assets/tmp/map-spb.jpg" target="_blank">
-                                <div class="contacts__download--content">
+                                <div class="download--content">
                                     <i class="cmp-icon cmp-icon-download"></i>
-                                    <h5 class="contacts__download--title">Схема проезда склад Санкт-Петербург.jpg</h5>
+                                    <h6 class="download--title">Схема проезда склад Санкт-Петербург.jpg</h6>
                                 </div>
-                                <div class="contacts__download--descr">
+                                <div class="download--descr">
                                     <div class="">Изображение</div>
-                                    <span class="contacts__download--size">2 MB</span>
+                                    <span class="download--size">2 MB</span>
                                 </div>
                             </a>
 
@@ -70,19 +70,19 @@
                         </svg></h4>
                     <div class="accordion-content">
                         <ul>
-                            <li>
+                            <li class="accordion-content--item">
                                 <h6>Офис</h6>
                                 <div>194292, Россия, Санкт-Петербург, 4-й Верхний переулок, 7</div><a
                                     href="tel:+7 (812) 334-79-79">Тел.: +7 (812) 334-79-79</a><a
                                     href="mailto:spb@ru.sika.com">E-mail: spb@ru.sika.com</a>
                             </li>
-                            <li>
+                            <li class="accordion-content--item">
                                 <h6>Руководитель подразделения Санкт-Петербург</h6>
                                 <div>Лобастов Антон Александрович</div><a href="tel:+7 981 698 01 52">Тел.: +7 981 698
                                     01
                                     52</a><a href="mailto:spb@ru.sika.com">E-mail: spb@ru.sika.com</a>
                             </li>
-                            <li>
+                            <li class="accordion-content--item">
                                 <h6>Склад</h6>
                                 <div>195279, г. Санкт-Петербург, шоссе Революции, д. 88/3</div><a
                                     href="tel:+7 (495) 5 777 333">Тел.: +7 (495) 5 777 333</a>
@@ -93,7 +93,7 @@
                             <a class="download--link" href="/assets/tmp/map-spb.jpg" target="_blank">
                                 <div class="download--content">
                                     <i class="cmp-icon cmp-icon-download"></i>
-                                    <h5 class="download--title">Схема проезда склад Санкт-Петербург.jpg</h5>
+                                    <h6 class="download--title">Схема проезда склад Санкт-Петербург.jpg</h6>
                                 </div>
                                 <div class="download--descr">
                                     <div class="">Изображение</div>
@@ -170,7 +170,6 @@ export default {
         font-weight: 700;
     }
 
-
     & a {
         color: $black !important;
     }
@@ -181,107 +180,6 @@ export default {
             color: $black !important;
         }
 
-    }
-
-    &__accordion-list {
-        border-radius: 4px;
-        margin-bottom: 10px;
-    }
-
-    &__accordion-header {
-        border-radius: 4px;
-        padding: 16px 24px;
-        cursor: pointer;
-        background-color: #f5f5f5;
-        //border-bottom: 1px solid #ccc;
-        outline: unset;
-        text-align: left;
-        margin-bottom: 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    &__accordion-content {
-        display: none;
-        padding: 24px 24px;
-        text-align: left;
-
-        & li {
-            margin-bottom: 32px;
-
-            & div {
-                margin-bottom: 10px;
-            }
-
-            & a {
-                display: table;
-            }
-        }
-
-        &.active {
-            display: block;
-        }
-    }
-
-    & .arrow {
-        width: 24px;
-        height: 24px;
-        transition: transform 0.2s;
-    }
-
-    & .rotate {
-        transform: rotate(180deg);
-    }
-
-    &__download {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        transition: all 0.3s ease-in;
-        padding: 15px 25px;
-        background-color: $light-gray-section;
-        margin-bottom: 15px;
-
-        &:hover {
-            box-shadow: 0 1px 2px #0003, 0 1px 5px #0000001a;
-        }
-
-        &--link {
-            width: 100%;
-            padding-right: 40px;
-            display: flex !important;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        &--content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        &--title {
-            margin-left: 20px;
-        }
-
-        // &--descr {
-        //     display: flex;
-        //     justify-content: space-between;
-        //     align-items: center;
-        // }
-
-        &--btn {
-            position: relative;
-            z-index: 10;
-
-            &--active {
-                & svg path {
-                    @include transition();
-                    fill: $sika-yellow;
-                }
-            }
-        }
     }
 
 

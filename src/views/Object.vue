@@ -30,15 +30,11 @@
 
 
             <h3>Использованные продукты Sika</h3>
-            <ul class="object__products">
-                <li v-for="(product, index) in products" :key="index">
-                    <router-link to="/product"></router-link>
-                    <h4> {{ product.name }} </h4>
-                    <div>{{ product.descr }}</div>
-                </li>
-            </ul>
+            <productListBlocks />
 
-            <brochure :title="title" :description="description" :brochure="brochure" :filePath="filePath" :fileSize="fileSize" />
+
+            <brochure :title="title" :description="description" :brochure="brochure" :filePath="filePath"
+                :fileSize="fileSize" />
 
         </div>
 
@@ -52,6 +48,7 @@ import brochure from '@/components/brochure.vue';
 import sliderBig from '@/components/slider-big.vue';
 import breadcrumbs from '@/components/breadcrumbs.vue';
 import products from '@/store/products';
+import productListBlocks from '@/components/product-list-blocks.vue';
 
 
 export default {
@@ -60,15 +57,16 @@ export default {
         hero,
         brochure,
         sliderBig,
-        breadcrumbs
+        breadcrumbs,
+        productListBlocks
     },
     data() {
         return {
-           title: 'Брошюра 2',
-           description: 'Описание брошюры 2',
-           brochure: require('@/assets/tmp/brochure.jpeg'),
-           filePath: require('@/assets/tmp/brochure.jpeg'),
-           fileSize: '10 Mb'
+            title: 'Брошюра 2',
+            description: 'Описание брошюры 2',
+            brochure: require('@/assets/tmp/brochure.jpeg'),
+            filePath: require('@/assets/tmp/brochure.jpeg'),
+            fileSize: '10 Mb'
         }
     },
     computed: {
@@ -117,56 +115,6 @@ export default {
         margin-bottom: 26px;
     }
 
-    &__products {
-        display: grid;
-        //flex-direction: column;
-        grid-template-columns: repeat(1, 1fr);
-        grid-gap: 15px;
-        justify-content: center;
-        margin-bottom: 40px !important;
 
-        @include up($sm) {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        @include up($md) {
-            grid-template-columns: repeat(4, 1fr);
-        }
-
-        & li {
-            padding: 25px;
-            box-shadow: 0 1px 2px #0003, 0 1px 3px #0000001a;
-            background-color: #fff;
-            border: 1px solid #e0e0e0;
-            outline: 1px solid transparent;
-            position: relative;
-            transition: all 0.2s ease;
-
-            &:hover {
-
-                background-color: $sika-yellow;
-                color: $white !important;
-            }
-
-            & h4 {
-                font-weight: 700;
-            }
-
-            & a {
-                color: $black !important;
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
-                //z-index: 10;
-
-
-            }
-        }
-
-
-
-    }
 }
 </style>
