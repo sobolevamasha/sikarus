@@ -1,13 +1,13 @@
 export default [
   {
     name: "О нас",
-    to: '',
+    to: "",
     isOpen: false,
     items: [
       {
         isOpen: false,
         title: "Концерн Sika",
-        to: '',
+        to: "",
         subitems: [
           {
             name: "Цели и бренд Sika",
@@ -30,7 +30,7 @@ export default [
       {
         isOpen: false,
         title: "Sika Россия",
-        to: '',
+        to: "",
         subitems: [
           {
             name: "О компании",
@@ -53,23 +53,20 @@ export default [
       {
         isOpen: false,
         title: "Новости",
-        to: 'news',
-        subitems: [
-          
-          
-        ],
+        to: "news",
+        subitems: [],
       },
     ],
   },
   {
     name: "Продукция",
-    to: '',
+    to: "",
     isOpen: false,
     items: [
       {
         isOpen: false,
         title: "Добавки в бетон",
-        to: '/category',
+        to: "/category",
         subitems: [
           {
             name: "Товарный бетон",
@@ -87,13 +84,12 @@ export default [
             name: "Торкретбетон",
             to: "/products",
           },
-          
         ],
       },
       {
         isOpen: false,
         title: "Ремонт и защита",
-        to: '/category',
+        to: "/category",
         subitems: [
           {
             name: "Материалы для ремонта и защиты бетона",
@@ -104,7 +100,7 @@ export default [
       {
         isOpen: false,
         title: "Полы и напольные покрытия",
-        to: '/category',
+        to: "/category",
         subitems: [
           {
             name: "Материалы для полов",
@@ -115,7 +111,7 @@ export default [
       {
         isOpen: false,
         title: "Гидроизоляция",
-        to: '/category',
+        to: "/category",
         subitems: [
           {
             name: "Рулонные гидроизоляционные мембраны",
@@ -138,7 +134,7 @@ export default [
       {
         isOpen: false,
         title: "Кровельные материалы",
-        to: '/category',
+        to: "/category",
         subitems: [
           {
             name: "Материалы для кровель",
@@ -153,7 +149,7 @@ export default [
       {
         isOpen: false,
         title: "Клеи и герметики",
-        to: '/category',
+        to: "/category",
         subitems: [
           {
             name: "Материалы для герметизации и приклеивания",
@@ -180,34 +176,25 @@ export default [
       //     },
       //   ],
       // },
-
     ],
   },
   {
     name: "Отраслевые решения",
-    to: '',
+    to: "",
     isOpen: false,
     items: [
       {
         isOpen: false,
-        title: "Концерн Sika",
-        to: '',
+        title: "Отраслевые решения",
+        to: "decisions",
         subitems: [
           {
-            name: "Цели и бренд Sika",
-            to: "",
+            name: "Строительство",
+            to: "decision",
           },
           {
-            name: "Ценности и принципы",
-            to: "",
-          },
-          {
-            name: "История",
-            to: "",
-          },
-          {
-            name: "Целевые рынки сбыта",
-            to: "",
+            name: "Производство бетона",
+            to: "decision",
           },
         ],
       },
@@ -215,18 +202,77 @@ export default [
   },
   {
     name: "Продуктовые бренды",
-    to: '/contacts',
+    to: "/contacts",
     isOpen: false,
   },
   {
     name: "Сервис",
-    to: '/about',
+    to: "/service",
     isOpen: false,
+    items: [
+      {
+        isOpen: false,
+        title: "Сервис",
+        to: "",
+        subitems: [
+          {
+            name: "Сервис на объекте",
+            to: "/dealers",
+          },
+          {
+            name: "Помощь в проектировании",
+            to: "/contacts",
+          },
+        ],
+      },
+      {
+        isOpen: false,
+        title: "Документация",
+        to: "",
+        subitems: [
+          {
+            name: "Брошюры",
+            to: "/contacts",
+          },
+        ],
+      },
+      {
+        isOpen: false,
+        title: "Помощь",
+        to: "",
+        subitems: [
+          {
+            name: "Техподдержка",
+            to: "/contacts",
+          },
+          {
+            name: "Задать нам вопрос",
+            to: "/contacts",
+          },
+        ],
+      },
+    ],
   },
   {
     name: "Где купить",
-    to: '/objects',
+    to: "/objects",
     isOpen: false,
+    items: [
+      {
+        isOpen: false,
+        title: "Где купить",
+        to: "",
+        subitems: [
+          {
+            name: "Дилеры",
+            to: "/dealers",
+          },
+          {
+            name: "Контакты",
+            to: "/contacts",
+          },
+        ],
+      },
+    ],
   },
-
 ];

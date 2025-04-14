@@ -22505,7 +22505,8 @@ button {
 }
 
 .accordion {
-margin-bottom: 48px !important;
+  margin-top: 20px;
+  margin-bottom: 24px !important;
     & .accordion-list {
         border-radius: 4px;
         margin-bottom: 10px;
@@ -22523,6 +22524,11 @@ margin-bottom: 48px !important;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          background-color: $sika-yellow;
+        }
     }
 
     & .accordion-content {
@@ -22559,14 +22565,14 @@ margin-bottom: 48px !important;
 
   }
 
-    .download {
+.download {
         display: flex;
         justify-content: space-between;
         align-items: center;
         transition: all 0.3s ease-in;
         padding: 15px 25px;
         background-color: $light-gray-section;
-        margin-bottom: 15px;
+        margin: 15px 0;
 
         &:hover {
             box-shadow: 0 1px 2px #0003, 0 1px 5px #0000001a;
@@ -22589,13 +22595,8 @@ margin-bottom: 48px !important;
 
         &--title {
             margin-left: 20px;
+            margin-bottom: 0;
         }
-
-        // &--descr {
-        //     display: flex;
-        //     justify-content: space-between;
-        //     align-items: center;
-        // }
 
         &--btn {
             position: relative;

@@ -9,11 +9,12 @@
                     <router-link :to="item.link"></router-link>
                     <img :src="item.img" />
                     <div class="newsList__content">
-                        <span class="text-left d-block">{{ item.lang }}</span>
                         <div>
+                            <span class="text-left d-block">{{ item.lang }}</span>
                             <h4 class="text-left my-4">{{ item.title }}</h4>
-                            <span class="text-left small cmp-font--bold d-block">{{ item.date }}</span>
                         </div>
+                        <span class="text-left small cmp-font--bold d-block">{{ item.date }}</span>
+
                     </div>
 
                 </li>
@@ -33,17 +34,6 @@
 
         justify-self: center;
 
-        & img {
-            //max-width: 250px;
-            //max-height: 167px;
-
-
-            @include up($lg) {
-                max-width: 370px;
-                max-height: 247px;
-            }
-        }
-
         @include up($md) {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -57,11 +47,13 @@
 
     &__item {
         max-width: 280px;
-        box-shadow: 0 1px 2px #0003, 0 1px 3px #0000001a;
         transition: all .3s ease-in-out;
-        outline: 1px solid transparent;
+        border: 4px solid transparent;
         margin: 0 auto;
         position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         @include up($md) {
             max-width: 320px;
@@ -78,11 +70,26 @@
             height: 100%;
 
         }
+
+        &:hover {
+            background-color: $sika-yellow;
+            border: 4px solid $sika-yellow;
+
+            & .news__content {
+                box-shadow: none;
+            }
+        }
+
     }
 
     &__content {
-        //max-width: 250px;
         padding: 15px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: left;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1019607843);
 
         @include up($lg) {
             max-width: 370px;

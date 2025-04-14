@@ -136,6 +136,16 @@ export default {
         height: 390px;
         box-shadow: 0 1px 2px #0003, 0 1px 3px #0000001a;
         transition: all .3s ease-in-out;
+        border: 4px solid transparent;
+
+        &:hover {
+            background-color: $sika-yellow;
+            border: 4px solid $sika-yellow;
+
+            & .news__content {
+                box-shadow: none;
+            }
+        }
 
         &--spans {
             height: 70px;

@@ -90,7 +90,7 @@
                             <router-link to="/contacts">Контакты</router-link>
                         </li>
                         <li>
-                            <router-link to="/">Дилеры</router-link>
+                            <router-link to="/dealers">Дилеры</router-link>
                         </li>
                         <li>
                             <button class="header__dropdown--cabinet">Моя Sika
