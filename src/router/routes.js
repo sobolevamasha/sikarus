@@ -206,6 +206,22 @@ const routes = [
         },
       },
       {
+        path: "/cabinet/docs",
+        name: "cabinetDocs",
+        component: () => import("../views/CabinetDocs"),
+        meta: {
+          title: "Моя Sika",
+          isSmall: true,
+          breadcrumbs: {
+            level1: "",
+            level2: "",
+            level3: "",
+            level4: "",
+            level5: "",
+          },
+        },
+      },
+      {
         path: "/news",
         name: "news",
         component: () => import("../views/News"),

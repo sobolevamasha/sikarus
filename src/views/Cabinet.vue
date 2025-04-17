@@ -1,6 +1,51 @@
 <template>
     <div class="cabinet">
         <div class="grid-container section-margin ">
+            <h3 class="mb-8">Информация о дилере</h3>
+            <div class="cabinet__wrap">
+                <ul class="cabinet__dealer">
+                    <li>
+                        <h6>Наименование:</h6>
+                        <span>
+                            Дилер №1
+                        </span>
+                    </li>
+                    <li>
+                        <h6>Регион:</h6>
+                        <span>
+                            Москва
+                        </span>
+                    </li>
+                    <li>
+                        <h6>Направления работы:</h6>
+                        <span>
+                            <span>Добавки в бетон</span>
+                            <span>Строительство и восстановление</span>
+                            <span>Промышленные полы</span>
+                        </span>
+                    </li>
+                    <li>
+                        <h6>Сайт:</h6>
+                        <a href="#">www.site.ru</a>
+                    </li>
+                    <li>
+                        <h6>Телефон:</h6>
+                        <a href="tel:89999999999">+7 999 999-99-99</a>
+                    </li>
+                    <li>
+                        <h6>Email:</h6>
+                        <a href="mailto:email@email.com">email@email.com</a>
+                    </li>
+                    <li>
+                        <h6>Адрес:</h6>
+                        <span>
+                            г. Москва, ул. Пушкина, 7
+                        </span>
+                    </li>
+                </ul>
+                <img src="@/assets/hero-skyline-2.jpg" />
+            </div>
+
             <h3 class="mb-8">Ваша корзина документов</h3>
             <ul class="mb-16">
                 <li class="download">
@@ -94,3 +139,51 @@ export default {
     }
 }
 </script>
+
+<style lang="scss">
+.cabinet {
+    &__wrap {
+        margin-bottom: 30px;
+        display: flex;
+        
+        & img {
+            display: none;
+            @include up($md) {
+                display: block;
+                width: 50%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    &__dealer {
+        padding: 30px !important;
+        background-color: $light-gray-section;
+        text-align: left;
+        width: 100%;
+
+        @include up($md) {
+            width: 50%;
+        }
+
+        & h6 {
+            font-weight: 700;
+        }
+
+        & span {
+            display: block;
+        }
+
+        & li {
+            margin-bottom: 10px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        & a {
+            color: #000 !important;
+            border-bottom: 2px solid $sika-yellow;
+        }
+    }
+}
+</style>
