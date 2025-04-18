@@ -5,7 +5,7 @@
             <h3 class="contacts__title">Региональные офисы Sika</h3>
 
             <div class="contacts__map section-margin ">
-                <contactsMap />
+                <contactsMap :markers="markers" />
             </div>
             <ul class="accordion">
                 <li class="accordion-list">
@@ -140,6 +140,10 @@ export default {
     data() {
         return {
             h1: 'Контакты',
+            markers: [
+                { coords: [60.069984, 30.357676], hint: "Офис Санкт-Петербург" },
+                { coords: [55.751426, 37.618879], hint: "Офис Москва" },
+            ],
 
         }
     },

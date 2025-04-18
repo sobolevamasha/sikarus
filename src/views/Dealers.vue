@@ -2,7 +2,9 @@
     <div class="dealers">
         <div class="grid-container section-margin">
             <h3 class="dealers__title mb-4">Официальные дилеры Sika в России</h3>
-
+            <div class="section-margin">
+            <contactsMap :markers="markers" />
+            </div>
             <ul class="accordion">
                 <li class="accordion-list" v-for="(item, index) in dealers" :key="index">
                     <h4 class="accordion-header">{{ item.region }}<svg class="arrow" viewBox="0 0 887 1024">
@@ -21,7 +23,7 @@
                                 <div class="accordion-content">
                                     <ul>
                                         <li v-for="(dealer, indexDealer) of city.dealers" :key="indexDealer"
-                                        class="accordion-content--item">
+                                            class="accordion-content--item">
                                             <h6 class="dealers__name">{{ dealer.name }}</h6>
                                             <div v-for="(info, indexInfo) of dealer.contacts" class="dealers__info">
                                                 <div>{{ info.address }}</div>
@@ -63,8 +65,21 @@
 <script>
 import dealers from '@/store/dealers';
 import { accordion } from '@/utils/utils';
+import contactsMap from '@/components/contactsMap.vue';
 
 export default {
+    data() {
+        return {
+            markers: [
+                { coords: [62.069984, 30.357676], hint: "Офис Санкт-Петербург" },
+                { coords: [53.751426, 37.618879], hint: "Офис Москва" },
+            ],
+
+        }
+    },
+    components: {
+        contactsMap
+    },
     computed: {
         dealers() {
             return dealers;

@@ -97,6 +97,20 @@
 
                                 <ul class="header__dropdown--cabinet-item">
                                     <li>
+                                        <router-link to="/cabinet/docs">
+                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                viewBox="0 0 1024 1024">
+                                                <g id="icomoon-ignore">
+                                                </g>
+                                                <path fill="#fff"
+                                                    d="M736 864h128.082c35.301 0 63.918-28.51 63.918-63.918v-544.082h-159.811c-35.451 0-64.189-28.375-64.189-63.939v-192.061h-319.727c-35.497 0-64.273 28.747-64.273 64.235v63.765h240l208 243.2v492.8h-32v-448h-159.811c-35.451 0-64.189-28.375-64.189-63.939v-192.061h-319.727c-35.497 0-64.273 28.747-64.273 64.235v735.531c0 35.476 28.51 64.235 63.918 64.235h480.165c35.301 0 63.918-28.51 63.918-63.918v-96.082zM736 0v191.906c0 17.725 14.431 32.094 31.705 32.094h160.295l-192-224zM544 160v191.906c0 17.725 14.431 32.094 31.705 32.094h160.295l-192-224z">
+                                                </path>
+                                            </svg>
+
+                                            Документы для дилера
+                                        </router-link>
+                                    </li>
+                                    <li>
                                         <router-link to="/cabinet">
                                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                                                 viewBox="0 0 1024 1024">
@@ -124,6 +138,8 @@
                                             <span>(10)</span>
                                         </router-link>
                                     </li>
+
+
                                     <li>
                                         <router-link to="/auth">
                                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
