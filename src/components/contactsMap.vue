@@ -6,13 +6,14 @@
 import config from '@/config';
 
 export default {
+    props: ["markers"],
     data() {
         return {
             map: null,
-            markers: [
-                { coords: [60.069984, 30.357676], hint: "Офис Санкт-Петербург" },
-                { coords: [55.751426, 37.618879], hint: "Офис Москва" },
-            ],
+            // markers: [
+            //     { coords: [60.069984, 30.357676], hint: "Офис Санкт-Петербург" },
+            //     { coords: [55.751426, 37.618879], hint: "Офис Москва" },
+            // ],
         };
     },
     mounted() {

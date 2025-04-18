@@ -197,8 +197,10 @@
             margin-bottom: 0 !important;
         }
     }
+
     & p {
         text-align: left;
+
         &:last-child {
             margin-bottom: 20px;
         }
