@@ -3,6 +3,7 @@
         <!-- <hero :title="this.new.title" :background="background" :isSmall="true" /> -->
         <!-- <breadcrumbs :level1="level1" :level2="level2" :level3="this.new.title" /> -->
         <div class="grid-container section-margin ">
+            <h1>{{ this.new.title }}</h1>
             <img class="new__img" :src="this.new.img" />
             <div class="new__detail" v-html="this.new.detailText"></div>
 
@@ -75,9 +76,18 @@
 .new {
     font-family: 'Parachute', sans-serif;
 
+    h1 {
+        text-align: left;
+        margin-bottom: 20px;
+        @include up($md) {
+            margin-bottom: 40px;
+        }
+    }
+
     & h3 {
         margin: 40px 0 20px;
     }
+
     &__products {
         display: grid;
         //flex-direction: column;
@@ -129,11 +139,15 @@
         margin-right: auto;
         margin-left: auto;
         margin-bottom: 20px;
+        width: 100%;
+        max-width: 300px;
+        object-fit: cover;
+
         @include up($md) {
             float: right;
             margin-left: 20px;
         }
-        
+
     }
 
     &__detail {

@@ -14,7 +14,7 @@
 
       <div class="container cmp-hero__content">
         <div class="cmp-hero__content--wrapper">
-          <div class="cmp-hero__content--wrapper--dark">
+          <div v-show="title" class="cmp-hero__content--wrapper--dark">
             <h1 class="cmp-display">{{ title }}</h1>
             <h4 class="cmp-font--regular">{{ subtitle }}</h4>
           </div>
