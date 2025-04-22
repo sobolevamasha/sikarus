@@ -246,6 +246,8 @@
 }
 
 .header {
+
+    font-family: "Parachute", sans-serif;
     min-height: 75px;
     width: 100%;
     position: relative;

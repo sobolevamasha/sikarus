@@ -223,5 +223,6 @@ export default {
 <style lang="scss">
 .footer {
   background-color: #616161;
+  font-family: "Parachute", sans-serif;
 }
 </style>

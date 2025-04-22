@@ -1,6 +1,7 @@
 export default [
   {
-    img: require("@/assets/tmp/new1.jpg"),
+    //img: require("@/assets/tmp/new1.jpg"),
+    img: require("@/assets/tmp/brochure.jpeg"),
     title:
       "Новинка от Sika: эластичный паропроницаемый акриловый герметик для срубов Sikacryl®-121 Wood",
     lang: "Русский",

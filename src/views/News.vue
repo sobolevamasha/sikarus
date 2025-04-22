@@ -28,15 +28,17 @@
 .newsList {
 
     &__list {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        grid-gap: 15px;
+        // display: grid;
+        // grid-template-columns: repeat(1, 1fr);
 
-        justify-self: center;
+
+       
 
         @include up($md) {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
+            grid-gap: 15px;
+            justify-self: center;
         }
 
         @include up($lg) {
@@ -46,7 +48,7 @@
     }
 
     &__item {
-        max-width: 280px;
+        // max-width: 280px;
         transition: all .3s ease-in-out;
         border: 4px solid transparent;
         margin: 0 auto;
@@ -54,9 +56,11 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        margin-bottom: 20px;
 
         @include up($md) {
             max-width: 320px;
+            margin-bottom: 0;
         }
 
         @include up($lg) {
@@ -77,6 +81,24 @@
 
             & .news__content {
                 box-shadow: none;
+            }
+        }
+
+        & img {
+            max-height: 250px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            @include up($sm) {
+                max-height: 400px;
+
+            }
+
+            @include up($md) {
+                //max-width: 370px;
+                max-height: 247px;
+
             }
         }
 

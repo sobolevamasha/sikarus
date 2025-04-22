@@ -243,7 +243,7 @@ const routes = [
         name: "new",
         component: () => import("../views/New"),
         meta: {
-          title: "Название новости",
+          //title: "Название новости",
           subtitle: "",
           background: require("@/assets/objects.jpg"),
           video: "",
