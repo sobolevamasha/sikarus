@@ -73,6 +73,7 @@
 
 <style lang="scss">
 .new {
+    font-family: 'Parachute', sans-serif;
 
     & h3 {
         margin: 40px 0 20px;
