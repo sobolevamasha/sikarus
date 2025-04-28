@@ -6,8 +6,7 @@
                     Последние новости
                 </h2>
                 <ul class="news__list">
-                    <li v-for="(item, index) in news" :key="index"
-                        v-show="news && news.length > 0 && index <= newsLimit" class="news__item">
+                    <li v-for="(item, index) in news" :key="index" class="news__item">
                         <router-link :to="item.link"></router-link>
                         <img :src="item.img" />
                         <div class="news__content">
@@ -128,32 +127,17 @@
 
 <script>
 import { RouterLink } from 'vue-router';
-import btn from '../btn.vue';
 import news from '@/store/news';
 
 
 export default {
     data() {
         return {
-            newsLimit: 2,
-            fullLimit: false,
             news: news
         }
     },
-    //mixins: [vp],
-    components: { btn },
     computed: {
     },
-    methods: {
-        onShowMore(newsLimit) {
-            if (this.newsLimit == this.news.length) {
-                this.newsLimit = 2;
-                this.fullLimit = false;
-            } else {
-                this.newsLimit = this.news.length;
-                this.fullLimit = true;
-            }
-        }
-    }
+    
 }
 </script>

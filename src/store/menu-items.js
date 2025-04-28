@@ -217,11 +217,11 @@ export default [
         subitems: [
           {
             name: "Сервис на объекте",
-            to: "/dealers",
+            to: "/service-object",
           },
           {
             name: "Помощь в проектировании",
-            to: "/contacts",
+            to: "/service-project",
           },
         ],
       },
@@ -232,7 +232,7 @@ export default [
         subitems: [
           {
             name: "Брошюры",
-            to: "/contacts",
+            to: "/documents",
           },
         ],
       },
@@ -243,11 +243,11 @@ export default [
         subitems: [
           {
             name: "Техподдержка",
-            to: "/contacts",
+            to: "/support",
           },
           {
             name: "Задать нам вопрос",
-            to: "/contacts",
+            to: "/question",
           },
         ],
       },
