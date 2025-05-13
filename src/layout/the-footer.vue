@@ -7,7 +7,7 @@
           <div class="cmp-footer__link-list footer__link-list--item">
             <div class="cmp-link-list">
               <h4 class="cmp-link-list__title cmp-layout--center">
-                Информация
+                Информация #1
               </h4>
               <ul class="cmp-link-list__items">
                 <li>
