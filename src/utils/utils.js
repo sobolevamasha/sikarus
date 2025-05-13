@@ -283,25 +283,90 @@ export function showMoreResults() {
 
 /*Скролл к якорю в карточке продукта */
 export function scrollToAnchor() {
-  document.querySelectorAll('product__info--anchor').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+  document.querySelectorAll("product__info--anchor").forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
 
-        const target = document.querySelector(this.getAttribute('href'));
-        target.scrollIntoView({
-            behavior: 'smooth'
-        });
+      const target = document.querySelector(this.getAttribute("href"));
+      target.scrollIntoView({
+        behavior: "smooth",
+      });
     });
-});
+  });
 }
 
 /*Выделяем желтым иконку "Добавить в избранное" по клику на кнопку */
 export function addToFavorite() {
-  const button = document.querySelector('.add-to-favorite');
+  const button = document.querySelector(".add-to-favorite");
 
   button.addEventListener("click", () => {
     const isButtonActive = button.classList.toggle("active");
   });
+}
+
+/*Swiper MAIN*/
+export function initMainSwiper() {
+  const swiper = new Swiper(".swiper", {
+    freeMode: true,
+    //modules: [Navigation, Pagination],
+    slidesPerView: 1,
+    spaceBetween: 15,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      360: {
+        slidesPerView: 1,
+      },
+      688: {
+        slidesPerView: 2,
+      },
+      1016: {
+        slidesPerView: 3,
+      },
+    },
+  });
+}
+
+/*Swiper OBJECT*/
+export function initObjectSwiper() {
+  const swiper2 = new Swiper('.mySwiper2', {
+            freeMode: true,
+            //modules: [Navigation],
+            spaceBetween: 5,
+            slidesPerView: 3,
+            watchSlidesVisibility: true,
+            watchSlidesProgress: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                360: {
+                    slidesPerView: 3,
+                    spaceBetween: 5,
+                },
+                688: {
+                    slidesPerView: 6,
+                    spaceBetween: 5,
+                },
+                1016: {
+                    slidesPerView: 7,
+                    spaceBetween: 15,
+                },
+            }
+
+        });
 
 
+        const swiper1 = new Swiper('.mySwiper', {
+            //modules: [Thumbs],
+            slidesPerView: 1,
+            spaceBetween: 15,
+            thumbs: {
+                swiper: swiper2
+            },
+            
+        });
 }

@@ -89,6 +89,7 @@
                 transition: all 0.3s ease;
                 opacity: 0.2;
             }
+
             & .slider__descr {
                 transition: all 0.3s ease;
                 color: #000 !important;
@@ -136,14 +137,15 @@
 
 <script>
 
-import Swiper, { Navigation, Pagination } from 'swiper';
-import 'swiper/swiper.min.css';
+// import Swiper, { Navigation, Pagination } from 'swiper';
+// import 'swiper/swiper.min.css';
 
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+// // Import Swiper styles
+// import 'swiper/css';
+// import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
 
+import { initMainSwiper } from '@/utils/utils';
 
 export default {
     name: "swiper",
@@ -151,35 +153,14 @@ export default {
     components: {
 
     },
+    methods: {
+        initScripts() {
+            initMainSwiper();
+        }
+    },
     mounted() {
-
-        const swiper = new Swiper('.swiper', {
-            freeMode: true,
-            modules: [Navigation, Pagination],
-            slidesPerView: 1,
-            spaceBetween: 15,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            //mousewheel: true,
-            //grabCursor: true,
-
-            breakpoints: {
-                360: {
-                    slidesPerView: 1,
-                },
-                688: {
-                    slidesPerView: 2,
-                },
-                1016: {
-                    slidesPerView: 3,
-                },
-            }
-
-        });
-
-    }
+        this.initScripts();
+    },
 
 }
 </script>
