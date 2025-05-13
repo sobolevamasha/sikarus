@@ -97,71 +97,22 @@
 </style>
 
 <script>
-import { ref } from 'vue';
-import { Swiper, SwiperSlide, Navigation, FreeMode, Thumbs } from 'swiper';
-import 'swiper/swiper.min.css';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/free-mode';
-import 'swiper/css/thumbs';
-
+import { initObjectSwiper } from '@/utils/utils';
 
 export default {
     name: "swiper-big",
     props: ["title", "items"],
     components: {
-        Swiper,
-        SwiperSlide,
-        FreeMode,
-        Thumbs
+
+    },
+    methods: {
+        initScripts() {
+            initObjectSwiper();
+        }
     },
     mounted() {
-
-        const swiper2 = new Swiper('.mySwiper2', {
-            freeMode: true,
-            modules: [Navigation],
-            spaceBetween: 5,
-            slidesPerView: 3,
-            watchSlidesVisibility: true,
-            watchSlidesProgress: true,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                360: {
-                    slidesPerView: 3,
-                    spaceBetween: 5,
-                },
-                688: {
-                    slidesPerView: 6,
-                    spaceBetween: 5,
-                },
-                1016: {
-                    slidesPerView: 7,
-                    spaceBetween: 15,
-                },
-            }
-
-        });
-
-
-        const swiper1 = new Swiper('.mySwiper', {
-            //freeMode: true,
-            modules: [Thumbs],
-            slidesPerView: 1,
-            spaceBetween: 15,
-            thumbs: {
-                swiper: swiper2
-            },
-            
-        });
-
-
-    }
+        this.initScripts();
+    },
 
 }
 </script>
