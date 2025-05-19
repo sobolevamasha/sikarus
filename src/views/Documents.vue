@@ -11,7 +11,15 @@
                 totam velit soluta earum delectus, libero, laborum incidunt eligendi ex minima minus eaque quaerat
                 itaque? Voluptatem?</p>
 
-            <div class="accordion">
+            <brochure :title="title" :description="description" :brochure="brochure" :filePath="filePath"
+                :fileSize="fileSize" />
+            <brochure :title="title" :description="description" :brochure="brochure" :filePath="filePath"
+                :fileSize="fileSize" />
+            <brochure :title="title" :description="description" :brochure="brochure" :filePath="filePath"
+                :fileSize="fileSize" />
+            <brochure :title="title" :description="description" :brochure="brochure" :filePath="filePath"
+                :fileSize="fileSize" />
+            <!-- <div class="accordion">
                 <div class="accordion-list">
                     <h4 class="accordion-header">Добавки в бетон<svg class="arrow" viewBox="0 0 887 1024">
                             <path
@@ -194,7 +202,7 @@
                 </div>
 
 
-            </div>
+            </div> -->
         </div>
     </div>
 </template>

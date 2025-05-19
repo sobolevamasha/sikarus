@@ -1,16 +1,16 @@
 <template>
     <div class="service-object">
         <div class="grid-container section-margin">
-            <img class="service-object__img" src="@/assets/tmp/decision.jpg" />
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis dolor rerum debitis assumenda cumque
-                totam velit soluta earum delectus, libero, laborum incidunt eligendi ex minima minus eaque quaerat
-                itaque? Voluptatem?</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis dolor rerum debitis assumenda cumque
-                totam velit soluta earum delectus, libero, laborum incidunt eligendi ex minima minus eaque quaerat
-                itaque? Voluptatem?</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis dolor rerum debitis assumenda cumque
-                totam velit soluta earum delectus, libero, laborum incidunt eligendi ex minima minus eaque quaerat
-                itaque? Voluptatem?</p>
+            <!-- <img class="service-object__img" src="@/assets/tmp/photo_2025-05-19_15-31-31.jpg" /> -->
+            <p>За годы работы нами был накоплен значительный опыт участия в различных проектах строительства зданий и
+                сооружений коммерческого, промышленного и инфраструктурного назначения.</p>
+            <p>Мы готовы поделиться своим​и знаниями для достижения лучших характеристик проектируемых объектов. Наш
+                партнерский подход включает в себя не только поставку материалов, но и комплекс сервисных услуг: от
+                разработки технических решений до технологического сопровождения на объекте в процессе производства
+                работ и последующей эксплуатации.</p>
+            <p>Мы готовы предоставить все необходимые консультации и чертежи узлов по вашим заданиям.</p>
+
+            <img width="80%" src="@/assets/tmp/photo_2025-05-19_15-29-40.jpg" />
 
             <div class="accordion">
                 <div class="accordion-list">
@@ -20,16 +20,26 @@
                             </path>
                         </svg></h4>
                     <div class="accordion-content">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis dolor rerum debitis assumenda
-                            cumque
-                            totam velit soluta earum delectus, libero, laborum incidunt eligendi ex minima minus eaque
-                            quaerat
-                            itaque? Voluptatem?</p>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis dolor rerum debitis assumenda
-                            cumque
-                            totam velit soluta earum delectus, libero, laborum incidunt eligendi ex minima minus eaque
-                            quaerat
-                            itaque? Voluptatem?</p>
+                        <p>Наши эксперты понимают, что для восстановления структурной целостности и продления срока
+                            службы сооружений мы должны рассматривать не только поверхностные повреждения для выявления
+                            основных причин разрушения. Сотрудничая с клиентами с самого начала проекта, мы
+                            разрабатываем адаптированные, надежные и эффективные системные стратегии с учетом их
+                            совместимости с местными условиями рабочей площадки, помогая нашим клиентам становиться
+                            более успешными и гарантируя быстрое возвращение сооружений в эксплуатацию и продление их
+                            срока службы.</p>
+                        <p>Строительные материалы бренда Master Builders Solutions специально разрабатываются для
+                            определенной цели, обеспечивая наиболее эффективную реконструкцию и долговременную защиту.
+                            Наши высокотехнологичные материалы проверены независимыми организациями в соответствии с
+                            требованиями национальных и/или международных стандартов. Их ассортимент охватывает
+                            ремонтные составы, материалы для усиления бетонных конструкций, материалы для ремонта
+                            трещин, а также гидроизоляционные и защитные покрытия.</p>
+
+                        <p><a style="color: #ffc510; border-bottom: yellow;"
+                                href="https://replayweb.page/w/id-6209d14a10ce/:37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f/20250122125806mp_/https://mbcc.sika.com/ru-ru/products/masteremaco">MasterEmaco</a>:
+                            ремонт бетона</p>
+                        <p><a style="color: #ffc510; border-bottom: yellow;"
+                                href="https://replayweb.page/w/id-6209d14a10ce/:37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f/20250122125806mp_/https://mbcc.sika.com/ru-ru/products/masterprotect">MasterProtect</a>:
+                            защита бетона</p>
                     </div>
                 </div>
                 <div class="accordion-list">
@@ -39,16 +49,17 @@
                             </path>
                         </svg></h4>
                     <div class="accordion-content">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis dolor rerum debitis assumenda
-                            cumque
-                            totam velit soluta earum delectus, libero, laborum incidunt eligendi ex minima minus eaque
-                            quaerat
-                            itaque? Voluptatem?</p>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis dolor rerum debitis assumenda
-                            cumque
-                            totam velit soluta earum delectus, libero, laborum incidunt eligendi ex minima minus eaque
-                            quaerat
-                            itaque? Voluptatem?</p>
+                        <p>Все строительные сооружения любого масштаба и качества подвергаются разрушительному
+                            воздействию окружающей среды, которое со временем может поставить под угрозу целостность
+                            сооружений.</p>
+                        <p>Под брендом Master Builders Solutions разработана система материалов MasterSeal –
+                            гидроизоляционных мембран и покрытий, наносимых вручную или методом распыления. Эти мембраны
+                            служат для устранения протечек воды и проникновения влаги во всех типах конструкций, включая
+                            автостоянки и транспортные сооружения, сооружения и резервуары водохозяйства,
+                            производственные объекты, подземные сооружения.</p>
+                        <p><a style="color: #ffc510; border-bottom: yellow;"
+                                href="https://replayweb.page/w/id-6209d14a10ce/:37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f/20250122125806mp_/https://mbcc.sika.com/ru-ru/products/masterseal">MasterSeal</a>
+                        </p>
                     </div>
                 </div>
                 <div class="accordion-list">
@@ -58,20 +69,82 @@
                             </path>
                         </svg></h4>
                     <div class="accordion-content">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis dolor rerum debitis assumenda
-                            cumque
-                            totam velit soluta earum delectus, libero, laborum incidunt eligendi ex minima minus eaque
-                            quaerat
-                            itaque? Voluptatem?</p>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis dolor rerum debitis assumenda
-                            cumque
-                            totam velit soluta earum delectus, libero, laborum incidunt eligendi ex minima minus eaque
-                            quaerat
-                            itaque? Voluptatem?</p>
+
+                        <p>Master BuildersSolutions специализируется в области
+                            разработки решений по устройству полов для широкого круга применений. Наши проверенные
+                            системы <b>бесшовных покрытий</b> <b>MasterTop</b>&nbsp;разработаны и для промышленных и
+                            для коммерческих секторов, и ориентированы как на индивидуальные качественные и
+                            технические критерии для устройства пола, так и на требования, связанные со стоимостью,
+                            ограничениями по времени и эффективностью.</p>
+                        <p>Линейка материалов <b>MasterTop</b> под брендом
+                            Master Builders Solutions включает высокоэффективные <b>полимерные</b> и
+                            <b>эпоксидные</b> промышленные и декоративные покрытия. Эти <b>системы</b> материалов
+                            отличаются быстрым вводом в эксплуатацию и отличными рабочими характеристиками,
+                            долговечностью и привлекательность.
+                        </p>
+                        <p>Команда технической поддержки Master Builders
+                            Solutions&nbsp;понимает особую важность <b>скорости устройства</b> полов и <b>быстрого
+                                возвращения</b> <b>объекта в эксплуатацию</b>. Наши опытные технические специалисты
+                            работают в сотрудничестве подрядными компаниями с этапа планирования проекта. Учитывая
+                            полный эксплуатационный цикл материала, они выбирают наиболее надежное,
+                            высокоэффективное и рентабельное решение для устройства полов, которое удовлетворяет
+                            потребности каждого клиента и каждой отрасли.&nbsp; </p>
+                        <p><a style="color: #ffc510; border-bottom: yellow;"
+                                href="https://replayweb.page/w/id-6209d14a10ce/:37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f/20250122125806mp_/https://mbcc.sika.com/ru-ru/products/mastertop">MasterTop</a><br>
+                        </p>
+
+
                     </div>
                 </div>
 
 
+            </div>
+
+            <div class="download">
+                <a class="download--link" href="/assets/tmp/map-spb.jpg" target="_blank">
+                    <div class="download--content">
+                        <i class="cmp-icon cmp-icon-download"></i>
+                        <h6 class="download--title">Документ</h6>
+                    </div>
+                    <div class="download--descr">
+                        <div class="">Изображение</div>
+                        <span class="download--size">2 MB</span>
+                    </div>
+                </a>
+
+                <button class="download--btn">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 768 768">
+                        <g id="icomoon-ignore">
+                        </g>
+                        <path fill="#000"
+                            d="M415.5 288h177l-177-175.5v175.5zM511.5 511.5v-63h-96v-96h-63v96h-96v63h96v96h63v-96h96zM448.5 64.5l192 192v384q0 25.5-19.5 44.25t-45 18.75h-384q-25.5 0-45-18.75t-19.5-44.25l1.5-513q0-25.5 18.75-44.25t44.25-18.75h256.5z">
+                        </path>
+                    </svg>
+
+                </button>
+            </div>
+            <div class="download">
+                <a class="download--link" href="/assets/tmp/map-spb.jpg" target="_blank">
+                    <div class="download--content">
+                        <i class="cmp-icon cmp-icon-download"></i>
+                        <h6 class="download--title">Документ</h6>
+                    </div>
+                    <div class="download--descr">
+                        <div class="">Изображение</div>
+                        <span class="download--size">2 MB</span>
+                    </div>
+                </a>
+
+                <button class="download--btn">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 768 768">
+                        <g id="icomoon-ignore">
+                        </g>
+                        <path fill="#000"
+                            d="M415.5 288h177l-177-175.5v175.5zM511.5 511.5v-63h-96v-96h-63v96h-96v63h96v96h63v-96h96zM448.5 64.5l192 192v384q0 25.5-19.5 44.25t-45 18.75h-384q-25.5 0-45-18.75t-19.5-44.25l1.5-513q0-25.5 18.75-44.25t44.25-18.75h256.5z">
+                        </path>
+                    </svg>
+
+                </button>
             </div>
         </div>
     </div>
