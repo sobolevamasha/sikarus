@@ -11,19 +11,19 @@ export default [
         subitems: [
           {
             name: "Цели и бренд Sika",
-            to: "",
+            to: "/celi-i-brend",
           },
           {
             name: "Ценности и принципы",
-            to: "",
+            to: "/cennosti-i-princypy",
           },
-          {
-            name: "История",
-            to: "",
-          },
+          // {
+          //   name: "История",
+          //   to: "",
+          // },
           {
             name: "Целевые рынки сбыта",
-            to: "",
+            to: "/rynki",
           },
         ],
       },
@@ -34,20 +34,50 @@ export default [
         subitems: [
           {
             name: "О компании",
-            to: "",
+            to: "/o-kompanii",
           },
           {
             name: "Заводы Sika в России",
-            to: "",
+            to: "/zavody",
           },
           {
             name: "Лаборатории Sika в России",
-            to: "",
+            to: "/labs",
           },
           {
             name: "Техподдержка",
             to: "",
           },
+        ],
+      },
+      {
+        isOpen: false,
+        title: "Карьера",
+        to: "",
+        subitems: [
+          {
+            name: "Что даёт работа в компании Sika?",
+            to: "sika-rabota",
+          },
+          {
+            name: "Быть частью корпоративного духа Sika",
+            to: "/corp-duh",
+          },
+        ],
+      },
+      {
+        isOpen: false,
+        title: "Приобретения",
+        to: "",
+        subitems: [
+          {
+            name: "Приобретение КРЕПС",
+            to: "kreps.ru",
+          },
+          {
+            name: "Приобретение MBCC",
+            to: "/mbcc",
+          }
         ],
       },
       {
