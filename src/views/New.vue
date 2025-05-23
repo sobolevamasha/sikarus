@@ -139,7 +139,7 @@
         margin-right: auto;
         margin-left: auto;
         margin-bottom: 20px;
-        width: 100%;
+        width: 50%;
         max-width: 300px;
         object-fit: cover;
 

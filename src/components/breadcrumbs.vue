@@ -39,6 +39,7 @@
 
     & ul {
         display: flex;
+        white-space: nowrap;
     }
 
     & li {
