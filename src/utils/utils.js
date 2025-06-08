@@ -331,42 +331,81 @@ export function initMainSwiper() {
 
 /*Swiper OBJECT*/
 export function initObjectSwiper() {
-  const swiper2 = new Swiper('.mySwiper2', {
-            freeMode: true,
-            //modules: [Navigation],
-            spaceBetween: 5,
-            slidesPerView: 3,
-            watchSlidesVisibility: true,
-            watchSlidesProgress: true,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                360: {
-                    slidesPerView: 3,
-                    spaceBetween: 5,
-                },
-                688: {
-                    slidesPerView: 6,
-                    spaceBetween: 5,
-                },
-                1016: {
-                    slidesPerView: 7,
-                    spaceBetween: 15,
-                },
-            }
+  const swiper2 = new Swiper(".mySwiper2", {
+    freeMode: true,
+    //modules: [Navigation],
+    spaceBetween: 5,
+    slidesPerView: 3,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      360: {
+        slidesPerView: 3,
+        spaceBetween: 5,
+      },
+      688: {
+        slidesPerView: 6,
+        spaceBetween: 5,
+      },
+      1016: {
+        slidesPerView: 7,
+        spaceBetween: 15,
+      },
+    },
+  });
 
-        });
+  const swiper1 = new Swiper(".mySwiper", {
+    //modules: [Thumbs],
+    slidesPerView: 1,
+    spaceBetween: 15,
+    thumbs: {
+      swiper: swiper2,
+    },
+  });
+}
 
+/*Закрепляем меню при скроллинге */
+export function menuScroll() {
+  const mainMenu = document.querySelector('.mainmenu');
+  const header = document.querySelector('.header');
+  
+  if (!mainMenu || !header) return;
 
-        const swiper1 = new Swiper('.mySwiper', {
-            //modules: [Thumbs],
-            slidesPerView: 1,
-            spaceBetween: 15,
-            thumbs: {
-                swiper: swiper2
-            },
-            
-        });
+  const headerHeight = header.offsetHeight;
+  let isFixed = false;
+
+  function checkScroll() {
+    const scrollPosition = window.scrollY;
+    
+    if (scrollPosition > headerHeight && !isFixed) {
+      // Фиксируем меню
+      mainMenu.classList.add('mainmenu--fixed');
+      document.body.style.paddingTop = mainMenu.offsetHeight + 'px';
+      isFixed = true;
+    } 
+    else if (scrollPosition <= headerHeight && isFixed) {
+      // Возвращаем меню на место
+      mainMenu.classList.remove('mainmenu--fixed');
+      document.body.style.paddingTop = '0';
+      isFixed = false;
+    }
+  }
+
+  // Оптимизация с requestAnimationFrame
+  let ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        checkScroll();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+ 
 }

@@ -241,6 +241,26 @@
 </template>
 
 <style lang="scss">
+
+.mainmenu {
+  transition: all 0.3s ease; /* Плавное появление/скрытие */
+}
+
+.mainmenu--fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  z-index: 1000;
+  background-color: $sika-yellow;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень */
+}
+
+.mainmenu--fixed .mainmenu__list {
+    background-color: $sika-yellow;
+  }
+
 .header__dropdown--product-list:hover {
     transition: all 0.2s ease-in;
 }
@@ -659,6 +679,7 @@ import { onToggleBurgerMenu } from '@/utils/utils';
 import { onToggleModal } from '@/utils/utils';
 import { onToggleProducts } from '@/utils/utils';
 import { onToggleCabinetitems } from '@/utils/utils';
+import { menuScroll } from '@/utils/utils';
 
 export default {
     name: "the-header",
@@ -728,6 +749,7 @@ export default {
             onToggleModal();
             onToggleProducts();
             onToggleCabinetitems();
+            menuScroll();
         }
     },
     mounted() {
